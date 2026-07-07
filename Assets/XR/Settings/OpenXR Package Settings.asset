@@ -15,35 +15,35 @@ MonoBehaviour:
   features:
   - {fileID: 5942445090085392831}
   - {fileID: 6772300690791871899}
-  - {fileID: 7934582949552889378}
-  - {fileID: 6343361933258622448}
-  - {fileID: 7504487095677185149}
-  - {fileID: -6368510786303152198}
+  - {fileID: 2743315192550428957}
+  - {fileID: -9201749273156529129}
+  - {fileID: -3612929612431674946}
+  - {fileID: -8811144938662934834}
   - {fileID: 2367530420719094618}
-  - {fileID: 8774794886910053215}
-  - {fileID: 4460198655830404788}
-  - {fileID: 7776585888566990514}
+  - {fileID: -8724944735824747527}
+  - {fileID: -1164231416242639154}
+  - {fileID: -7449992407040190538}
   - {fileID: 362152529494339504}
-  - {fileID: 7350193464809206742}
-  - {fileID: 5097978306783680846}
+  - {fileID: -825833022388522666}
+  - {fileID: -183895893868476422}
   - {fileID: 8176497396156407199}
   - {fileID: 1021543439965938480}
-  - {fileID: -8893430463853140055}
-  - {fileID: -792861138835225082}
-  - {fileID: -522201051965513861}
-  - {fileID: 5993480039709177930}
+  - {fileID: -3018695950344003225}
+  - {fileID: -5533595317476974077}
+  - {fileID: 83612153196315684}
+  - {fileID: -1963105336487288160}
   - {fileID: 3566248763171188483}
-  - {fileID: 5426918284214688067}
-  - {fileID: 1552305846563578651}
-  - {fileID: -1861956826083918290}
+  - {fileID: -2769892693387126916}
+  - {fileID: 6818214573645613764}
+  - {fileID: -6887116958956190129}
   - {fileID: -1297406277701333865}
   - {fileID: 826010351631460415}
   - {fileID: 2805257444718958072}
-  - {fileID: 6927817250407249877}
-  - {fileID: 9134082788948539307}
-  - {fileID: -5195168587482061603}
-  - {fileID: -4323495894865218298}
-  - {fileID: 3400890757730845606}
+  - {fileID: -419355566389373192}
+  - {fileID: 5348630521109128663}
+  - {fileID: -3710337928436297053}
+  - {fileID: -6661561308124121407}
+  - {fileID: -2298675671302328595}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.Features.Interactions.OculusTouchControllerProfile
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
@@ -2057,39 +2057,39 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: 4080219374092165258}
-  - {fileID: 6075473392370048024}
-  - {fileID: 3319012168814757874}
+  - {fileID: -2625958662686309954}
+  - {fileID: 120942755926609619}
+  - {fileID: -7255149935402891812}
   - {fileID: -2657813496767201157}
-  - {fileID: 8491285419048827625}
-  - {fileID: 7794917072470672015}
+  - {fileID: 1742953642724939690}
+  - {fileID: 6050409279697808149}
   - {fileID: 961355099341781019}
-  - {fileID: 1122766366329598295}
+  - {fileID: -8560244426220499096}
   - {fileID: -1722523356100425211}
   - {fileID: 4547233085820647203}
-  - {fileID: 3783346400636441265}
-  - {fileID: 9095745136578146021}
+  - {fileID: -2725604222732178008}
+  - {fileID: -2570574748068509771}
   - {fileID: 3573499311065082825}
-  - {fileID: -3419167655652803230}
+  - {fileID: 7739168594819376457}
   - {fileID: 1890444317381493090}
-  - {fileID: 2000844987889422172}
-  - {fileID: -4431164495033556455}
-  - {fileID: 5753074311257286199}
-  - {fileID: 4709417611538141919}
+  - {fileID: -1657099622405852603}
+  - {fileID: 8811616838626770106}
+  - {fileID: -7685918914573736815}
+  - {fileID: 2111879298951952165}
   - {fileID: 389800156200844539}
-  - {fileID: 8093361703266090812}
-  - {fileID: -8116013564189532122}
-  - {fileID: 5219721628065628605}
-  - {fileID: -1889378478647388350}
-  - {fileID: -3546283681870315111}
-  - {fileID: -946707679186900520}
-  - {fileID: -4859111225915566791}
-  - {fileID: -798899585642482952}
+  - {fileID: 96140064833615172}
+  - {fileID: 751936265450289156}
+  - {fileID: 6809733274671131463}
+  - {fileID: 5691975116745221743}
+  - {fileID: -7395951332095908527}
+  - {fileID: -5843860294129240951}
+  - {fileID: 8095466789589114041}
+  - {fileID: -4224707540247306299}
   - {fileID: 943454209871478663}
-  - {fileID: 3413021967793121941}
+  - {fileID: -5313693895495996570}
   - {fileID: 2744215261949434141}
   - {fileID: 400238316665726874}
-  - {fileID: -4544338217955088787}
+  - {fileID: -4462553333648870745}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1927c045052a06d49a9b21fdcaa26db6, type: 3}
   m_Name: MetaXRFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1927c045052a06d49a9b21fdcaa26db6, type: 3}
   m_Name: MetaXRFeature Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr
@@ -3013,7 +3013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
   m_Name: OculusTouchControllerProfile Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.Features.Interactions.OculusTouchControllerProfile
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.oculustouch
