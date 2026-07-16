@@ -71,3 +71,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Firebase SDK (각 팀원이 직접 설치)
+#Firebase Unity SDK 13.13.0 다운로드
+# FirebaseApp
+# FirebaseAuth
+# FirebaseFirestore
+# FirebaseStorage 전부 import
+/[Aa]ssets/[Ff]irebase/
