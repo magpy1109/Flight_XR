@@ -1,0 +1,10 @@
+*.cs diff=csharp text
+*.meta merge=unityyamlmerge
+*.unity merge=unityyamlmerge
+*.prefab merge=unityyamlmerge
+*.asset merge=unityyamlmerge
+*.mat merge=unityyamlmerge
+*.physicsMaterial2D merge=unityyamlmerge
+*.physicMaterial merge=unityyamlmerge
+*.anim merge=unityyamlmerge
+*.controller merge=unityyamlmerge
