@@ -79,3 +79,5 @@ crashlytics-build.properties
 # FirebaseFirestore
 # FirebaseStorage 전부 import
 /[Aa]ssets/[Ff]irebase/
+
+/[Aa]ssets/google-services.json
