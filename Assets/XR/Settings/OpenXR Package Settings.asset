@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
   - {fileID: 5942445090085392831}
-  - {fileID: -5027129181292678031}
-  - {fileID: 2743315192550428957}
+  - {fileID: 6772300690791871899}
+  - {fileID: 7934582949552889378}
   - {fileID: 6343361933258622448}
   - {fileID: 7504487095677185149}
   - {fileID: -1256995637719543502}
@@ -26,9 +26,9 @@ MonoBehaviour:
   - {fileID: 2289748696748186279}
   - {fileID: 7350193464809206742}
   - {fileID: 6429139845351431596}
-  - {fileID: -568955874000097961}
+  - {fileID: 8176497396156407199}
   - {fileID: 7468460100189506644}
-  - {fileID: -8893430463853140055}
+  - {fileID: -3018695950344003225}
   - {fileID: -792861138835225082}
   - {fileID: 83612153196315684}
   - {fileID: 5993480039709177930}
@@ -37,11 +37,11 @@ MonoBehaviour:
   - {fileID: 6818214573645613764}
   - {fileID: 935925104934619346}
   - {fileID: 4172219481284306048}
-  - {fileID: -8105739647847554009}
-  - {fileID: -221321267927097012}
+  - {fileID: 826010351631460415}
+  - {fileID: 2805257444718958072}
   - {fileID: 6927817250407249877}
   - {fileID: 9134082788948539307}
-  - {fileID: -5195168587482061603}
+  - {fileID: -3710337928436297053}
   - {fileID: 2230153154514372003}
   - {fileID: 3400890757730845606}
   customLoaderName: 
@@ -2069,26 +2069,26 @@ MonoBehaviour:
   - {fileID: 4547233085820647203}
   - {fileID: 4531708123408322845}
   - {fileID: 9095745136578146021}
-  - {fileID: -1642157796520202072}
-  - {fileID: -3419167655652803230}
-  - {fileID: 449509519741272401}
-  - {fileID: 2000844987889422172}
-  - {fileID: -4431164495033556455}
+  - {fileID: 3573499311065082825}
+  - {fileID: 7739168594819376457}
+  - {fileID: 1890444317381493090}
+  - {fileID: 8084099221088658565}
+  - {fileID: 8811616838626770106}
   - {fileID: 5753074311257286199}
-  - {fileID: 2111879298951952165}
-  - {fileID: -97422007306428200}
-  - {fileID: 1245483814917953394}
-  - {fileID: -8116013564189532122}
-  - {fileID: 5219721628065628605}
-  - {fileID: -1889378478647388350}
+  - {fileID: 4709417611538141919}
+  - {fileID: 389800156200844539}
+  - {fileID: 8093361703266090812}
+  - {fileID: 751936265450289156}
+  - {fileID: 6809733274671131463}
+  - {fileID: 5691975116745221743}
   - {fileID: 2616054698455345546}
   - {fileID: -946707679186900520}
-  - {fileID: -4859111225915566791}
+  - {fileID: 8095466789589114041}
   - {fileID: -798899585642482952}
   - {fileID: 7455666721057895395}
   - {fileID: 4558019714007560314}
   - {fileID: 4706418745668620854}
-  - {fileID: -6438257122829024831}
+  - {fileID: 400238316665726874}
   - {fileID: -4462553333648870745}
   customLoaderName: 
   m_renderMode: 1
@@ -2697,7 +2697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7a7b4a7bf27d4d96b8eb673f5174e, type: 3}
   m_Name: OculusTouchControllerProximityProfile Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.OculusTouchControllerProximityProfile
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Oculus Touch Controller Proximity Interaction
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.input.oculustouch.proximity
