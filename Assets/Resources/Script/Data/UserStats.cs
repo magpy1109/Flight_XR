@@ -1,20 +1,8 @@
 using Firebase.Firestore;
 
 [FirestoreData]
-public class UserData
+public class UserStats
 {
-    [FirestoreProperty]
-    public string nickname { get; set; } = "Player";
-
-    [FirestoreProperty]
-    public string email { get; set; } = "";
-
-    [FirestoreProperty]
-    public string photo_url { get; set; } = "";
-
-    [FirestoreProperty]
-    public string equipped_skin_id { get; set; } = "default";
-
     [FirestoreProperty]
     public int best_score { get; set; } = 0;
 
@@ -31,5 +19,12 @@ public class UserData
     public float total_distance { get; set; } = 0;
 
     [FirestoreProperty]
-    public Timestamp created_at { get; set; } = Timestamp.GetCurrentTimestamp();
+    public float total_play_time { get; set; } = 0;
+
+    [FirestoreProperty]
+    public float total_height { get; set; } = 0;
+
+    [FirestoreProperty]
+    public Timestamp updated_at { get; set; } =
+        Timestamp.GetCurrentTimestamp();
 }
