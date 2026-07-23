@@ -47,7 +47,7 @@ public class GameResultManager : MonoBehaviour
         result.ring_count = ringCount;
 
         Debug.Log("Firestore 저장 시작");
-        
+
         db.Collection("game_results")
             .AddAsync(result)
             .ContinueWithOnMainThread(task =>
@@ -60,8 +60,7 @@ public class GameResultManager : MonoBehaviour
 
                 Debug.Log("게임 결과 저장 완료");
 
-                // 다음 단계에서 구현
-                // StatsManager.Instance.UpdateStats(result);
+                StatsManager.Instance.UpdateStats(result);
             });
     }
 }

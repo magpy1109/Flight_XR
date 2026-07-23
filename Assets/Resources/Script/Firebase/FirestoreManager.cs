@@ -127,6 +127,9 @@ public class FirestoreManager : MonoBehaviour
             if (task.IsCompletedSuccessfully)
             {
                 Debug.Log("기본 스킨 지급 완료");
+
+                // 모든 기본 데이터 생성 후 로드
+                SaveManager.Instance.LoadGameData();
             }
             else
             {

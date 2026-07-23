@@ -25,6 +25,8 @@ public class PlaneLauncher : MonoBehaviour
             spawnPosition,
             spawn.rotation);
 
+        GameManager.Instance.StartGame();
+
         Rigidbody rb = currentPlane.GetComponent<Rigidbody>();
 
         if (rb != null)

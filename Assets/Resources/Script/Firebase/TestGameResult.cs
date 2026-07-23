@@ -16,5 +16,10 @@ public class TestGameResult : MonoBehaviour
                 8
             );
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SkinManager.Instance.UnlockSkin("gold");
+        }
     }
+    
 }

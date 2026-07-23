@@ -7345,6 +7345,9 @@ GameObject:
   - component: {fileID: 1187964770}
   - component: {fileID: 1187964771}
   - component: {fileID: 1187964772}
+  - component: {fileID: 1187964773}
+  - component: {fileID: 1187964774}
+  - component: {fileID: 1187964775}
   m_Layer: 0
   m_Name: FirebaseManager
   m_TagString: Untagged
@@ -7415,6 +7418,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336a3ba216f96b74e9a4e1612468eef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameResultManager
+--- !u!114 &1187964773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187964767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd01669bd49bef441ae4f20d5f160f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatsManager
+--- !u!114 &1187964774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187964767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f279602887b239747af9aa3f5f00d3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinManager
+--- !u!114 &1187964775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187964767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f5b236feb08d149a3b18454c47299b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
 --- !u!1 &1190825589
 GameObject:
   m_ObjectHideFlags: 0
