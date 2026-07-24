@@ -23,19 +23,20 @@ public class FirebaseAuthManager : MonoBehaviour
 
     public void SignInAnonymously()
     {
+        Debug.Log("익명 로그인 시작");
+
         auth.SignInAnonymouslyAsync()
             .ContinueWithOnMainThread(task =>
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    Debug.LogError("로그인 실패");
+                    Debug.LogError(task.Exception);
                     return;
                 }
 
                 CurrentUser = task.Result.User;
 
                 Debug.Log("로그인 성공");
-
                 Debug.Log(CurrentUser.UserId);
             });
     }
