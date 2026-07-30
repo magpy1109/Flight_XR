@@ -1,0 +1,5 @@
+C:/Users/smj80/Desktop/Flight_XR/.utmp/RelWithDebInfo/2s1l5k69/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/smj80/Desktop/Flight_XR/.utmp/RelWithDebInfo/2s1l5k69/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/smj80/Desktop/Flight_XR/.utmp/RelWithDebInfo/2s1l5k69/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/smj80/Desktop/Flight_XR/.utmp/RelWithDebInfo/2s1l5k69/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/smj80/Desktop/Flight_XR/.utmp/RelWithDebInfo/2s1l5k69/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
