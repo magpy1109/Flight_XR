@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("게임 시작");
     }
 
-    public void EndGame()
+    public void EndGame(GameObject plane)
     {
         if (!IsPlaying)
             return;
@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
         int flightTime =
             Mathf.RoundToInt(Time.time - startTime);
 
+        Debug.Log("게임 종료");
+
         GameResultManager.Instance.SaveResult(
             Score,
             Distance,
@@ -71,12 +73,19 @@ public class GameManager : MonoBehaviour
             MaxHeight,
             RingCount);
 
-        Debug.Log("게임 종료");
+        // 다음 단계에서 추가 예정
+        // StatsManager.Instance.UpdateStats(...);
+        // AchievementManager.Instance.Check(...);
+        // UIManager.Instance.ShowResult();
+
+        Destroy(plane);
     }
 
     public void AddScore(int value)
     {
         Score += value;
+
+        Debug.Log($"현재 점수 : {Score}");
     }
 
     public void AddRing()

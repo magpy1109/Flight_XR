@@ -31,6 +31,7 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - QDSUIToggleThumbnail
+  - Plane
   layers:
   - Default
   - TransparentFX
@@ -38,11 +39,11 @@ TagManager:
   - Overlay UI
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Wall
+  - Obstacle
+  - Ring
+  - Coin
   - 
   - 
   - 

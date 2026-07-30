@@ -13,7 +13,6 @@ public class PlaneController : MonoBehaviour
     void Awake()
     {
         physics = GetComponent<PlanePhysics>();
-        startPosition = transform.position;
     }
 
     void Update()

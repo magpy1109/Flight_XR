@@ -20,10 +20,25 @@ public class PlaneLauncher : MonoBehaviour
         // 손(또는 카메라) 앞 35cm에서 생성
         Vector3 spawnPosition = spawn.position + spawn.forward * 0.35f;
 
+        // ⭐ 먼저 비행기 생성
         currentPlane = Instantiate(
             planePrefab,
             spawnPosition,
             spawn.rotation);
+
+        // ⭐ 생성된 비행기에서 컨트롤러 가져오기
+        PlaneController controller =
+            currentPlane.GetComponent<PlaneController>();
+
+        if (controller != null)
+        {
+            controller.StartFlight();
+
+            controller.OnPlaneDestroyed += () =>
+            {
+                currentPlane = null;
+            };
+        }
 
         GameManager.Instance.StartGame();
 
@@ -31,18 +46,8 @@ public class PlaneLauncher : MonoBehaviour
 
         if (rb != null)
         {
-            rb.linearVelocity = spawn.forward * launchSpeed;
-        }
-
-        PlaneController controller =
-            currentPlane.GetComponent<PlaneController>();
-
-        if (controller != null)
-        {
-            controller.OnPlaneDestroyed += () =>
-            {
-                currentPlane = null;
-            };
+            rb.linearVelocity =
+                spawn.forward * launchSpeed;
         }
     }
 }
