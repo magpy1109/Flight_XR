@@ -31,7 +31,10 @@ public class GameManager : MonoBehaviour
     {
         if (FlightInputManager.Instance.LaunchPressed)
         {
-            launcher.Launch();
+            CountdownManager.Instance.StartCountdown(() =>
+            {
+                launcher.Launch();
+            });
 
             //StartGame();
         }
