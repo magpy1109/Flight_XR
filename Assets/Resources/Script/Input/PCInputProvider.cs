@@ -18,13 +18,7 @@ public class PCInputProvider : IInputProvider
         //-------------------------
         // 입김 테스트
         //-------------------------
-        BlowInput = 0f;
-
-        if (Input.GetKey(KeyCode.W))
-            BlowInput = 0.5f;
-
-        if (Input.GetKey(KeyCode.Space))
-            BlowInput = 1f;
+        BlowInput = BreathDetector.Instance.BreathPower;
 
         //-------------------------
         // 발사
