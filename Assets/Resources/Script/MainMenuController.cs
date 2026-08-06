@@ -16,12 +16,12 @@ public class MainMenuController : MonoBehaviour
 
     public void GoToMain()
     {
-        fadeManager.LoadScene("MainScene");
+        fadeManager.LoadScene("SampleScene");
     }
 
     public void GoToSkinSetting()
     {
-        fadeManager.LoadScene("SkinScene_FLIGHT");
+        fadeManager.LoadScene("SkinScene");
     }
 
     public void GoToMainSetting()
