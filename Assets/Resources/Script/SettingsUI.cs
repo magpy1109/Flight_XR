@@ -40,8 +40,6 @@ public class SettingsUI : MonoBehaviour
     public Slider genMasterSlider;
     public Slider genBGMSlider;
     public Slider genSFXSlider;
-    public TMP_Dropdown genResDropdown;
-    public TMP_Dropdown genSizeDropdown;
     public TMP_Dropdown genFrameDropdown;
 
     [Header("[ Individual Tab UI Elements ]")]
@@ -49,8 +47,6 @@ public class SettingsUI : MonoBehaviour
     public Slider soundMasterSlider;
     public Slider soundBGMSlider;
     public Slider soundSFXSlider;
-    public TMP_Dropdown graphResDropdown;
-    public TMP_Dropdown graphSizeDropdown;
     public TMP_Dropdown graphFrameDropdown;
 
     [Header("[ Mute Row Sync ]")] // ★ [새로 추가] 각 줄의 음소거 컴포넌트 연동 칸
@@ -65,6 +61,9 @@ public class SettingsUI : MonoBehaviour
     private Color activeTextColor;
     private Color inactiveTextColor;
 
+    // 슬라이더 Min/Max가 0~100이면 100f, 0~1이면 1f로 설정
+    private const float SLIDER_SCALE = 100f;
+
     void Start()
     {
         ColorUtility.TryParseHtmlString("#0C8CE9", out activeTextColor);
@@ -74,23 +73,87 @@ public class SettingsUI : MonoBehaviour
         tabSoundBtn.onClick.AddListener(() => SwitchTab(1));
         tabGraphicBtn.onClick.AddListener(() => SwitchTab(2));
 
-        // 슬라이더 값 동기화
+        // 슬라이더 값 동기화 (General 탭 <-> Sound 탭)
         SetupSliderSync(genInputSlider, soundInputSlider);
         SetupSliderSync(genMasterSlider, soundMasterSlider);
         SetupSliderSync(genBGMSlider, soundBGMSlider);
         SetupSliderSync(genSFXSlider, soundSFXSlider);
 
-        // 드롭다운 값 동기화
-        SetupDropdownSync(genResDropdown, graphResDropdown);
-        SetupDropdownSync(genSizeDropdown, graphSizeDropdown);
+        // 드롭다운 값 동기화 (프레임만 남음 - 해상도/화면크기 제거됨)
         SetupDropdownSync(genFrameDropdown, graphFrameDropdown);
 
-        // ★ [새로 추가] 줄 음소거 거울 동기화 연결
+        // ★ 줄 음소거 거울 동기화 연결
         SetupMuteSync(genMasterMuter, soundMasterMuter);
         SetupMuteSync(genBGMMuter, soundBGMMuter);
         SetupMuteSync(genSFXMuter, soundSFXMuter);
 
+        // ★★ [새로 추가] 저장된 설정값을 UI에 먼저 반영
+        LoadSavedValuesToUI();
+
+        // ★★ [새로 추가] 실제 오디오/프레임레이트 매니저에 값을 적용하는 리스너 연결
+        BindRealSettingsListeners();
+
         SwitchTab(0);
+    }
+
+    // ★★ [새로 추가] PlayerPrefs에 저장돼 있던 값을 슬라이더/드롭다운/음소거 버튼에 반영
+    private void LoadSavedValuesToUI()
+    {
+        if (AudioSettingsManager.Instance != null)
+        {
+            // 슬라이더 Max Value가 100이면 SLIDER_SCALE = 100f, 슬라이더가 0~1 범위면 1f로 바꿔주세요.
+            float master = AudioSettingsManager.Instance.GetSavedMasterVolume() * SLIDER_SCALE;
+            float bgm = AudioSettingsManager.Instance.GetSavedBGMVolume() * SLIDER_SCALE;
+            float sfx = AudioSettingsManager.Instance.GetSavedSFXVolume() * SLIDER_SCALE;
+
+            genMasterSlider.SetValueWithoutNotify(master);
+            genBGMSlider.SetValueWithoutNotify(bgm);
+            genSFXSlider.SetValueWithoutNotify(sfx);
+
+            soundMasterSlider.SetValueWithoutNotify(master);
+            soundBGMSlider.SetValueWithoutNotify(bgm);
+            soundSFXSlider.SetValueWithoutNotify(sfx);
+
+            if (genMasterMuter != null) genMasterMuter.SetMute(AudioSettingsManager.Instance.GetSavedMasterMute());
+            if (genBGMMuter != null) genBGMMuter.SetMute(AudioSettingsManager.Instance.GetSavedBGMMute());
+            if (genSFXMuter != null) genSFXMuter.SetMute(AudioSettingsManager.Instance.GetSavedSFXMute());
+        }
+
+        if (FrameRateSettingsManager.Instance != null)
+        {
+            int savedIndex = FrameRateSettingsManager.Instance.GetSavedIndex();
+            genFrameDropdown.SetValueWithoutNotify(savedIndex);
+            graphFrameDropdown.SetValueWithoutNotify(savedIndex);
+        }
+    }
+
+    // ★★ [새로 추가] UI 조작이 실제 설정에 반영되도록 매니저 함수들을 연결
+    private void BindRealSettingsListeners()
+    {
+        if (AudioSettingsManager.Instance != null)
+        {
+            // 슬라이더 값(0~100 또는 0~1)을 매니저가 기대하는 0~1 값으로 나눠서 전달
+            genMasterSlider.onValueChanged.AddListener((val) => AudioSettingsManager.Instance.SetMasterVolume(val / SLIDER_SCALE));
+            genBGMSlider.onValueChanged.AddListener((val) => AudioSettingsManager.Instance.SetBGMVolume(val / SLIDER_SCALE));
+            genSFXSlider.onValueChanged.AddListener((val) => AudioSettingsManager.Instance.SetSFXVolume(val / SLIDER_SCALE));
+
+            if (genMasterMuter != null) genMasterMuter.onMuteChanged += AudioSettingsManager.Instance.SetMasterMute;
+            if (genBGMMuter != null) genBGMMuter.onMuteChanged += AudioSettingsManager.Instance.SetBGMMute;
+            if (genSFXMuter != null) genSFXMuter.onMuteChanged += AudioSettingsManager.Instance.SetSFXMute;
+        }
+        else
+        {
+            Debug.LogWarning("[SettingsUI] AudioSettingsManager 인스턴스가 없습니다. 씬에 배치했는지 확인하세요.");
+        }
+
+        if (FrameRateSettingsManager.Instance != null)
+        {
+            genFrameDropdown.onValueChanged.AddListener(FrameRateSettingsManager.Instance.ApplyFrameRate);
+        }
+        else
+        {
+            Debug.LogWarning("[SettingsUI] FrameRateSettingsManager 인스턴스가 없습니다. 씬에 배치했는지 확인하세요.");
+        }
     }
 
     public void SwitchTab(int tabIndex)
@@ -143,7 +206,7 @@ public class SettingsUI : MonoBehaviour
         }
     }
 
-    // ★ [새로 추가] 음소거 상태를 실시간 거울 동기화 시켜주는 기하학적 함수
+    // ★ [새로 추가] 음소거 상태를 실시간 거울 동기화 시켜주는 함수
     private void SetupMuteSync(SoundRowMuter a, SoundRowMuter b)
     {
         if (a == null || b == null) return;
