@@ -29,9 +29,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (FlightInputManager.Instance.LaunchPressed)
+        if (!IsPlaying && FlightInputManager.Instance.LaunchPressed)
         {
-            launcher.Launch();
+            CountdownManager.Instance.StartCountdown(() =>
+            {
+                launcher.Launch();
+            });
 
             //StartGame();
         }
