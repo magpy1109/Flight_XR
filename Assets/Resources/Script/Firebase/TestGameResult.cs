@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TestGameResult : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P 눌림!");
 
@@ -16,7 +17,7 @@ public class TestGameResult : MonoBehaviour
                 8
             );
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             SkinManager.Instance.UnlockSkin("gold");
         }
