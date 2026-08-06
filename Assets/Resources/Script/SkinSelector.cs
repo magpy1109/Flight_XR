@@ -5,25 +5,28 @@ using TMPro;
 
 public class SkinSelector : MonoBehaviour
 {
-    [Header("메인 미리보기 화면")]
+    [Header("메인 미리보기 화면 (2D 전용)")]
+    // 3D 비행기 매니저에서는 비워두면 에러가 나지 않고 자연스럽게 무시됩니다.
     public Image mainPreviewImage;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI infoText;
 
-    // 👇 [새로 추가된 부분] 파란색 적용 버튼 제어용
     [Header("적용 버튼 (파란색)")]
-    public Button applyButton; // 버튼 자체 (클릭 켜고 끄기 위해)
-    public TextMeshProUGUI applyButtonText; // 버튼 안의 글씨
+    public Button applyButton;
+    public TextMeshProUGUI applyButtonText;
 
     [Header("선택 테두리 UI")]
     public Transform selectionFrame;
     public GameObject defaultButton;
 
+    // 👇 [새로 추가된 부분] 3D 비행기 모델 관리용
+    [Header("3D 비행기 모델 관리 (트레일 매니저에선 비워두세요)")]
+    public GameObject[] planeModels; // 0번:클래식, 1번:스카이블루, 2번:스노우
+
     private GameObject currentSelectedButton;
 
-    // 상태 기억용 변수들
-    private int currentAppliedSkinID = 0; // 현재 '진짜 적용중'인 스킨 번호 (시작은 0번 클래식 화이트)
-    private int previewingSkinID = 0;     // 방금 클릭해서 '미리보기' 중인 스킨 번호
+    private int currentAppliedSkinID = 0;
+    private int previewingSkinID = 0;
 
     void Start()
     {
@@ -32,6 +35,9 @@ public class SkinSelector : MonoBehaviour
             currentSelectedButton = defaultButton;
             selectionFrame.position = defaultButton.transform.position;
         }
+
+        // 게임 시작 시 0번(클래식 화이트) 모델을 기본으로 켭니다.
+        Update3DModel(0);
     }
 
     void Update()
@@ -44,27 +50,34 @@ public class SkinSelector : MonoBehaviour
 
     public void ChangePreviewImage(Sprite selectedSprite, string title, string info, int skinID, bool isLocked)
     {
-        mainPreviewImage.sprite = selectedSprite;
+        // 👇 [핵심 수정] Image가 있을 때만 2D 이미지를 교체하도록 방어막 설정! (에러 방지)
+        if (mainPreviewImage != null && selectedSprite != null)
+        {
+            mainPreviewImage.sprite = selectedSprite;
+        }
+
         titleText.text = title;
         infoText.text = info;
 
-        previewingSkinID = skinID; // 지금 미리보기로 띄운 스킨 번호 저장
+        previewingSkinID = skinID;
 
-        // 👇 파란색 버튼 상태 업데이트 로직
+        // 👇 [새로 추가] 3D 모델 교체 실행
+        Update3DModel(skinID);
+
         if (isLocked)
         {
             applyButtonText.text = "조건을 달성하세요";
-            applyButton.interactable = false; // 회색으로 변하며 클릭 안 됨
+            applyButton.interactable = false;
         }
         else if (skinID == currentAppliedSkinID)
         {
-            applyButtonText.text = "적용중";
-            applyButton.interactable = false; // 이미 적용중이므로 클릭 안 됨
+            applyButtonText.text = "적용 중";
+            applyButton.interactable = false;
         }
         else
         {
             applyButtonText.text = "이 스킨 적용";
-            applyButton.interactable = true; // 클릭 가능하게 활성화!
+            applyButton.interactable = true;
         }
 
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
@@ -76,12 +89,28 @@ public class SkinSelector : MonoBehaviour
         }
     }
 
-    // 👇 [새로 추가된 부분] 파란색 적용 버튼을 '클릭'했을 때 실행될 함수
     public void OnApplyButtonClicked()
     {
-        currentAppliedSkinID = previewingSkinID; // 미리보기 중이던 스킨을 '적용중'으로 확정 땅땅!
+        currentAppliedSkinID = previewingSkinID;
 
-        applyButtonText.text = "적용중";
-        applyButton.interactable = false; // 방금 적용했으니 다시 못 누르게 잠금
+        applyButtonText.text = "적용 중";
+        applyButton.interactable = false;
+    }
+
+    // 👇 [새로 추가된 함수] 3D 비행기들에게 투명 망토를 씌우고 벗기는 기능
+    private void Update3DModel(int targetID)
+    {
+        // 3D 세팅이 안 된 곳(예: 트레일 스킨)에서는 작동하지 않고 부드럽게 넘어갑니다.
+        if (planeModels == null || planeModels.Length == 0) return;
+
+        // 모든 비행기를 순회하면서 선택된 번호만 켜고 나머지는 끕니다.
+        for (int i = 0; i < planeModels.Length; i++)
+        {
+            if (planeModels[i] != null)
+            {
+                // i와 targetID가 같으면 true(켜짐), 다르면 false(꺼짐)가 적용됩니다.
+                planeModels[i].SetActive(i == targetID);
+            }
+        }
     }
 }
