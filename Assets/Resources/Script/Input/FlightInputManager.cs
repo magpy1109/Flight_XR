@@ -23,12 +23,7 @@ public class FlightInputManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-#if UNITY_EDITOR
-        inputProvider = new PCInputProvider();
-#else
-        inputProvider = new QuestInputProvider();
-#endif
+        inputProvider = new XRInputProvider();
     }
 
     private void Update()

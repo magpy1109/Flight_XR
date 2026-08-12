@@ -17,6 +17,7 @@ public class Ring : MonoBehaviour
         Debug.Log("링 통과!");
 
         GameManager.Instance.AddScore(100);
+        GameManager.Instance.AddRing();
 
         Destroy(gameObject);
     }
