@@ -22,12 +22,22 @@ public class SpawnPointResolver : MonoBehaviour
 
     public Transform GetSpawnTransform()
     {
-#if UNITY_EDITOR
-        // PC 테스트는 카메라 기준
+    #if UNITY_EDITOR
+        if (centerEyeAnchor == null)
+        {
+            Debug.LogError("CenterEyeAnchor가 연결되지 않았습니다.");
+            return transform;
+        }
+
         return centerEyeAnchor;
-#else
-        // Quest는 오른손 기준
+    #else
+        if (rightHandAnchor == null)
+        {
+            Debug.LogError("RightHandAnchor가 연결되지 않았습니다.");
+            return transform;
+        }
+
         return rightHandAnchor;
-#endif
+    #endif
     }
 }
