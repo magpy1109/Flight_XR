@@ -10,22 +10,20 @@ public class AutoSkinButton : MonoBehaviour
     public string skinTitle;
     [TextArea] public string skinInfo;
 
-    // 👇 [새로 추가된 부분] 스킨의 상태 정보
-    [Header("스킨 고유 번호 (0부터 순서대로 적어주세요)")]
+    [Header("스킨 고유 번호 (0부터 44까지 순서대로)")]
     public int skinID;
 
-    [Header("잠긴 스킨인가요? (체크하면 '조건 달성'이 뜹니다)")]
+    [Header("잠긴 스킨인가요?")]
     public bool isLocked;
 
     void Start()
     {
         SkinSelector mySelector = GetComponentInParent<SkinSelector>();
-
         if (mySelector != null)
         {
-            // 이제 번호(skinID)와 잠김 여부(isLocked)도 같이 던져줍니다!
+            // 👇 [변경됨] 버튼이 눌리면 자기 정보와 '내 위치(transform)'까지 한 방에 매니저로 쏩니다!
             GetComponent<Button>().onClick.AddListener(() =>
-                mySelector.ChangePreviewImage(bigSkinSprite, skinTitle, skinInfo, skinID, isLocked));
+                mySelector.ChangePreviewImage(bigSkinSprite, skinTitle, skinInfo, skinID, isLocked, transform));
         }
     }
 }
