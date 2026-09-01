@@ -1,0 +1,8 @@
+google-services.json파일과 firebase sdk는 따로 설치 필요
+firebase sdk: https://firebase.google.com/download/unity
+다운로드 후 assets-> import package-> custom package->
+FirebaseApp
+FirebaseAuth
+FirebaseFirestore
+FirebaseStorage
+4가지 항목 각각 all-> import하기
