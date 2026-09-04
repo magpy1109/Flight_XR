@@ -13592,7 +13592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94377,12 +94377,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1647515981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d4459d8f9294e4f8b6afad19c186cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 29d964247af308f479e3e2ba2171ac89, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VRButtonHoverScale
-  playIcon: {fileID: 1654625683}
-  playText: {fileID: 595423305}
-  hoverScale: 1.1
+  m_EditorClassIdentifier: Assembly-CSharp::VRTextHoverColor
+  textComponent: {fileID: 595423306}
   duration: 0.2
 --- !u!1 &1654625682
 GameObject:
@@ -128172,9 +128170,9 @@ SceneRoots:
   - {fileID: 47593863}
   - {fileID: 1111501698}
   - {fileID: 1951313812}
-  - {fileID: 279132734}
   - {fileID: 288500414}
   - {fileID: 878192722}
   - {fileID: 496420151}
   - {fileID: 1924758461}
   - {fileID: 72702188}
+  - {fileID: 279132734}
