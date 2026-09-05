@@ -11,8 +11,13 @@ public class PlaneLauncher : MonoBehaviour
 
     public void Launch()
     {
+        Debug.Log("=== PLANE LAUNCH ===");
+
         if (currentPlane != null)
+        {
+            Debug.Log("이미 비행기 존재");
             return;
+        }
 
         // Spawn 위치 가져오기
         Transform spawn = SpawnPointResolver.Instance.GetSpawnTransform();
