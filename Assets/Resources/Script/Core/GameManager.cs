@@ -75,21 +75,50 @@ public class GameManager : MonoBehaviour
         int flightTime =
             Mathf.RoundToInt(Time.time - startTime);
 
-        Debug.Log("게임 종료");
+        Debug.Log("=== GAME OVER ===");
 
-        GameResultManager.Instance.SaveResult(
-            Score,
-            Distance,
-            flightTime,
-            MaxHeight,
-            RingCount);
+        // 결과 UI를 먼저 표시
+        if (ResultUI.Instance != null)
+        {
+            Debug.Log("ResultUI.ShowResult 호출");
 
-        // 다음 단계에서 추가 예정
-        // StatsManager.Instance.UpdateStats(...);
-        // AchievementManager.Instance.Check(...);
-        // UIManager.Instance.ShowResult();
+            ResultUI.Instance.ShowResult(
+                Score,
+                Distance,
+                MaxHeight,
+                RingCount);
+        }
+        else
+        {
+            Debug.LogError("ResultUI.Instance가 NULL입니다.");
+        }
+
+        // Firebase 저장
+        if (GameResultManager.Instance != null)
+        {
+            GameResultManager.Instance.SaveResult(
+                Score,
+                Distance,
+                flightTime,
+                MaxHeight,
+                RingCount);
+        }
 
         Destroy(plane);
+    }
+
+    public void ResetGame()
+    {
+        IsPlaying = false;
+
+        Score = 0;
+        Distance = 0;
+        MaxHeight = 0;
+        RingCount = 0;
+
+        Debug.Log("게임 상태 초기화");
+
+        launcher.ResetPlane();
     }
 
     public void AddScore(int value)

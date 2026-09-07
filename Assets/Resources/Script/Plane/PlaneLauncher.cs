@@ -20,18 +20,20 @@ public class PlaneLauncher : MonoBehaviour
         }
 
         // Spawn 위치 가져오기
-        Transform spawn = SpawnPointResolver.Instance.GetSpawnTransform();
+        Transform spawn =
+            SpawnPointResolver.Instance.GetSpawnTransform();
 
         // 손(또는 카메라) 앞 35cm에서 생성
-        Vector3 spawnPosition = spawn.position + spawn.forward * 0.35f;
+        Vector3 spawnPosition =
+            spawn.position + spawn.forward * 0.35f;
 
-        // ⭐ 먼저 비행기 생성
+        // 비행기 생성
         currentPlane = Instantiate(
             planePrefab,
             spawnPosition,
             spawn.rotation);
 
-        // ⭐ 생성된 비행기에서 컨트롤러 가져오기
+        // 생성된 비행기의 컨트롤러
         PlaneController controller =
             currentPlane.GetComponent<PlaneController>();
 
@@ -45,14 +47,27 @@ public class PlaneLauncher : MonoBehaviour
             };
         }
 
+        // 게임 시작
         GameManager.Instance.StartGame();
 
-        Rigidbody rb = currentPlane.GetComponent<Rigidbody>();
+        // 초기 속도
+        Rigidbody rb =
+            currentPlane.GetComponent<Rigidbody>();
 
         if (rb != null)
         {
             rb.linearVelocity =
                 spawn.forward * launchSpeed;
+        }
+    }
+
+    // ⭐ 재시작할 때 기존 비행기 제거
+    public void ResetPlane()
+    {
+        if (currentPlane != null)
+        {
+            Destroy(currentPlane);
+            currentPlane = null;
         }
     }
 }
