@@ -3,6 +3,7 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     public FadeManager fadeManager;
+    public GameObject exitPanel;
 
     public void QuitGame()
     {
@@ -12,6 +13,16 @@ public class MainMenuController : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void ShowExitPanel()
+    {
+        exitPanel.SetActive(true);
+    }
+
+    public void HideExitPanel()
+    {
+        exitPanel.SetActive(false);
     }
 
     public void GoToMain()
@@ -33,6 +44,4 @@ public class MainMenuController : MonoBehaviour
     {
         fadeManager.LoadScene("LeaderBoardScene");
     }
-
-    
 }
