@@ -38,7 +38,7 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
         targetScale = originalScale;
     }
 
-    public void GoMain()
+    public void GoToMainMenu()
     {
         fadeManager.LoadScene("MainMenuScene");
     }
