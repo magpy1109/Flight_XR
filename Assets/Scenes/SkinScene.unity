@@ -13933,7 +13933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29838,7 +29838,7 @@ GameObject:
   - component: {fileID: 830036638}
   - component: {fileID: 830036637}
   m_Layer: 5
-  m_Name: LeaderText
+  m_Name: TrailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29883,7 +29883,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "// \uC124\uC815"
+  m_text: "| \uC2A4\uD0A8\uC124\uC815"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
   m_sharedMaterial: {fileID: -3170984793708658146, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
@@ -46382,7 +46382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &939248793
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -102696,7 +102696,7 @@ GameObject:
   - component: {fileID: 1798683718}
   - component: {fileID: 1798683717}
   m_Layer: 5
-  m_Name: LeaderText
+  m_Name: SkinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102741,7 +102741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "// \uC2A4\uD0A8\uC124\uC815"
+  m_text: "| \uC2A4\uD0A8\uC124\uC815"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
   m_sharedMaterial: {fileID: -3170984793708658146, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}

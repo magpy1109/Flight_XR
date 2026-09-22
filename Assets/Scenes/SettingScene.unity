@@ -1214,7 +1214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &132489384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7500,7 +7500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12109,7 +12109,7 @@ GameObject:
   - component: {fileID: 1707681501}
   - component: {fileID: 1707681500}
   m_Layer: 5
-  m_Name: LeaderText
+  m_Name: SettingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12154,7 +12154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "// \uC124\uC815"
+  m_text: "| \uC124\uC815"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
   m_sharedMaterial: {fileID: -3170984793708658146, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
@@ -14253,6 +14253,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3834725188267657874, guid: c409bd054dee2da4b9ad0a4aae55773e, type: 3}
+      propertyPath: generalBGMList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834725188267657874, guid: c409bd054dee2da4b9ad0a4aae55773e, type: 3}
+      propertyPath: 'generalBGMList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ac6a27da418bd24f8684da8fe20ce3b, type: 3}
+    - target: {fileID: 3834725188267657874, guid: c409bd054dee2da4b9ad0a4aae55773e, type: 3}
+      propertyPath: 'generalBGMList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ac6a27da418bd24f8684da8fe20ce3b, type: 3}
     - target: {fileID: 4917889727962247125, guid: c409bd054dee2da4b9ad0a4aae55773e, type: 3}
       propertyPath: m_Name
       value: PersistentManagers

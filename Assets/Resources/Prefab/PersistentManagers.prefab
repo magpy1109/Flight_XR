@@ -92,8 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BGMManager
   bgmMixerGroup: {fileID: -44668985091616973, guid: fea62c476e8d0f14c8bcd0ab2390a9b4, type: 2}
   generalBGMList:
-  - {fileID: 8300000, guid: 3c6fbe6203dc2a84794e18f961a3fabc, type: 3}
-  - {fileID: 8300000, guid: ceeed2b4f2a68c548a7f3acddb95a1a5, type: 3}
+  - {fileID: 8300000, guid: 5ac6a27da418bd24f8684da8fe20ce3b, type: 3}
   gameBGMList: []
   crossfadeDuration: 1.5
   shufflePlaylist: 1
