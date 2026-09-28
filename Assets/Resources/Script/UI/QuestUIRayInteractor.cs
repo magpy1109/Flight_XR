@@ -31,6 +31,16 @@ public class QuestUIRayInteractor : MonoBehaviour
 
     private Button currentButton;
 
+    // 레이가 올라가 있는 슬라이더 (호버 효과용, 클릭은 하지 않음)
+    private Slider currentSlider;
+
+    // A 버튼을 누른 채 조작 중인 슬라이더
+    private Slider draggingSlider;
+
+    // 이번 프레임에 레이가 Canvas에 닿은 위치
+    private bool lastHitCanvas;
+    private Vector3 lastHitPoint;
+
     // A 버튼의 이전 프레임 상태
     private bool wasPressed;
 
@@ -96,9 +106,11 @@ public class QuestUIRayInteractor : MonoBehaviour
     private void Update()
     {
         GetRightHand();
-        
+
         if (targetCanvas == null || targetCamera == null)
         {
+            lastHitCanvas = false;
+
             DrawRay(
                 transform.position,
                 transform.position +
@@ -123,6 +135,9 @@ public class QuestUIRayInteractor : MonoBehaviour
             out Vector3 hitPoint
         );
 
+        lastHitCanvas = hitCanvas;
+        lastHitPoint = hitPoint;
+
         Vector3 rayEnd = hitCanvas
             ? hitPoint
             : ray.origin + ray.direction * rayLength;
@@ -136,6 +151,7 @@ public class QuestUIRayInteractor : MonoBehaviour
         if (!hitCanvas)
         {
             ClearHover();
+            UpdateSliderHover(null);
 
             if (reticle != null)
                 reticle.SetActive(false);
@@ -170,6 +186,11 @@ public class QuestUIRayInteractor : MonoBehaviour
             FindButtonAtWorldPoint(hitPoint);
 
         UpdateHover(hitButton);
+
+        // 버튼이 아니면 슬라이더 위인지 확인 (호버 확대 효과용)
+        UpdateSliderHover(
+            hitButton == null ? FindSliderAtWorldPoint(hitPoint) : null
+        );
 
         // ------------------------------------------------
         // 5. A 버튼 확인
@@ -206,7 +227,26 @@ public class QuestUIRayInteractor : MonoBehaviour
         {
             Debug.Log("Quest A 버튼 입력 감지");
 
-            PressCurrentButton();
+            if (currentButton == null && currentSlider != null)
+            {
+                // 슬라이더 위에서 누르면 드래그 시작
+                draggingSlider = currentSlider;
+            }
+            else
+            {
+                PressCurrentButton();
+            }
+        }
+
+        // 누르고 있는 동안 슬라이더 값 변경
+        if (isPressed && draggingSlider != null)
+        {
+            DragSlider(draggingSlider);
+        }
+
+        if (!isPressed)
+        {
+            draggingSlider = null;
         }
 
         wasPressed = isPressed;
@@ -300,6 +340,110 @@ public class QuestUIRayInteractor : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void DragSlider(Slider slider)
+    {
+        if (slider == null ||
+            !slider.IsInteractable() ||
+            !lastHitCanvas ||
+            targetCamera == null)
+        {
+            return;
+        }
+
+        // 슬라이더 채우기 영역(없으면 슬라이더 자체) 기준으로 위치 계산
+        RectTransform area =
+            slider.fillRect != null && slider.fillRect.parent != null
+                ? (RectTransform)slider.fillRect.parent
+                : (RectTransform)slider.transform;
+
+        Vector2 screenPoint =
+            targetCamera.WorldToScreenPoint(lastHitPoint);
+
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                area, screenPoint, targetCamera, out Vector2 local))
+        {
+            return;
+        }
+
+        Rect rect = area.rect;
+        bool horizontal =
+            slider.direction == Slider.Direction.LeftToRight ||
+            slider.direction == Slider.Direction.RightToLeft;
+
+        float t = horizontal
+            ? Mathf.InverseLerp(rect.xMin, rect.xMax, local.x)
+            : Mathf.InverseLerp(rect.yMin, rect.yMax, local.y);
+
+        if (slider.direction == Slider.Direction.RightToLeft ||
+            slider.direction == Slider.Direction.TopToBottom)
+        {
+            t = 1f - t;
+        }
+
+        slider.normalizedValue = t;
+    }
+
+    private Slider FindSliderAtWorldPoint(Vector3 worldPoint)
+    {
+        Vector2 screenPoint =
+            targetCamera.WorldToScreenPoint(worldPoint);
+
+        Slider[] sliders =
+            targetCanvas.GetComponentsInChildren<Slider>(false);
+
+        foreach (Slider slider in sliders)
+        {
+            if (!slider.gameObject.activeInHierarchy)
+                continue;
+
+            // 음소거 등으로 조작이 막힌 슬라이더는 제외
+            if (!slider.IsInteractable())
+                continue;
+
+            RectTransform rect =
+                slider.GetComponent<RectTransform>();
+
+            if (rect == null)
+                continue;
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(
+                rect,
+                screenPoint,
+                targetCamera))
+            {
+                return slider;
+            }
+        }
+
+        return null;
+    }
+
+    private void UpdateSliderHover(Slider newSlider)
+    {
+        if (currentSlider == newSlider)
+            return;
+
+        if (currentSlider != null && EventSystem.current != null)
+        {
+            ExecuteEvents.Execute(
+                currentSlider.gameObject,
+                new PointerEventData(EventSystem.current),
+                ExecuteEvents.pointerExitHandler
+            );
+        }
+
+        currentSlider = newSlider;
+
+        if (currentSlider != null && EventSystem.current != null)
+        {
+            ExecuteEvents.Execute(
+                currentSlider.gameObject,
+                new PointerEventData(EventSystem.current),
+                ExecuteEvents.pointerEnterHandler
+            );
+        }
     }
 
     private void UpdateHover(
@@ -417,11 +561,18 @@ public class QuestUIRayInteractor : MonoBehaviour
                 );
         }
 
+        // 씬이 바뀌어도 레티클이 사라지지 않도록 유지
+        DontDestroyOnLoad(reticle);
+
         reticle.SetActive(false);
     }
 
     private void OnSceneChanged(Scene oldScene, Scene newScene)
     {
+        currentButton = null;
+        currentSlider = null;
+        draggingSlider = null;
+
         SetupCanvas(newScene.name);
     }
 
@@ -457,7 +608,8 @@ public class QuestUIRayInteractor : MonoBehaviour
         }
         else
         {
-            targetCanvas = null;
+            // 그 외 씬(SettingScene 등)은 씬 안의 World Space Canvas 사용
+            targetCanvas = FindSceneWorldCanvas(sceneName);
         }
 
         if (targetCanvas != null)
@@ -476,6 +628,28 @@ public class QuestUIRayInteractor : MonoBehaviour
                 targetCanvas.name
             );
         }
+    }
+
+    private static Canvas FindSceneWorldCanvas(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+
+        if (!scene.IsValid() || !scene.isLoaded)
+            return null;
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            Canvas canvas = root.GetComponent<Canvas>();
+
+            if (canvas != null &&
+                canvas.renderMode == RenderMode.WorldSpace &&
+                root.activeInHierarchy)
+            {
+                return canvas;
+            }
+        }
+
+        return null;
     }
 
     private void OnDestroy()

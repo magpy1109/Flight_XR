@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC785\uB825"
+  m_text: "\uB9C8\uC774\uD06C \uAC10\uB3C4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
   m_sharedMaterial: {fileID: -3170984793708658146, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
@@ -10211,7 +10211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC785\uB825"
+  m_text: "\uB9C8\uC774\uD06C \uAC10\uB3C4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
   m_sharedMaterial: {fileID: -3170984793708658146, guid: 434d82421b4dc1d42b5ace80ef2b6926, type: 2}
@@ -13319,6 +13319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13677,6 +13681,12 @@ MonoBehaviour:
   soundBGMMuter: {fileID: 441302667}
   genSFXMuter: {fileID: 821723673}
   soundSFXMuter: {fileID: 1168142634}
+  bgmSelectTitle: "\uBC30\uACBD\uC74C\uC545 \uC120\uD0DD"
+  bgmSelectDescription: "\uC7AC\uC0DD\uD560 \uACE1\uACFC \uBC18\uBCF5 \uC7AC\uC0DD
+    \uC5EC\uBD80\uB97C \uC120\uD0DD\uD569\uB2C8\uB2E4"
+  bgmAutoOptionText: "\uC790\uB3D9 \uC120\uACE1"
+  bgmLoopOffText: "\uBC18\uBCF5 \uB044\uAE30"
+  bgmLoopOnText: "\uD55C \uACE1 \uBC18\uBCF5"
 --- !u!4 &1912241913
 Transform:
   m_ObjectHideFlags: 0
@@ -14141,6 +14151,8 @@ GameObject:
   - component: {fileID: 2047018793}
   - component: {fileID: 2047018792}
   - component: {fileID: 2047018795}
+  - component: {fileID: 2047018796}
+  - component: {fileID: 2047018797}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14235,6 +14247,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &2047018796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047018790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d844952ba611cf449645a6185a9c64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuCanvasPositioner
+  centerEye: {fileID: 0}
+  distance: 1.5
+--- !u!114 &2047018797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047018790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &2053940356
 GameObject:
   m_ObjectHideFlags: 0

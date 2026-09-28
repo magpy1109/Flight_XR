@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -57,6 +58,13 @@ public class SettingsUI : MonoBehaviour
     public SoundRowMuter genSFXMuter;
     public SoundRowMuter soundSFXMuter;
 
+    [Header("[ BGM 선택 / 반복 재생 줄 (실행 시 자동 생성) ]")]
+    public string bgmSelectTitle = "배경음악 선택";
+    public string bgmSelectDescriptionText = "곡을 고르면 그 곡만 반복 재생됩니다";
+    public string bgmShuffleAllText = "전체 랜덤 재생";
+
+    private readonly List<TMP_Dropdown> bgmSelectDropdowns = new List<TMP_Dropdown>();
+
     private bool isSyncing = false;
     private Color activeTextColor;
     private Color inactiveTextColor;
@@ -72,6 +80,12 @@ public class SettingsUI : MonoBehaviour
         tabGeneralBtn.onClick.AddListener(() => SwitchTab(0));
         tabSoundBtn.onClick.AddListener(() => SwitchTab(1));
         tabGraphicBtn.onClick.AddListener(() => SwitchTab(2));
+
+        // 프레임 드롭다운 옵션을 실제 적용되는 주사율 목록으로 채움
+        SetupFrameDropdownOptions();
+
+        // 사운드 탭 / 일반 탭에 BGM 선택 + 반복 재생 줄 생성
+        BuildBgmRows();
 
         // 슬라이더 값 동기화 (General 탭 <-> Sound 탭)
         SetupSliderSync(genInputSlider, soundInputSlider);
@@ -240,6 +254,168 @@ public class SettingsUI : MonoBehaviour
         if (a == null || b == null) return;
         a.onValueChanged.AddListener((val) => { if (isSyncing) return; isSyncing = true; b.value = val; isSyncing = false; });
         b.onValueChanged.AddListener((val) => { if (isSyncing) return; isSyncing = true; a.value = val; isSyncing = false; });
+    }
+
+    // ------------------------------------------------
+    // 프레임 드롭다운 옵션
+    // ------------------------------------------------
+
+    // 씬에 입력된 옵션 문구(60/144/240/제한 없음)는 실제 적용 값(72/80/90/120Hz)과 달라서
+    // 매니저의 목록으로 덮어쓴다. (순서가 항상 frameRateOptions와 같아짐)
+    private void SetupFrameDropdownOptions()
+    {
+        if (FrameRateSettingsManager.Instance == null)
+            return;
+
+        List<string> labels = FrameRateSettingsManager.Instance.GetOptionLabels();
+
+        foreach (TMP_Dropdown dropdown in new[] { genFrameDropdown, graphFrameDropdown })
+        {
+            if (dropdown == null) continue;
+
+            dropdown.ClearOptions();
+            dropdown.AddOptions(labels);
+        }
+    }
+
+    // ------------------------------------------------
+    // BGM 선택 / 반복 재생
+    // ------------------------------------------------
+
+    private void BuildBgmRows()
+    {
+        if (BGMManager.Instance == null)
+        {
+            Debug.LogWarning("[SettingsUI] BGMManager 인스턴스가 없어 BGM 선택 줄을 만들지 않습니다.");
+            return;
+        }
+
+        if (graphFrameDropdown == null)
+        {
+            Debug.LogWarning("[SettingsUI] 복제할 드롭다운(graphFrameDropdown)이 없어 BGM 선택 줄을 만들지 않습니다.");
+            return;
+        }
+
+        // 그래픽 탭의 "프레임" 줄(드롭다운이 있는 줄)을 복제해서 사용
+        Transform template = graphFrameDropdown.transform.parent;
+
+        CreateBgmRow(template, soundBGMSlider);
+        CreateBgmRow(template, genBGMSlider);
+
+        // 곡 목록 : 0 = 전체 랜덤 재생(기본), 1 이상 = 곡
+        List<string> songOptions = new List<string> { bgmShuffleAllText };
+        songOptions.AddRange(BGMManager.Instance.GetGeneralBGMNames());
+
+        int songValue = SelectionToDropdown(BGMManager.Instance.SavedGeneralSelection);
+
+        foreach (TMP_Dropdown dropdown in bgmSelectDropdowns)
+        {
+            dropdown.ClearOptions();
+            dropdown.AddOptions(songOptions);
+            dropdown.SetValueWithoutNotify(songValue);
+            dropdown.RefreshShownValue();
+
+            dropdown.onValueChanged.AddListener(value =>
+            {
+                if (isSyncing) return;
+                isSyncing = true;
+                foreach (TMP_Dropdown other in bgmSelectDropdowns)
+                    if (other != dropdown) other.SetValueWithoutNotify(value);
+                isSyncing = false;
+
+                if (BGMManager.Instance != null)
+                    BGMManager.Instance.SelectGeneralBGM(DropdownToSelection(value));
+            });
+        }
+    }
+
+    private static int SelectionToDropdown(int selection)
+    {
+        return selection >= 0 ? selection + 1 : 0; // 0 = 전체 랜덤 재생
+    }
+
+    private static int DropdownToSelection(int dropdownValue)
+    {
+        return dropdownValue <= 0 ? BGMManager.SelectAllShuffle : dropdownValue - 1;
+    }
+
+    private void CreateBgmRow(Transform template, Slider bgmSlider)
+    {
+        if (template == null || bgmSlider == null)
+            return;
+
+        // BGM 볼륨 줄 바로 아래에 삽입
+        Transform bgmRow = bgmSlider.transform.parent;
+        Transform panel = bgmRow.parent;
+
+        GameObject row = Instantiate(template.gameObject, panel, false);
+        row.name = "Row_BGMSelect";
+        row.SetActive(true);
+        row.transform.SetSiblingIndex(bgmRow.GetSiblingIndex() + 1);
+
+        // 높이를 BGM 볼륨 줄과 맞춤 (사운드 탭 영역 안에 들어가도록)
+        LayoutElement rowLayout = row.GetComponent<LayoutElement>();
+        LayoutElement bgmLayout = bgmRow.GetComponent<LayoutElement>();
+        if (rowLayout != null && bgmLayout != null)
+            rowLayout.preferredHeight = bgmLayout.preferredHeight;
+
+        // 제목 / 설명
+        Transform title = row.transform.Find("TitleText");
+        if (title != null)
+        {
+            TMP_Text titleText = title.GetComponent<TMP_Text>();
+            if (titleText != null) titleText.text = bgmSelectTitle;
+
+            RectTransform titleRect = (RectTransform)title;
+            titleRect.sizeDelta = new Vector2(400f, titleRect.sizeDelta.y);
+        }
+
+        Transform desc = row.transform.Find("DescriptionText");
+        Transform bgmDesc = bgmRow.Find("DescriptionText");
+        if (desc != null)
+        {
+            TMP_Text descText = desc.GetComponent<TMP_Text>();
+            if (descText != null) descText.text = bgmSelectDescriptionText;
+
+            // 설명 위치를 BGM 볼륨 줄과 같게
+            if (bgmDesc != null)
+                CopyRect((RectTransform)bgmDesc, (RectTransform)desc);
+        }
+
+        // 곡 선택 드롭다운 (슬라이더가 있던 오른쪽 영역)
+        TMP_Dropdown songDropdown = row.GetComponentInChildren<TMP_Dropdown>(true);
+        if (songDropdown == null)
+        {
+            Destroy(row);
+            return;
+        }
+
+        songDropdown.onValueChanged = new TMP_Dropdown.DropdownEvent();
+        songDropdown.gameObject.name = "BGMDropdown";
+
+        // 슬라이더가 있던 오른쪽 영역에 배치
+        RectTransform songRect = (RectTransform)songDropdown.transform;
+        SetTopRight(songRect, Vector2.zero, new Vector2(700f, 50f));
+
+        bgmSelectDropdowns.Add(songDropdown);
+    }
+
+    private static void SetTopRight(RectTransform rect, Vector2 position, Vector2 size)
+    {
+        rect.anchorMin = new Vector2(1f, 1f);
+        rect.anchorMax = new Vector2(1f, 1f);
+        rect.pivot = new Vector2(1f, 1f);
+        rect.anchoredPosition = position;
+        rect.sizeDelta = size;
+    }
+
+    private static void CopyRect(RectTransform from, RectTransform to)
+    {
+        to.anchorMin = from.anchorMin;
+        to.anchorMax = from.anchorMax;
+        to.pivot = from.pivot;
+        to.anchoredPosition = from.anchoredPosition;
+        to.sizeDelta = from.sizeDelta;
     }
 
     // 추가

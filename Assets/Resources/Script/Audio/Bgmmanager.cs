@@ -51,6 +51,12 @@ public class BGMManager : MonoBehaviour
     private Coroutine autoAdvanceRoutine;
     private Coroutine crossfadeRoutine;
 
+    // 설정 저장 키 (설정씬의 BGM 선택 / 반복 재생)
+    private const string KEY_BGM_INDEX = "Setting_BGMIndex";   // -2 = 전체 랜덤 재생(기본), 0 이상 = 곡 번호
+
+    /// <summary>BGM 선택값 : 전체 곡을 랜덤 순서로 재생 (기본값)</summary>
+    public const int SelectAllShuffle = -2;
+
     void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -73,7 +79,9 @@ public class BGMManager : MonoBehaviour
     {
         if (autoPlayOnStart)
         {
-            PlayCategory(autoPlayCategory, -1);
+            // 일반 BGM은 설정에서 고른 곡이 있으면 그 곡부터 재생
+            int startIndex = autoPlayCategory == BGMCategory.General ? SavedGeneralIndex : -1;
+            PlayCategory(autoPlayCategory, startIndex);
         }
     }
 
@@ -107,7 +115,7 @@ public class BGMManager : MonoBehaviour
     {
         if (currentPlaylist.Count == 1) return 0;
 
-        if (shufflePlaylist)
+        if (UseShuffle)
         {
             int next;
             do { next = Random.Range(0, currentPlaylist.Count); }
@@ -122,7 +130,10 @@ public class BGMManager : MonoBehaviour
     {
         float wait = Mathf.Max(0.1f, clipLength - crossfadeDuration);
         yield return new WaitForSeconds(wait);
-        PlayCategory(currentCategory, GetNextIndex());
+
+        // 설정에서 곡을 골랐으면 그 곡 반복, 전체 랜덤 재생이면 다음 곡
+        int next = IsSingleSongSelected ? currentIndex : GetNextIndex();
+        PlayCategory(currentCategory, next);
     }
 
     private void StartCrossfade(AudioClip clip)
@@ -156,6 +167,78 @@ public class BGMManager : MonoBehaviour
         var temp = activeSource;
         activeSource = inactiveSource;
         inactiveSource = temp;
+    }
+
+    // ---------- 설정씬 연동 (BGM 선택 / 반복 재생) ----------
+
+    /// <summary>
+    /// 설정에 저장된 BGM 선택값.
+    /// SelectAllShuffle(-2) = 전체 랜덤 재생(기본), 0 이상 = 곡 번호
+    /// </summary>
+    public int SavedGeneralSelection
+    {
+        get
+        {
+            int value = PlayerPrefs.GetInt(KEY_BGM_INDEX, SelectAllShuffle);
+            return (value >= 0 && value < generalBGMList.Count) ? value : SelectAllShuffle;
+        }
+    }
+
+    /// <summary>설정에서 고른 곡 번호. 전체 랜덤 재생이면 -1</summary>
+    public int SavedGeneralIndex => SavedGeneralSelection >= 0 ? SavedGeneralSelection : -1;
+
+    /// <summary>다음 곡을 랜덤으로 고를지 (일반 BGM은 항상 랜덤, 게임 BGM은 Inspector 값)</summary>
+    private bool UseShuffle =>
+        currentCategory == BGMCategory.General || shufflePlaylist;
+
+    /// <summary>일반 BGM에서 특정 곡을 골라 그 곡만 반복 중인지</summary>
+    private bool IsSingleSongSelected =>
+        currentCategory == BGMCategory.General && SavedGeneralSelection >= 0;
+
+    /// <summary>일반 BGM 곡 이름 목록 (설정 드롭다운용)</summary>
+    public List<string> GetGeneralBGMNames()
+    {
+        var names = new List<string>();
+        foreach (var clip in generalBGMList)
+            names.Add(clip != null ? clip.name : "(비어 있음)");
+        return names;
+    }
+
+    /// <summary>
+    /// 일반 BGM 선택.
+    /// SelectAllShuffle 이면 전체 랜덤 재생 (지금 곡은 끊지 않고 다음 곡부터 적용),
+    /// 곡 번호면 즉시 그 곡으로 바뀌고, 그 곡만 계속 반복한다.
+    /// </summary>
+    public void SelectGeneralBGM(int index)
+    {
+        if (index < 0 || index >= generalBGMList.Count)
+            index = SelectAllShuffle;
+
+        PlayerPrefs.SetInt(KEY_BGM_INDEX, index);
+        PlayerPrefs.Save();
+
+        // 전체 랜덤 재생 : 이미 일반 BGM이 나오고 있으면 끊지 않고, 다음 곡부터 적용
+        if (index < 0)
+        {
+            bool playing = currentCategory == BGMCategory.General &&
+                           activeSource != null && activeSource.isPlaying;
+
+            if (!playing)
+                PlayCategory(BGMCategory.General, -1);
+
+            return;
+        }
+
+        // 이미 그 곡이 재생 중이면 다시 시작하지 않음
+        if (index >= 0 &&
+            currentCategory == BGMCategory.General &&
+            currentIndex == index &&
+            activeSource != null && activeSource.isPlaying)
+        {
+            return;
+        }
+
+        PlayCategory(BGMCategory.General, index);
     }
 
     /// <summary>BGM 완전 정지 (씬 전환, 일시정지 메뉴 등에서 사용)</summary>
