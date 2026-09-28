@@ -2560,13 +2560,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2088220744}
-  - component: {fileID: 2088220751}
-  - component: {fileID: 2088220750}
-  - component: {fileID: 2088220749}
   - component: {fileID: 2088220748}
   - component: {fileID: 2088220747}
-  - component: {fileID: 2088220746}
-  - component: {fileID: 2088220745}
   m_Layer: 0
   m_Name: Firebase
   m_TagString: Untagged
@@ -2589,30 +2584,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1752986237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088220745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088220743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8f5b236feb08d149a3b18454c47299b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
---- !u!114 &2088220746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088220743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f279602887b239747af9aa3f5f00d3cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SkinManager
 --- !u!114 &2088220747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,42 +2608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336a3ba216f96b74e9a4e1612468eef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameResultManager
---- !u!114 &2088220749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088220743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02aa069ded77a746880e1dbd1938487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirestoreManager
---- !u!114 &2088220750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088220743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5b7f64452c87f4dab29afda93c39e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirebaseAuthManager
---- !u!114 &2088220751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088220743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2128d5f9bf323468e58ed60e477854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirebaseManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

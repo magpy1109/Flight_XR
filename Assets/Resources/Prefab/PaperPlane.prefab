@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8023333577873139436
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.94145
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.25288
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.04662
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      propertyPath: m_Name
+      value: PaperPlane
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6850174323472091145}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5810152172881001977}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8784612460460336969}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3872675182371017780}
+  m_SourcePrefab: {fileID: 100100000, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+--- !u!1 &7177034322335669181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 981fdae5d0f1d3f468d73b800054ba66, type: 3}
+  m_PrefabInstance: {fileID: 8023333577873139436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &6850174323472091145
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177034322335669181}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5810152172881001977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177034322335669181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41536b0ad54304c41914c6b601f43872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanePhysics
+  forwardForce: 3
+  turnSpeed: 90
+  liftForce: 5
+--- !u!114 &8784612460460336969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177034322335669181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b879d2b7394f348a2f40fdb6efe6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaneController
+--- !u!114 &3872675182371017780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177034322335669181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83101b673b09b584382c886cbef26911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaneCrash

@@ -12,10 +12,34 @@ public class GameResultManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        Debug.Log(
+            $"[GameResultManager] Awake | " +
+            $"name={gameObject.name} | " +
+            $"active={gameObject.activeInHierarchy} | " +
+            $"enabled={enabled} | " +
+            $"Instance={Instance}"
+        );
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log("[GameResultManager] OnEnable");
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("[GameResultManager] OnDisable");
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("[GameResultManager] OnDestroy");
     }
 
     private void Start()
     {
+        Debug.Log("GameResultManager Start 실행");
         db = FirebaseFirestore.DefaultInstance;
     }
 

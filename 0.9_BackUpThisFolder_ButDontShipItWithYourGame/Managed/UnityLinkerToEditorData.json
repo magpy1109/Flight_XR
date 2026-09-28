@@ -1201,8 +1201,7 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/MainMenuScene.unity",
-              "Assets/Scenes/SampleScene.unity"
+              "Assets/Scenes/MainMenuScene.unity"
             ],
             "dependencyType": 0,
             "icon": null

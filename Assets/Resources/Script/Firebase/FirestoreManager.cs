@@ -1,8 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Auth;
 using Firebase.Extensions;
-using System.Collections;
 
 public class FirestoreManager : MonoBehaviour
 {
@@ -12,28 +12,48 @@ public class FirestoreManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator Start()
     {
-        db = FirebaseFirestore.DefaultInstance;
-
-        Debug.Log("로그인 대기중...");
-
-        while (FirebaseAuth.DefaultInstance.CurrentUser == null)
+        // Firebase 초기화 완료 대기
+        while (
+            FirebaseManager.Instance == null ||
+            !FirebaseManager.Instance.IsInitialized)
         {
             yield return null;
         }
 
-        Debug.Log("로그인 확인");
+        Debug.Log("FirestoreManager : Firebase 초기화 확인");
+
+        db = FirebaseFirestore.DefaultInstance;
+    }
+
+    public void OnLoginCompleted()
+    {
+        Debug.Log("FirestoreManager : 로그인 확인");
+
+        if (db == null)
+        {
+            db = FirebaseFirestore.DefaultInstance;
+        }
 
         CreateUserIfNeeded();
     }
 
     private void CreateUserIfNeeded()
     {
-        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+        FirebaseUser user =
+            FirebaseAuth.DefaultInstance.CurrentUser;
 
         if (user == null)
         {
@@ -46,24 +66,28 @@ public class FirestoreManager : MonoBehaviour
         DocumentReference doc =
             db.Collection("users").Document(user.UserId);
 
-        doc.GetSnapshotAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsFaulted)
+        doc.GetSnapshotAsync()
+            .ContinueWithOnMainThread(task =>
             {
-                Debug.LogError(task.Exception);
-                return;
-            }
+                if (task.IsCanceled || task.IsFaulted)
+                {
+                    Debug.LogError(
+                        "유저 확인 실패 : " +
+                        task.Exception
+                    );
+                    return;
+                }
 
-            if (task.Result.Exists)
-            {
-                Debug.Log("이미 존재하는 유저");
-                return;
-            }
+                if (task.Result.Exists)
+                {
+                    Debug.Log("이미 존재하는 유저");
+                    return;
+                }
 
-            Debug.Log("새 유저 생성");
+                Debug.Log("새 유저 생성");
 
-            CreateUserDocument(user);
-        });
+                CreateUserDocument(user);
+            });
     }
 
     private void CreateUserDocument(FirebaseUser user)
@@ -71,70 +95,76 @@ public class FirestoreManager : MonoBehaviour
         UserData data = new UserData();
 
         data.email = user.Email ?? "";
-        data.photo_url = user.PhotoUrl?.ToString() ?? "";
+        data.photo_url =
+            user.PhotoUrl?.ToString() ?? "";
 
         db.Collection("users")
             .Document(user.UserId)
             .SetAsync(data)
             .ContinueWithOnMainThread(task =>
+            {
+                if (!task.IsCompletedSuccessfully)
                 {
-                    if (!task.IsCompletedSuccessfully)
-                    {
-                        Debug.LogError("유저 생성 실패");
-                        return;
-                    }
+                    Debug.LogError(
+                        "유저 생성 실패 : " +
+                        task.Exception
+                    );
+                    return;
+                }
 
-                    Debug.Log("유저 생성 완료");
+                Debug.Log("유저 생성 완료");
 
-                    CreateUserStats(user.UserId);
-
-                    GiveDefaultSkin(user.UserId);
-                });
+                CreateUserStats(user.UserId);
+                GiveDefaultSkin(user.UserId);
+            });
     }
 
     private void CreateUserStats(string userId)
     {
-    UserStats stats = new UserStats();
+        UserStats stats = new UserStats();
 
-    db.Collection("user_stats")
-        .Document(userId)
-        .SetAsync(stats)
-        .ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
+        db.Collection("user_stats")
+            .Document(userId)
+            .SetAsync(stats)
+            .ContinueWithOnMainThread(task =>
             {
-                Debug.Log("기본 스탯 생성 완료");
-            }
-            else
-            {
-                Debug.LogError("기본 스탯 생성 실패");
-            }
-        });
+                if (task.IsCompletedSuccessfully)
+                {
+                    Debug.Log("기본 스탯 생성 완료");
+                }
+                else
+                {
+                    Debug.LogError(
+                        "기본 스탯 생성 실패 : " +
+                        task.Exception
+                    );
+                }
+            });
     }
 
     private void GiveDefaultSkin(string userId)
     {
-    UserSkin skin = new UserSkin();
+        UserSkin skin = new UserSkin();
 
-    skin.user_id = userId;
-    skin.skin_id = "default";
+        skin.user_id = userId;
+        skin.skin_id = "default";
 
-    db.Collection("user_skins")
-        .Document(userId + "_default")
-        .SetAsync(skin)
-        .ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
+        db.Collection("user_skins")
+            .Document(userId + "_default")
+            .SetAsync(skin)
+            .ContinueWithOnMainThread(task =>
             {
-                Debug.Log("기본 스킨 지급 완료");
-
-                // 모든 기본 데이터 생성 후 로드
-                SaveManager.Instance.LoadGameData();
-            }
-            else
-            {
-                Debug.LogError("기본 스킨 지급 실패");
-            }
-        });
+                if (task.IsCompletedSuccessfully)
+                {
+                    Debug.Log("기본 스킨 지급 완료");
+                }
+                else
+                {
+                    Debug.LogError(
+                        "기본 스킨 지급 실패 : " +
+                        task.Exception
+                    );
+                }
+            });
     }
 }

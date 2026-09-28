@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,12 +24,26 @@ public class SkinSelector : MonoBehaviour
     private int currentAppliedSkinID = 0;
     private int previewingSkinID = 0;
 
-    void Start()
+    private IEnumerator Start()
     {
-        // 1. 장착해둔 스킨(예: 스카이블루) 번호는 기억만 해둡니다.
-        currentAppliedSkinID = PlayerPrefs.GetInt("EquippedSkin", 0);
+        // SaveManager가 생성될 때까지 대기
+        while (SaveManager.Instance == null)
+        {
+            yield return null;
+        }
 
-        // 👇 [문제 해결의 핵심!] 스킨 화면에 들어오면 장착 스킨과 무관하게 무조건 0번(클래식 화이트)을 보여줍니다.
+        // Firebase에서 유저 데이터가 모두 로드될 때까지 대기
+        while (!SaveManager.Instance.IsLoaded)
+        {
+            yield return null;
+        }
+
+        Debug.Log("SkinSelector : 게임 데이터 로드 확인");
+
+        // Firebase에 저장된 장착 스킨 가져오기
+        currentAppliedSkinID = GetEquippedSkinID();
+
+        // 기존처럼 화면 진입 시 0번을 미리보기
         previewingSkinID = 0;
 
         if (defaultButton != null && selectionFrame != null)
@@ -37,20 +52,36 @@ public class SkinSelector : MonoBehaviour
             selectionFrame.gameObject.SetActive(true);
         }
 
-        // 장착된 스킨(currentAppliedSkinID)이 아니라, 미리보기 스킨(0번)으로 3D 모델을 켭니다!
         Update3DModel(previewingSkinID);
-        UpdateButtonState(previewingSkinID, false);
+
+        // 실제 Firebase 보유 여부 기준으로 버튼 상태 결정
+        UpdateButtonState(previewingSkinID);
     }
 
-    public void ChangePreviewImage(Sprite selectedSprite, string title, string info, int skinID, bool isLocked, Transform buttonTransform)
+    public void ChangePreviewImage(
+        Sprite selectedSprite,
+        string title,
+        string info,
+        int skinID,
+        bool isLocked,
+        Transform buttonTransform)
     {
-        if (mainPreviewImage != null && selectedSprite != null) mainPreviewImage.sprite = selectedSprite;
-        if (titleText != null) titleText.text = title;
-        if (infoText != null) infoText.text = info;
+        if (mainPreviewImage != null && selectedSprite != null)
+            mainPreviewImage.sprite = selectedSprite;
+
+        if (titleText != null)
+            titleText.text = title;
+
+        if (infoText != null)
+            infoText.text = info;
 
         previewingSkinID = skinID;
+
         Update3DModel(skinID);
-        UpdateButtonState(skinID, isLocked);
+
+        // Inspector의 isLocked는 사용하지 않고
+        // Firebase 보유 여부로 판단
+        UpdateButtonState(skinID);
 
         if (selectionFrame != null && buttonTransform != null)
         {
@@ -59,11 +90,25 @@ public class SkinSelector : MonoBehaviour
         }
     }
 
-    private void UpdateButtonState(int skinID, bool isLocked)
+    private void UpdateButtonState(int skinID)
     {
-        if (applyButton == null || applyButtonText == null) return;
+        if (applyButton == null || applyButtonText == null)
+            return;
 
-        if (isLocked)
+        if (SaveManager.Instance == null ||
+            !SaveManager.Instance.IsLoaded)
+        {
+            applyButtonText.text = "불러오는 중...";
+            applyButton.interactable = false;
+            return;
+        }
+
+        string firestoreSkinID = ConvertSkinID(skinID);
+
+        bool isOwned =
+            SaveManager.Instance.HasSkin(firestoreSkinID);
+
+        if (!isOwned)
         {
             applyButtonText.text = "조건을 달성하세요";
             applyButton.interactable = false;
@@ -82,45 +127,115 @@ public class SkinSelector : MonoBehaviour
 
     public void OnApplyButtonClicked()
     {
+        if (SaveManager.Instance == null ||
+            !SaveManager.Instance.IsLoaded)
+        {
+            Debug.LogWarning("SaveManager 데이터가 아직 로드되지 않았습니다.");
+            return;
+        }
+
+        string firestoreSkinID =
+            ConvertSkinID(previewingSkinID);
+
+        // 실제 보유 스킨인지 다시 확인
+        if (!SaveManager.Instance.HasSkin(firestoreSkinID))
+        {
+            Debug.LogWarning(
+                $"보유하지 않은 스킨입니다 : {firestoreSkinID}"
+            );
+
+            return;
+        }
+
         currentAppliedSkinID = previewingSkinID;
 
-        PlayerPrefs.SetInt("EquippedSkin", currentAppliedSkinID);
-        PlayerPrefs.Save();
+        // Firebase users 문서에 장착 스킨 저장
+        SaveManager.Instance.EquipSkin(firestoreSkinID);
 
-        Debug.Log($"🎉 스킨 장착 완료! 저장된 스킨 ID: {currentAppliedSkinID}");
+        Debug.Log(
+            $"🎉 스킨 장착 완료! 저장된 스킨 ID: {firestoreSkinID}"
+        );
 
-        if (applyButtonText != null) applyButtonText.text = "적용 중";
-        if (applyButton != null) applyButton.interactable = false;
+        if (applyButtonText != null)
+            applyButtonText.text = "적용 중";
+
+        if (applyButton != null)
+            applyButton.interactable = false;
+    }
+
+    private int GetEquippedSkinID()
+    {
+        if (SaveManager.Instance == null ||
+            SaveManager.Instance.CurrentUser == null)
+        {
+            return 0;
+        }
+
+        string equippedID =
+            SaveManager.Instance.CurrentUser.equipped_skin_id;
+
+        if (string.IsNullOrEmpty(equippedID))
+            return 0;
+
+        // 기본 스킨
+        if (equippedID == "default")
+            return 0;
+
+        // 숫자 스킨
+        if (int.TryParse(equippedID, out int result))
+            return result;
+
+        Debug.LogWarning(
+            $"알 수 없는 장착 스킨 ID : {equippedID}"
+        );
+
+        return 0;
+    }
+
+    private string ConvertSkinID(int skinID)
+    {
+        // UI의 0번 = Firebase의 default
+        if (skinID == 0)
+            return "default";
+
+        return skinID.ToString();
     }
 
     private void Update3DModel(int targetID)
     {
-        if (planeModels == null || planeModels.Length == 0) return;
+        if (planeModels == null || planeModels.Length == 0)
+            return;
 
-        // 1. 모든 비행기 끄기
+        // 모든 모델 끄기
         for (int i = 0; i < planeModels.Length; i++)
         {
-            if (planeModels[i] != null) planeModels[i].SetActive(false);
+            if (planeModels[i] != null)
+                planeModels[i].SetActive(false);
         }
 
-        // 2. 9대 모델로 45번 버튼까지 커버하는 마법(%)
+        // 현재 구조 유지
         int modelIndex = targetID % planeModels.Length;
 
-        // 3. 알맞은 모델 1대 켜기
-        if (planeModels[modelIndex] != null) planeModels[modelIndex].SetActive(true);
+        if (planeModels[modelIndex] != null)
+            planeModels[modelIndex].SetActive(true);
     }
 
-#if UNITY_EDITOR    
-    [ContextMenu("✨ 1초 컷! 버튼 자동 번호 매기기 (노가다 해방)")]
+#if UNITY_EDITOR
+    [ContextMenu("✨ 1초 컷! 버튼 자동 번호 매기기")]
     public void AutoAssignSkinIDs()
     {
-        AutoSkinButton[] buttons = GetComponentsInChildren<AutoSkinButton>(true);
+        AutoSkinButton[] buttons =
+            GetComponentsInChildren<AutoSkinButton>(true);
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].skinID = i;
-            UnityEditor.EditorUtility.SetDirty(buttons[i]); 
+            UnityEditor.EditorUtility.SetDirty(buttons[i]);
         }
-        Debug.Log($"🎉 [성공] 총 {buttons.Length}개의 버튼에 0번부터 번호를 자동으로 매겼습니다!");
+
+        Debug.Log(
+            $"🎉 [성공] 총 {buttons.Length}개의 버튼에 0번부터 번호를 자동으로 매겼습니다!"
+        );
     }
 #endif
 }

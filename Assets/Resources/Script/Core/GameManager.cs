@@ -96,12 +96,20 @@ public class GameManager : MonoBehaviour
         // Firebase 저장
         if (GameResultManager.Instance != null)
         {
+            Debug.Log("GameResultManager 발견 → SaveResult 호출");
+
             GameResultManager.Instance.SaveResult(
                 Score,
                 Distance,
                 flightTime,
                 MaxHeight,
                 RingCount);
+        }
+        else
+        {
+            Debug.LogError(
+                "GameResultManager.Instance가 NULL입니다."
+            );
         }
 
         Destroy(plane);
