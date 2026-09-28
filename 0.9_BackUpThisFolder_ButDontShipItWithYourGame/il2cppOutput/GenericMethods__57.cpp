@@ -23866,7 +23866,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Serialization_CloneViaSerializationInto_
 		return;
 	}
 }
-// Method Definition Index: 150116
+// Method Definition Index: 150139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MatchInfo_tE2A17D7E4A41F9DE0C81C75856518FA1EF8320FF SerializationUtils_DeserializeFromString_TisMatchInfo_tE2A17D7E4A41F9DE0C81C75856518FA1EF8320FF_m9AAAECF1858F61AAC2B2FD223B90AE5B498678F3_gshared (String_t* ___0_base64, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -23964,7 +23964,7 @@ IL_004e:
 		return L_16;
 	}
 }
-// Method Definition Index: 150116
+// Method Definition Index: 150139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SerializationUtils_DeserializeFromString_TisIl2CppFullySharedGenericAny_m9FC1BA739D74CCEDC01A5D80415022EDFECBE0E2_gshared (String_t* ___0_base64, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -24067,7 +24067,7 @@ IL_004e:
 		return;
 	}
 }
-// Method Definition Index: 150116
+// Method Definition Index: 150139
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpaceSharingInfo_t8859D951A4E8EDABABD21B97822F283E66EF9AE7 SerializationUtils_DeserializeFromString_TisSpaceSharingInfo_t8859D951A4E8EDABABD21B97822F283E66EF9AE7_m733F2E61C24FE7FFF48402809872BB05C499E01D_gshared (String_t* ___0_base64, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -24165,7 +24165,7 @@ IL_004e:
 		return L_16;
 	}
 }
-// Method Definition Index: 150115
+// Method Definition Index: 150138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SerializationUtils_SerializeToString_TisMatchInfo_tE2A17D7E4A41F9DE0C81C75856518FA1EF8320FF_m1E43F8B228AB30348B4FD759B16252203D80756E_gshared (MatchInfo_tE2A17D7E4A41F9DE0C81C75856518FA1EF8320FF ___0_obj, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -24261,7 +24261,7 @@ IL_004a:
 		return L_16;
 	}
 }
-// Method Definition Index: 150115
+// Method Definition Index: 150138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SerializationUtils_SerializeToString_TisIl2CppFullySharedGenericAny_mD189497F3C8E50EE6152B3BF7EED2904C2C0D857_gshared (Il2CppFullySharedGenericAny ___0_obj, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
@@ -24368,7 +24368,7 @@ IL_004a:
 		return L_16;
 	}
 }
-// Method Definition Index: 150115
+// Method Definition Index: 150138
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SerializationUtils_SerializeToString_TisSpaceSharingInfo_t8859D951A4E8EDABABD21B97822F283E66EF9AE7_m85B73A6FCF2A79F03D4DA43AB1609B69E642A41D_gshared (SpaceSharingInfo_t8859D951A4E8EDABABD21B97822F283E66EF9AE7 ___0_obj, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))

@@ -374,7 +374,7 @@ IL2CPP_EXTERN_C uint8_t DEFAULT_CALL script_xrSetInputDeviceVelocityUNITY(uint64
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 159708
+// Method Definition Index: 159731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t3A050769EF29D65DD40643291B8171148DFCD2B8 UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m6896F9030296BC124990DFA5D1BF93C27AD21F83 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -409,7 +409,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t3A050769EF29D65DD40643291B817
 		return L_6;
 	}
 }
-// Method Definition Index: 159709
+// Method Definition Index: 159732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m923204C4085E57A1065D46ADAFD919B74F219B17 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tBF3D310A9A5A12D716986FEDC8C72FF91BEDA456* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -496,7 +496,7 @@ IL2CPP_EXTERN_C void MonoScriptData_t3A050769EF29D65DD40643291B8171148DFCD2B8_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 159710
+// Method Definition Index: 159733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_OnInstanceCreate_m2FE4E5849C89EB442F5B56B7D3A62FFC7A3833FB (ConformanceAutomationFeature_t0C2E5D391DBCC81F1B86F2D7E34719B7D292BFF7* __this, uint64_t ___0_instance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -541,7 +541,7 @@ IL_0018:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 159711
+// Method Definition Index: 159734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnInstanceDestroy_m96D8F96B35E8B653A502EB0DF784399E4136A12A (ConformanceAutomationFeature_t0C2E5D391DBCC81F1B86F2D7E34719B7D292BFF7* __this, uint64_t ___0_xrInstance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -560,7 +560,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnInstanceD
 		return;
 	}
 }
-// Method Definition Index: 159712
+// Method Definition Index: 159735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnSessionCreate_m2979BF91B65F60D1B0C00F1B65B26B894E8F6BAF (ConformanceAutomationFeature_t0C2E5D391DBCC81F1B86F2D7E34719B7D292BFF7* __this, uint64_t ___0_xrSessionId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -580,7 +580,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnSessionCr
 		return;
 	}
 }
-// Method Definition Index: 159713
+// Method Definition Index: 159736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnSessionDestroy_mC7E3A6C106E0079A0AE636DF7B419A9FBA609724 (ConformanceAutomationFeature_t0C2E5D391DBCC81F1B86F2D7E34719B7D292BFF7* __this, uint64_t ___0_xrSessionId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -599,7 +599,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_OnSessionDe
 		return;
 	}
 }
-// Method Definition Index: 159714
+// Method Definition Index: 159737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetActive_mF4A84EFAC4CCD4611ED8353E5F475DB6A0F76D12 (String_t* ___0_interactionProfile, String_t* ___1_topLevelPath, bool ___2_isActive, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -627,7 +627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_6;
 	}
 }
-// Method Definition Index: 159715
+// Method Definition Index: 159738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetBool_mAF080AEA6BA9F2178272DE6C3BAF16F6AA3BC1C8 (String_t* ___0_topLevelPath, String_t* ___1_inputSourcePath, bool ___2_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -655,7 +655,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_6;
 	}
 }
-// Method Definition Index: 159716
+// Method Definition Index: 159739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetFloat_mD2EF304BE3B2B677541F451A787DDB1C6EBEE31F (String_t* ___0_topLevelPath, String_t* ___1_inputSourcePath, float ___2_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -683,7 +683,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_6;
 	}
 }
-// Method Definition Index: 159717
+// Method Definition Index: 159740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetVec2_mCC5BE5AD298944496AC6F1049CEE313375D3F972 (String_t* ___0_topLevelPath, String_t* ___1_inputSourcePath, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_state, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -714,7 +714,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_7;
 	}
 }
-// Method Definition Index: 159718
+// Method Definition Index: 159741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetPose_m2C22B6572470A8D652AD54793EB45E798101FA27 (String_t* ___0_topLevelPath, String_t* ___1_inputSourcePath, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___2_position, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___3_orientation, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -749,7 +749,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_9;
 	}
 }
-// Method Definition Index: 159719
+// Method Definition Index: 159742
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_ConformanceAutomationSetVelocity_m6FFAFFF40B684DDE72403D9D4CAFF4F16F46A42C (String_t* ___0_topLevelPath, String_t* ___1_inputSourcePath, bool ___2_linearValid, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___3_linear, bool ___4_angularValid, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___5_angular, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -792,7 +792,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_Conformance
 		return L_12;
 	}
 }
-// Method Definition Index: 159720
+// Method Definition Index: 159743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_initialize_m1B315C43D35E283CCFEAF84FBC98B64B55B27197 (intptr_t ___0_xrGetInstanceProcAddr, uint64_t ___1_xrInstance, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -814,7 +814,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature_initialize_
 	#endif
 
 }
-// Method Definition Index: 159721
+// Method Definition Index: 159744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceActiveEXT_mCA351F487857A2CC4C2F98078BE2BFEBB19E5D54 (uint64_t ___0_xrSession, uint64_t ___1_interactionProfile, uint64_t ___2_topLevelPath, bool ___3_isActive, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -837,7 +837,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159722
+// Method Definition Index: 159745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceStateBoolEXT_m4A825E828EA07831112EC159CDCCE4AC11C86777 (uint64_t ___0_xrSession, uint64_t ___1_topLevelPath, uint64_t ___2_inputSourcePath, bool ___3_state, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -860,7 +860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159723
+// Method Definition Index: 159746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceStateFloatEXT_mCDF3171C55122EDEA62C1E93904F0F231BB11765 (uint64_t ___0_xrSession, uint64_t ___1_topLevelPath, uint64_t ___2_inputSourcePath, float ___3_state, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -883,7 +883,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159724
+// Method Definition Index: 159747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceStateVector2fEXT_m5473879B1B7DC220B1605535E11DE5B7D0C1024C (uint64_t ___0_xrSession, uint64_t ___1_topLevelPath, uint64_t ___2_inputSourcePath, XrVector2f_t347E48BCFE5F37AFA86233510BC67C246F868188 ___3_state, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -906,7 +906,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159725
+// Method Definition Index: 159748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceLocationEXT_m205D504F56533E790B6F2CEA8702FB5EF997ADC9 (uint64_t ___0_xrSession, uint64_t ___1_topLevelPath, uint64_t ___2_inputSourcePath, uint64_t ___3_space, XrPosef_t30CFD88924941CAA7DB413CD1AFF423530A90DD0 ___4_pose, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -929,7 +929,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159726
+// Method Definition Index: 159749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputDeviceVelocityUNITY_m840F7BCC7FE9D2F2560A70DD16FA0F1BA1B04490 (uint64_t ___0_xrSession, uint64_t ___1_topLevelPath, uint64_t ___2_inputSourcePath, bool ___3_linearValid, XrVector3f_t63DECBA2AFC7771B19C164A533925A5E20386F2A ___4_linear, bool ___5_angularValid, XrVector3f_t63DECBA2AFC7771B19C164A533925A5E20386F2A ___6_angular, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -952,7 +952,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConformanceAutomationFeature_xrSetInputD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 159727
+// Method Definition Index: 159750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConformanceAutomationFeature__ctor_mD56EBF29667C1232A5456B17D69A475FFC18BAC4 (ConformanceAutomationFeature_t0C2E5D391DBCC81F1B86F2D7E34719B7D292BFF7* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>

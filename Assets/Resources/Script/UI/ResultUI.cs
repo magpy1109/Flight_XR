@@ -1,6 +1,6 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ResultUI : MonoBehaviour
 {
@@ -9,16 +9,15 @@ public class ResultUI : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject hud;
     [SerializeField] private GameObject resultPanel;
-
-    [Header("Result Texts")]
     [SerializeField] private TMP_Text resultTitle;
     [SerializeField] private TMP_Text finalScoreText;
     [SerializeField] private TMP_Text finalDistanceText;
     [SerializeField] private TMP_Text finalHeightText;
     [SerializeField] private TMP_Text finalRingText;
 
-    [Header("MooBehaviour Script")]
+    [Header("Game")]
     [SerializeField] private PlaneLauncher launcher;
+    [SerializeField] private GameObject gameCanvas;
 
     [Header("Scene")]
     [SerializeField] private string homeSceneName = "MainMenuScene";
@@ -35,7 +34,6 @@ public class ResultUI : MonoBehaviour
             return;
         }
 
-        // 게임 시작 시 상태
         if (hud != null)
             hud.SetActive(true);
 
@@ -49,36 +47,27 @@ public class ResultUI : MonoBehaviour
         float height,
         int ringCount)
     {
-        Debug.Log("ResultUI.ShowResult 실행");
+        Debug.Log("ResultUI.ShowResult 호출");
 
-        // 게임 HUD 숨기기
-        if (hud != null)
-            hud.SetActive(false);
-
-        // 결과창 표시
         if (resultPanel != null)
             resultPanel.SetActive(true);
 
-        if (resultTitle != null)
-            resultTitle.text = "GAME OVER";
+        if (hud != null)
+            hud.SetActive(false);
 
         if (finalScoreText != null)
-            finalScoreText.text = $"SCORE : {score}";
+            finalScoreText.text = score.ToString();
 
         if (finalDistanceText != null)
-            finalDistanceText.text =
-                $"DISTANCE : {distance:F1} m";
+            finalDistanceText.text = distance.ToString("F1") + " m";
 
         if (finalHeightText != null)
-            finalHeightText.text =
-                $"HEIGHT : {height:F1} m";
+            finalHeightText.text = height.ToString("F1") + " m";
 
         if (finalRingText != null)
-            finalRingText.text =
-                $"RINGS : {ringCount}";
+            finalRingText.text = ringCount.ToString();
     }
 
-    // 다시 시작
     public void RestartGame()
     {
         Debug.Log("RestartGame 실행");
@@ -92,16 +81,53 @@ public class ResultUI : MonoBehaviour
         if (GameManager.Instance != null)
             GameManager.Instance.ResetGame();
 
+        // 현재 SampleScene의 PlaneLauncher 다시 찾기
+        launcher = FindFirstObjectByType<PlaneLauncher>(
+            FindObjectsInactive.Include
+        );
+
+        if (launcher == null)
+        {
+            Debug.LogError(
+                "RestartGame: 현재 씬에서 PlaneLauncher를 찾을 수 없습니다."
+            );
+            return;
+        }
+
+        if (CountdownManager.Instance == null)
+        {
+            Debug.LogError(
+                "RestartGame: CountdownManager.Instance가 없습니다."
+            );
+            return;
+        }
+
+        Debug.Log("Restart용 PlaneLauncher 찾음 : " + launcher.name);
+
         CountdownManager.Instance.StartCountdown(() =>
         {
-            launcher.Launch();
+            Debug.Log("Restart 카운트다운 완료 → 비행기 발사");
+
+            if (launcher != null)
+                launcher.Launch();
+            else
+                Debug.LogError("Restart 발사 시점에 PlaneLauncher가 null입니다.");
         });
     }
 
-    // 홈으로 이동
     public void GoHome()
     {
-        Debug.Log($"홈 이동 : {homeSceneName}");
+        Debug.Log("홈 이동 : " + homeSceneName);
+
+        // Persistent GameCanvas 끄기
+        if (gameCanvas != null)
+            gameCanvas.SetActive(false);
+
+        if (resultPanel != null)
+            resultPanel.SetActive(false);
+
+        if (hud != null)
+            hud.SetActive(false);
 
         SceneManager.LoadScene(homeSceneName);
     }

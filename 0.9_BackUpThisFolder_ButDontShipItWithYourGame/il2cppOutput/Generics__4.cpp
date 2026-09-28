@@ -7233,7 +7233,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3Cget_deserializationDependen
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 154620
+// Method Definition Index: 154643
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2_OnEnable_m77C593D2261C9B5D408B144BB26AAA822C750C68_gshared (ARTrackableManagerListener_2_t9EA9D44E3A196D6E12AB493386FCF8AA711CDDAA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7404,7 +7404,7 @@ IL_0158:
 		return;
 	}
 }
-// Method Definition Index: 154621
+// Method Definition Index: 154644
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2_OnDisable_m61F8158261AC7EF2BEBBEFDA015064B3F1431774_gshared (ARTrackableManagerListener_2_t9EA9D44E3A196D6E12AB493386FCF8AA711CDDAA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7421,7 +7421,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2_OnDisable_m
 		return;
 	}
 }
-// Method Definition Index: 154622
+// Method Definition Index: 154645
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2_OnTrackablesChanged_m4C24969047D2C2586BCA15CD278048E0B884FAB5_gshared (ARTrackableManagerListener_2_t9EA9D44E3A196D6E12AB493386FCF8AA711CDDAA* __this, ARTrackablesChangedEventArgs_1_tBCF753F2713CF4535B38A8D0848CE177E3F88E5F ___0_args, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7459,7 +7459,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2_OnTrackable
 		return;
 	}
 }
-// Method Definition Index: 154623
+// Method Definition Index: 154646
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2__ctor_m67FEC1A35F8AA4520A43216A6713268F75E2F541_gshared (ARTrackableManagerListener_2_t9EA9D44E3A196D6E12AB493386FCF8AA711CDDAA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7478,7 +7478,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2__ctor_m67FE
 		return;
 	}
 }
-// Method Definition Index: 154624
+// Method Definition Index: 154647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackableManagerListener_2__cctor_m98C4CA417CB29C0CA91FC18CF5B4B489A3FA371C_gshared (const RuntimeMethod* method) 
 {
 	{
@@ -26770,7 +26770,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ARTrackable_2__ctor_m7CF23A9800D39D90609
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 158067
+// Method Definition Index: 158090
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool SubsystemWithProvider_get_running_m6BF31FC3BDA38C56C0F60FEA37767A4151B22C44_inline (SubsystemWithProvider_tC72E35EE2D413A4B0635B058154BABF265F31242* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26788,7 +26788,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TrackableId_t49EAE8AA4B9584E31451
 		return L_0;
 	}
 }
-// Method Definition Index: 147478
+// Method Definition Index: 147501
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* XROrigin_get_TrackablesParent_m6F7933DF03A5376C31D328F865F77D28EEC18E9C_inline (XROrigin_t5E534A6D886991AF3C1C64127E19A3A510009CFE* __this, const RuntimeMethod* method) 
 {
 	{

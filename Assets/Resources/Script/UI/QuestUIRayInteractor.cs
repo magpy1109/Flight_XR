@@ -3,9 +3,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class QuestUIRayInteractor : MonoBehaviour
 {
+    [SerializeField] private GraphicRaycaster graphicRaycaster;
+
+    [Header("Canvas")]
+    [SerializeField] private Canvas mainMenuCanvas;
+    [SerializeField] private Canvas gameCanvas;
+
+    private readonly List<RaycastResult> raycastResults =
+        new List<RaycastResult>();
+
     [Header("References")]
     [SerializeField] private Canvas targetCanvas;
     [SerializeField] private Camera targetCamera;
@@ -20,31 +30,52 @@ public class QuestUIRayInteractor : MonoBehaviour
     private InputDevice rightHand;
 
     private Button currentButton;
+
+    // A 버튼의 이전 프레임 상태
     private bool wasPressed;
 
     private GameObject reticle;
 
     private void Start()
     {
-        if (targetCanvas == null)
-        {
-            Debug.LogError("QuestUIRayInteractor: Canvas가 연결되지 않았습니다.");
-            return;
-        }
+        SceneManager.activeSceneChanged += OnSceneChanged;
 
         if (targetCamera == null)
         {
             targetCamera = Camera.main;
         }
 
+        SetupCanvas(SceneManager.GetActiveScene().name);
+
         if (targetCamera == null)
         {
-            Debug.LogError("QuestUIRayInteractor: Camera를 찾을 수 없습니다.");
+            Debug.LogError(
+                "QuestUIRayInteractor: Camera를 찾을 수 없습니다."
+            );
             return;
         }
 
-        // World Space Canvas가 어떤 카메라를 사용할지 명확하게 지정
+        if (targetCanvas == null)
+        {
+            Debug.LogError(
+                "QuestUIRayInteractor: 사용할 Canvas가 없습니다."
+            );
+            return;
+        }
+
+        // World Space Canvas가 사용할 카메라
         targetCanvas.worldCamera = targetCamera;
+
+        if (graphicRaycaster == null)
+        {
+            graphicRaycaster = targetCanvas.GetComponent<GraphicRaycaster>();
+        }
+
+        if (graphicRaycaster == null)
+        {
+            Debug.LogError("Canvas에 GraphicRaycaster가 없습니다.");
+            return;
+        }
 
         if (lineRenderer == null)
         {
@@ -65,6 +96,22 @@ public class QuestUIRayInteractor : MonoBehaviour
     private void Update()
     {
         GetRightHand();
+        
+        if (targetCanvas == null || targetCamera == null)
+        {
+            DrawRay(
+                transform.position,
+                transform.position +
+                transform.forward * rayLength
+            );
+
+            CheckButtonInput();
+            return;
+        }
+
+        // ------------------------------------------------
+        // 1. 컨트롤러에서 Ray 발사
+        // ------------------------------------------------
 
         Ray ray = new Ray(
             transform.position,
@@ -82,6 +129,10 @@ public class QuestUIRayInteractor : MonoBehaviour
 
         DrawRay(ray.origin, rayEnd);
 
+        // ------------------------------------------------
+        // 2. Canvas를 맞추지 못한 경우
+        // ------------------------------------------------
+
         if (!hitCanvas)
         {
             ClearHover();
@@ -89,12 +140,19 @@ public class QuestUIRayInteractor : MonoBehaviour
             if (reticle != null)
                 reticle.SetActive(false);
 
+            CheckButtonInput();
+
             return;
         }
+
+        // ------------------------------------------------
+        // 3. Reticle 표시
+        // ------------------------------------------------
 
         if (reticle != null)
         {
             reticle.SetActive(true);
+
             reticle.transform.position =
                 hitPoint;
 
@@ -104,28 +162,54 @@ public class QuestUIRayInteractor : MonoBehaviour
                 );
         }
 
+        // ------------------------------------------------
+        // 4. 맞은 Button 찾기
+        // ------------------------------------------------
+
         Button hitButton =
             FindButtonAtWorldPoint(hitPoint);
 
         UpdateHover(hitButton);
 
-        // QuestInputProvider가 이미 읽고 있는 A 버튼 사용
-        if (FlightInputManager.Instance != null &&
-            FlightInputManager.Instance.LaunchPressed)
-        {
-            PressCurrentButton();
-        }
+        // ------------------------------------------------
+        // 5. A 버튼 확인
+        // ------------------------------------------------
+
+        CheckButtonInput();
     }
 
     private void GetRightHand()
     {
-        if (!rightHand.isValid)
+        if (rightHand.isValid)
+            return;
+
+        rightHand =
+            InputDevices.GetDeviceAtXRNode(
+                XRNode.RightHand
+            );
+    }
+
+    private void CheckButtonInput()
+    {
+        bool isPressed = false;
+
+        if (rightHand.isValid)
         {
-            rightHand =
-                InputDevices.GetDeviceAtXRNode(
-                    XRNode.RightHand
-                );
+            rightHand.TryGetFeatureValue(
+                CommonUsages.primaryButton,
+                out isPressed
+            );
         }
+
+        // 버튼을 누르는 순간만 실행
+        if (isPressed && !wasPressed)
+        {
+            Debug.Log("Quest A 버튼 입력 감지");
+
+            PressCurrentButton();
+        }
+
+        wasPressed = isPressed;
     }
 
     private bool TryGetCanvasHit(
@@ -135,7 +219,8 @@ public class QuestUIRayInteractor : MonoBehaviour
         UnityEngine.Plane canvasPlane =
             new UnityEngine.Plane(
                 targetCanvas.transform.forward,
-                targetCanvas.transform.position);
+                targetCanvas.transform.position
+            );
 
         if (canvasPlane.Raycast(
             ray,
@@ -150,10 +235,9 @@ public class QuestUIRayInteractor : MonoBehaviour
                     point
                 );
 
-            // Canvas까지의 거리 체크
+            // Ray 길이 확인
             if (distance <= rayLength)
             {
-                // Canvas Rect 안에 실제로 들어왔는지 확인
                 RectTransform rect =
                     targetCanvas.transform
                         as RectTransform;
@@ -162,12 +246,13 @@ public class QuestUIRayInteractor : MonoBehaviour
                 {
                     Vector2 localPoint;
 
-                    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                        rect,
-                        targetCamera.WorldToScreenPoint(point),
-                        targetCamera,
-                        out localPoint
-                    );
+                    RectTransformUtility
+                        .ScreenPointToLocalPointInRectangle(
+                            rect,
+                            targetCamera.WorldToScreenPoint(point),
+                            targetCamera,
+                            out localPoint
+                        );
 
                     if (rect.rect.Contains(localPoint))
                     {
@@ -182,18 +267,13 @@ public class QuestUIRayInteractor : MonoBehaviour
         return false;
     }
 
-    private Button FindButtonAtWorldPoint(
-        Vector3 worldPoint)
+    private Button FindButtonAtWorldPoint(Vector3 worldPoint)
     {
         Vector2 screenPoint =
-            targetCamera.WorldToScreenPoint(
-                worldPoint
-            );
+            targetCamera.WorldToScreenPoint(worldPoint);
 
         Button[] buttons =
-            targetCanvas.GetComponentsInChildren<Button>(
-                true
-            );
+            targetCanvas.GetComponentsInChildren<Button>(true);
 
         foreach (Button button in buttons)
         {
@@ -209,6 +289,7 @@ public class QuestUIRayInteractor : MonoBehaviour
             if (rect == null)
                 continue;
 
+            // Button의 전체 RectTransform 영역을 클릭 영역으로 사용
             if (RectTransformUtility.RectangleContainsScreenPoint(
                 rect,
                 screenPoint,
@@ -234,16 +315,19 @@ public class QuestUIRayInteractor : MonoBehaviour
 
         currentButton = newButton;
 
-        PointerEventData eventData =
-            new PointerEventData(
-                EventSystem.current
-            );
+        if (EventSystem.current != null)
+        {
+            PointerEventData eventData =
+                new PointerEventData(
+                    EventSystem.current
+                );
 
-        ExecuteEvents.Execute(
-            currentButton.gameObject,
-            eventData,
-            ExecuteEvents.pointerEnterHandler
-        );
+            ExecuteEvents.Execute(
+                currentButton.gameObject,
+                eventData,
+                ExecuteEvents.pointerEnterHandler
+            );
+        }
 
         Debug.Log(
             "UI Hover : " +
@@ -253,7 +337,8 @@ public class QuestUIRayInteractor : MonoBehaviour
 
     private void ClearHover()
     {
-        if (currentButton != null)
+        if (currentButton != null &&
+            EventSystem.current != null)
         {
             PointerEventData eventData =
                 new PointerEventData(
@@ -273,38 +358,21 @@ public class QuestUIRayInteractor : MonoBehaviour
     private void PressCurrentButton()
     {
         if (currentButton == null)
+        {
+            Debug.Log(
+                "A 버튼 입력은 감지됐지만 현재 Button이 없습니다."
+            );
+
             return;
+        }
 
         Debug.Log(
             "UI Click : " +
-            currentButton.name);
+            currentButton.name
+        );
 
         currentButton.onClick.Invoke();
     }
-
-    // private void ReleaseCurrentButton()
-    // {
-    //     if (currentButton == null)
-    //         return;
-
-    //     PointerEventData eventData =
-    //         new PointerEventData(
-    //             EventSystem.current
-    //         );
-
-    //     ExecuteEvents.Execute(
-    //         currentButton.gameObject,
-    //         eventData,
-    //         ExecuteEvents.pointerUpHandler
-    //     );
-
-    //     currentButton.onClick.Invoke();
-
-    //     Debug.Log(
-    //         "UI Click : " +
-    //         currentButton.name
-    //     );
-    // }
 
     private void DrawRay(
         Vector3 start,
@@ -342,14 +410,78 @@ public class QuestUIRayInteractor : MonoBehaviour
         if (renderer != null)
         {
             renderer.material.color =
-                new Color(0.8f, 0.2f, 1f);
+                new Color(
+                    0.8f,
+                    0.2f,
+                    1f
+                );
         }
 
         reticle.SetActive(false);
     }
 
+    private void OnSceneChanged(Scene oldScene, Scene newScene)
+    {
+        SetupCanvas(newScene.name);
+    }
+
+    private void SetupCanvas(string sceneName)
+    {
+        if (sceneName == "MainMenuScene")
+        {
+            GameObject menuObject =
+                GameObject.Find("MainMenuCanvas");
+
+            if (menuObject != null)
+            {
+                mainMenuCanvas =
+                    menuObject.GetComponent<Canvas>();
+
+                targetCanvas = mainMenuCanvas;
+
+                // 메인 메뉴에서는 게임 Canvas 숨김
+                if (gameCanvas != null)
+                    gameCanvas.gameObject.SetActive(false);
+
+                targetCanvas.gameObject.SetActive(true);
+            }
+        }
+        else if (sceneName == "SampleScene")
+        {
+            // 게임에서는 GameCanvas 활성화
+            if (gameCanvas != null)
+            {
+                gameCanvas.gameObject.SetActive(true);
+                targetCanvas = gameCanvas;
+            }
+        }
+        else
+        {
+            targetCanvas = null;
+        }
+
+        if (targetCanvas != null)
+        {
+            if (targetCamera == null)
+                targetCamera = Camera.main;
+
+            if (targetCamera != null)
+                targetCanvas.worldCamera = targetCamera;
+
+            graphicRaycaster =
+                targetCanvas.GetComponent<GraphicRaycaster>();
+
+            Debug.Log(
+                "QuestUI Canvas 변경 : " +
+                targetCanvas.name
+            );
+        }
+    }
+
     private void OnDestroy()
     {
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+
         if (reticle != null)
             Destroy(reticle);
     }

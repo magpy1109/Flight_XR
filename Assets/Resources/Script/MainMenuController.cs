@@ -5,6 +5,19 @@ public class MainMenuController : MonoBehaviour
     public FadeManager fadeManager;
     public GameObject exitPanel;
 
+    [Header("Canvas")]
+    public GameObject mainMenuCanvas;
+    public GameObject gameCanvas;
+
+    private void Start()
+    {
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(true);
+
+        if (gameCanvas != null)
+            gameCanvas.SetActive(false);
+    }
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
@@ -17,16 +30,26 @@ public class MainMenuController : MonoBehaviour
 
     public void ShowExitPanel()
     {
-        exitPanel.SetActive(true);
+        if (exitPanel != null)
+            exitPanel.SetActive(true);
     }
 
     public void HideExitPanel()
     {
-        exitPanel.SetActive(false);
+        if (exitPanel != null)
+            exitPanel.SetActive(false);
     }
 
     public void GoToMain()
     {
+        Debug.Log("Play 버튼 실행");
+
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(false);
+
+        if (gameCanvas != null)
+            gameCanvas.SetActive(true);
+
         fadeManager.LoadScene("SampleScene");
     }
 

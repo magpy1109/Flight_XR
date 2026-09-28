@@ -140,8 +140,10 @@
           {
             "name": "AudioClip",
             "scenes": [
+              "Assets/Scenes/LeaderBoardScene.unity",
               "Assets/Scenes/MainMenuScene.unity",
-              "Assets/Scenes/SettingScene.unity"
+              "Assets/Scenes/SettingScene.unity",
+              "Assets/Scenes/SkinScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -194,15 +196,22 @@
           {
             "name": "AudioResource",
             "scenes": [
+              "Assets/Scenes/LeaderBoardScene.unity",
               "Assets/Scenes/MainMenuScene.unity",
-              "Assets/Scenes/SettingScene.unity"
+              "Assets/Scenes/SettingScene.unity",
+              "Assets/Scenes/SkinScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioSource",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/LeaderBoardScene.unity",
+              "Assets/Scenes/MainMenuScene.unity",
+              "Assets/Scenes/SettingScene.unity",
+              "Assets/Scenes/SkinScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

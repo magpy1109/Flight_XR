@@ -3,7 +3,11 @@ using Meta.XR.MRUtilityKit;
 
 public class PassthroughBootstrap : MonoBehaviour
 {
+    [Header("Passthrough")]
     [SerializeField] private OVRPassthroughLayer passthroughLayer;
+
+    [Header("MRUK")]
+    [SerializeField] private bool waitForMRUK = false;
 
     private bool passthroughStarted;
 
@@ -17,10 +21,10 @@ public class PassthroughBootstrap : MonoBehaviour
 
         if (passthroughLayer != null)
         {
-            // 시작할 때는 일단 패스스루 레이어를 꺼둔다.
+            // 시작할 때는 꺼둔다.
             passthroughLayer.enabled = false;
 
-            // 패스스루가 실제 화면에 표시된 순간 호출
+            // 실제 HMD에 표시되었을 때 호출
             passthroughLayer.passthroughLayerResumed
                 .AddListener(OnPassthroughLayerResumed);
         }
@@ -38,10 +42,16 @@ public class PassthroughBootstrap : MonoBehaviour
             return;
         }
 
-        // 시작 시 자동 패스스루 방지
-        OVRManager.instance.isInsightPassthroughEnabled = false;
-
-        WaitForMRUK();
+        // MainMenu처럼 MRUK가 필요하지 않은 씬에서는
+        // 바로 Passthrough를 시작한다.
+        if (waitForMRUK)
+        {
+            WaitForMRUK();
+        }
+        else
+        {
+            StartPassthrough();
+        }
     }
 
     private void WaitForMRUK()
@@ -57,18 +67,11 @@ public class PassthroughBootstrap : MonoBehaviour
             $"MRUK 발견 / Initialized = {MRUK.Instance.IsInitialized}"
         );
 
-        // MRUK 씬이 이미 준비됐으면 즉시 콜백
-        // 아직 준비되지 않았으면 Scene Loaded 시 호출
         MRUK.Instance.RegisterSceneLoadedCallback(OnMRUKSceneLoaded);
     }
 
     private void OnMRUKSceneLoaded()
     {
-        if (passthroughStarted)
-            return;
-
-        passthroughStarted = true;
-
         Debug.Log("=== MRUK SCENE LOADED ===");
 
         StartPassthrough();
@@ -76,6 +79,9 @@ public class PassthroughBootstrap : MonoBehaviour
 
     private void StartPassthrough()
     {
+        if (passthroughStarted)
+            return;
+
         if (OVRManager.instance == null)
         {
             Debug.LogError("OVRManager.instance가 없습니다.");
@@ -88,12 +94,14 @@ public class PassthroughBootstrap : MonoBehaviour
             return;
         }
 
+        passthroughStarted = true;
+
         Debug.Log("=== PASSTHROUGH START ===");
 
-        // 1. Insight Passthrough 시스템 활성화
+        // Insight Passthrough 활성화
         OVRManager.instance.isInsightPassthroughEnabled = true;
 
-        // 2. 실제 Passthrough Layer 활성화
+        // 실제 Passthrough Layer 활성화
         passthroughLayer.enabled = true;
     }
 

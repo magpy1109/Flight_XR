@@ -42,6 +42,7 @@ public class MenuHoverReveal : MonoBehaviour,
 
         // 처음에는 아이콘을 숨김
         iconCanvasGroup.alpha = 0f;
+        iconCanvasGroup.blocksRaycasts = false;
         icon.SetActive(true);
     }
 
