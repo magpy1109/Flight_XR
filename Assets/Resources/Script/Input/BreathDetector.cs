@@ -177,10 +177,11 @@ public class BreathDetector : MonoBehaviour
         {
             RawVolume = GetMicrophoneVolume();
 
-            targetPower = Mathf.InverseLerp(
+            // 설정씬의 "입력" 감도를 반영
+            targetPower = MicSensitivity.Evaluate(
+                RawVolume,
                 minVolume,
-                maxVolume,
-                RawVolume);
+                maxVolume);
         }
 
 #endif

@@ -93,6 +93,10 @@ MonoBehaviour:
   bgmMixerGroup: {fileID: -44668985091616973, guid: fea62c476e8d0f14c8bcd0ab2390a9b4, type: 2}
   generalBGMList:
   - {fileID: 8300000, guid: 5ac6a27da418bd24f8684da8fe20ce3b, type: 3}
+  - {fileID: 8300000, guid: d68e7da329470e444842f138f6c8a01d, type: 3}
+  - {fileID: 8300000, guid: d01a3f11129a8194fad40013226269d4, type: 3}
+  - {fileID: 8300000, guid: 3c6fbe6203dc2a84794e18f961a3fabc, type: 3}
+  - {fileID: 8300000, guid: ce5d00907979d954fb34330dc99dc5d5, type: 3}
   gameBGMList: []
   crossfadeDuration: 1.5
   shufflePlaylist: 1
