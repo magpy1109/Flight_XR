@@ -659,4 +659,36 @@ public class QuestUIRayInteractor : MonoBehaviour
         if (reticle != null)
             Destroy(reticle);
     }
+
+    // 외부(PauseManager)에서 조준 대상 Canvas를 임시로 바꿀 때 사용
+    public void SetTargetCanvas(Canvas canvas)
+    {
+        // 이전 버튼에 pointerExit를 보내고 상태 초기화
+        ClearHover();
+        UpdateSliderHover(null);
+        draggingSlider = null;
+
+        targetCanvas = canvas;
+
+        if (targetCanvas == null)
+            return;
+
+        if (targetCamera == null)
+            targetCamera = Camera.main;
+
+        if (targetCamera != null)
+            targetCanvas.worldCamera = targetCamera;
+
+        graphicRaycaster = targetCanvas.GetComponent<GraphicRaycaster>();
+    }
+
+    // 현재 씬의 기본 Canvas(SampleScene이면 GameCanvas)로 복귀
+    public void RestoreDefaultCanvas()
+    {
+        ClearHover();
+        UpdateSliderHover(null);
+        draggingSlider = null;
+
+        SetupCanvas(SceneManager.GetActiveScene().name);
+    }
 }

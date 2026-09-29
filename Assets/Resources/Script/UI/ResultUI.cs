@@ -22,6 +22,8 @@ public class ResultUI : MonoBehaviour
     [Header("Scene")]
     [SerializeField] private string homeSceneName = "MainMenuScene";
 
+    public bool IsResultShown => resultPanel != null && resultPanel.activeSelf;
+
     private void Awake()
     {
         if (Instance == null)
@@ -59,10 +61,10 @@ public class ResultUI : MonoBehaviour
             finalScoreText.text = score.ToString();
 
         if (finalDistanceText != null)
-            finalDistanceText.text = distance.ToString("F1") + " m";
+            finalDistanceText.text = "distance: " + distance.ToString("F1") + " m";
 
         if (finalHeightText != null)
-            finalHeightText.text = height.ToString("F1") + " m";
+            finalHeightText.text = "height: " + height.ToString("F1") + " m";
 
         if (finalRingText != null)
             finalRingText.text = ringCount.ToString();

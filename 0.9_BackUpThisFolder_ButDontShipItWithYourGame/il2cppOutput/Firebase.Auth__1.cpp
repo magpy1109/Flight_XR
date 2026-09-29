@@ -1303,7 +1303,7 @@ IL2CPP_EXTERN_C void DEFAULT_CALL SWIGRegisterStringCallback_AuthUtil(Il2CppMeth
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149206
+// Method Definition Index: 149230
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult__ctor_mC602DBB1677CA3FDAF3C78A8A84EEFBA603613AC (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, intptr_t ___0_cPtr, bool ___1_cMemoryOwn, const RuntimeMethod* method) 
 {
 	{
@@ -1323,7 +1323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult__ctor_mC602DBB1677C
 		return;
 	}
 }
-// Method Definition Index: 149207
+// Method Definition Index: 149231
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FetchProvidersResult_getCPtr_m3711D1597EE84BBB1AC9D1EE41D99605BBFFCC35 (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* ___0_obj, const RuntimeMethod* method) 
 {
 	HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F V_0;
@@ -1367,7 +1367,7 @@ IL_001a:
 		return L_4;
 	}
 }
-// Method Definition Index: 149208
+// Method Definition Index: 149232
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FetchProvidersResult_swigRelease_mE499F05F485E2EE447E7D3906F0FC7F479BE6A9D (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* ___0_obj, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -1443,7 +1443,7 @@ IL_004a:
 		return L_12;
 	}
 }
-// Method Definition Index: 149209
+// Method Definition Index: 149233
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult_Finalize_mDA784F16813D7AE35373BAB4FBC1C4C89A7C08D5 (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1477,7 +1477,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 149210
+// Method Definition Index: 149234
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult_Dispose_mF2598D4AEEB2675E759B41397340F24B3719A4DA (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1496,7 +1496,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult_Dispose_mF2598D4AEE
 		return;
 	}
 }
-// Method Definition Index: 149211
+// Method Definition Index: 149235
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult_Dispose_mC808CDA6986697CFBF9FEFDE1585B20D31CA34B6 (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, bool ___0_disposing, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1609,7 +1609,7 @@ IL_0073:
 		return;
 	}
 }
-// Method Definition Index: 149212
+// Method Definition Index: 149236
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FetchProvidersResult_get_Providers_m491537D9A69A2412B70D5F726D2CB1120C881178 (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1692,7 +1692,7 @@ IL_0038:
 		return L_10;
 	}
 }
-// Method Definition Index: 149213
+// Method Definition Index: 149237
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FetchProvidersResult__ctor_m58E551FE8B15D4EF27788710947B48D9261FA78A (FetchProvidersResult_t40819EDBD59FA39A3C18603E1F730AAAEBE27035* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1742,7 +1742,7 @@ IL_001d:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149214
+// Method Definition Index: 149238
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider__ctor_m78323280B32D48FD01CA87508D0C30CDCC5D65BB (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* __this, intptr_t ___0_cPtr, bool ___1_cMemoryOwn, const RuntimeMethod* method) 
 {
 	{
@@ -1762,7 +1762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider__ctor_m78323280B32
 		return;
 	}
 }
-// Method Definition Index: 149215
+// Method Definition Index: 149239
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FederatedAuthProvider_getCPtr_m0F52276224DA51F5DCF38C5610E390DD17C1C6F5 (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* ___0_obj, const RuntimeMethod* method) 
 {
 	HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F V_0;
@@ -1806,7 +1806,7 @@ IL_001a:
 		return L_4;
 	}
 }
-// Method Definition Index: 149216
+// Method Definition Index: 149240
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FederatedAuthProvider_swigRelease_m3D9606F0A210E2D35EFE21F340796B2B1DF7E53E (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* ___0_obj, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -1882,7 +1882,7 @@ IL_004a:
 		return L_12;
 	}
 }
-// Method Definition Index: 149217
+// Method Definition Index: 149241
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider_Finalize_mBD71BB30ACE5C8184DFC0EB656122309279F22D6 (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -1916,7 +1916,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 149218
+// Method Definition Index: 149242
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider_Dispose_mED9B374EF4B42A0BCB3358B6FED4A972F0ACD987 (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1935,7 +1935,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider_Dispose_mED9B374EF
 		return;
 	}
 }
-// Method Definition Index: 149219
+// Method Definition Index: 149243
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedAuthProvider_Dispose_m74D8A2815F985A6F330D561CDBB15AB0170874DA (FederatedAuthProvider_t54C5F79A13FD3C8CB5BD4096E92D34B764C1172E* __this, bool ___0_disposing, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2056,7 +2056,7 @@ IL_0073:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149220
+// Method Definition Index: 149244
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider__ctor_mFA18C328B54461C935851B3B30772E396E2A286D (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* __this, intptr_t ___0_cPtr, bool ___1_cMemoryOwn, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2084,7 +2084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider__ctor_mFA18C328B5
 		return;
 	}
 }
-// Method Definition Index: 149221
+// Method Definition Index: 149245
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FederatedOAuthProvider_getCPtr_m292127CBF42394D574F9094F79CBE1B32D2B48F6 (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* ___0_obj, const RuntimeMethod* method) 
 {
 	HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F V_0;
@@ -2128,7 +2128,7 @@ IL_001a:
 		return L_4;
 	}
 }
-// Method Definition Index: 149222
+// Method Definition Index: 149246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F FederatedOAuthProvider_swigRelease_m02485CEEC6FA6CC3EC942DF720A169B4DD070AE9 (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* ___0_obj, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -2204,7 +2204,7 @@ IL_004a:
 		return L_12;
 	}
 }
-// Method Definition Index: 149223
+// Method Definition Index: 149247
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider_Dispose_mFA156271E27890FD307E6D71183917D5BE5A3ECE (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* __this, bool ___0_disposing, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2320,7 +2320,7 @@ IL_007b:
 		return;
 	}
 }
-// Method Definition Index: 149224
+// Method Definition Index: 149248
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider__ctor_mA31F20A8B8A6C2B38A70BBF511DC292BFB0C6233 (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2362,7 +2362,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 149225
+// Method Definition Index: 149249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider__ctor_m8E41D43DC5460CE1758987E5C1E3134A8E01AA7B (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* __this, FederatedOAuthProviderData_t4A5AD4CBB4ACD54A60999A0DD116D8EB65FE778E* ___0_providerData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2407,7 +2407,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 149226
+// Method Definition Index: 149250
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FederatedOAuthProvider_SetProviderData_mF736442E7DA07F7C1E786723914C962FE26AC879 (FederatedOAuthProvider_t6B2C271BB1C19DB11F827AD3AFB8355AC01A2506* __this, FederatedOAuthProviderData_t4A5AD4CBB4ACD54A60999A0DD116D8EB65FE778E* ___0_providerData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2459,7 +2459,7 @@ IL_0022:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149227
+// Method Definition Index: 149251
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE__cctor_m1630D95EAAE6E61E8A8E565239682157B7385C38 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2485,7 +2485,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE__cctor_m1630D95EAAE6E61E
 		return;
 	}
 }
-// Method Definition Index: 149228
+// Method Definition Index: 149252
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_ExportFix_mDC7E0B0ACD89C6169FDA35052747F7896516C15D (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2507,7 +2507,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_ExportFix_mDC7E0B0ACD89C
 	#endif
 
 }
-// Method Definition Index: 149229
+// Method Definition Index: 149253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfaceList__SWIG_0_mADEE06A8877BAB33A513BBA6AF68BCF51C9C7EA5 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2530,7 +2530,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfac
 
 	return returnValue;
 }
-// Method Definition Index: 149230
+// Method Definition Index: 149254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfaceList__SWIG_1_mA89F74AD67A08EB5CB70737436AEB490FDA4551A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2556,7 +2556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfac
 
 	return returnValue;
 }
-// Method Definition Index: 149231
+// Method Definition Index: 149255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Clear_m84D08D44EAC78AFA7E3FFE81DE622A9C15AB6E6D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2581,7 +2581,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Cl
 	#endif
 
 }
-// Method Definition Index: 149232
+// Method Definition Index: 149256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Add_m2B9AF38C693CE4493A351353AEAB00D4AEAC2D1D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2609,7 +2609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Ad
 	#endif
 
 }
-// Method Definition Index: 149233
+// Method Definition Index: 149257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_UserInfoInterfaceList_size_m066B7CC65DD89DDE33C4C20ADB14048D02E463F6 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2635,7 +2635,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149234
+// Method Definition Index: 149258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_UserInfoInterfaceList_empty_m878118729B9CE867457704B0D2BEDC58B2AD684C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2661,7 +2661,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_UserInfoInterfaceList_em
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149235
+// Method Definition Index: 149259
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_UserInfoInterfaceList_capacity_mE9760BA44D016925A3810839F4CB7EFB0F4D7CDF (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2687,7 +2687,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149236
+// Method Definition Index: 149260
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_reserve_mC5E211BE4577AE92D940F7606BB467395F91C27D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, uint32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2712,7 +2712,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_re
 	#endif
 
 }
-// Method Definition Index: 149237
+// Method Definition Index: 149261
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfaceList__SWIG_2_m091DAC05EADC98A3B0A406CDA76AE62D6FA47A33 (int32_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2735,7 +2735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfac
 
 	return returnValue;
 }
-// Method Definition Index: 149238
+// Method Definition Index: 149262
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceList_getitemcopy_m06E4941EA4EBE0E74733708D5BF4558ED8C412AD (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2761,7 +2761,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149239
+// Method Definition Index: 149263
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceList_getitem_mF4D49DD6ECF0A4F9A5492D0462C4DFEC0AADF02F (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2787,7 +2787,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149240
+// Method Definition Index: 149264
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_setitem_m74C18CCB527EFA9D1F7043DE3DB1B19C94148800 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2815,7 +2815,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_se
 	#endif
 
 }
-// Method Definition Index: 149241
+// Method Definition Index: 149265
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_AddRange_m5D8FEEC796E689E797B8101B2F45F4E2D0827B0C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2843,7 +2843,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Ad
 	#endif
 
 }
-// Method Definition Index: 149242
+// Method Definition Index: 149266
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceList_GetRange_m71D0DB0E3D46E8D844D645468971E851134B812C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2869,7 +2869,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149243
+// Method Definition Index: 149267
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Insert_mB88C0140E716EFD64BA921F1B3371B33FFF2F172 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2897,7 +2897,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_In
 	#endif
 
 }
-// Method Definition Index: 149244
+// Method Definition Index: 149268
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_InsertRange_mD188FBBAC9A64621D810523EBAA83B0926A18DA2 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2925,7 +2925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_In
 	#endif
 
 }
-// Method Definition Index: 149245
+// Method Definition Index: 149269
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_RemoveAt_mBEBC4FE5E0C4997CFA9A011464BEC44EEE9713B6 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2950,7 +2950,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Re
 	#endif
 
 }
-// Method Definition Index: 149246
+// Method Definition Index: 149270
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_RemoveRange_m2E322992A632E130E899C0C0090C56784DFCBC2A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2975,7 +2975,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Re
 	#endif
 
 }
-// Method Definition Index: 149247
+// Method Definition Index: 149271
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceList_Repeat_m1A1EAFAFC655320BEE367A7FD6232269086CA0D1 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3001,7 +3001,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_UserInfoInterfaceLis
 
 	return returnValue;
 }
-// Method Definition Index: 149248
+// Method Definition Index: 149272
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Reverse__SWIG_0_mC0C879E2622C0BF34C53953D642CD100C456CD3E (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3026,7 +3026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Re
 	#endif
 
 }
-// Method Definition Index: 149249
+// Method Definition Index: 149273
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Reverse__SWIG_1_m2E24466BC2C31473F502CB755BA83445C65C8526 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3051,7 +3051,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Re
 	#endif
 
 }
-// Method Definition Index: 149250
+// Method Definition Index: 149274
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_SetRange_mC283408BCEFA728FDD15D729579FDDCB88F22C39 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t ___1_jarg2, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3079,7 +3079,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserInfoInterfaceList_Se
 	#endif
 
 }
-// Method Definition Index: 149251
+// Method Definition Index: 149275
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserInfoInterfaceList_m673388B29961D491797C27A1E10A1B179E8F60CC (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3104,7 +3104,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserInfoInterface
 	#endif
 
 }
-// Method Definition Index: 149252
+// Method Definition Index: 149276
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_User_mB79540024B7BD8E8A7CC5ADA7CED3669E04715D0 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3127,7 +3127,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_User_mB79
 
 	return returnValue;
 }
-// Method Definition Index: 149253
+// Method Definition Index: 149277
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_SWIG_OnCompletion_m296C5844E099430387E2F721F1D6A24FD54AF941 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, SWIG_CompletionDelegate_tB4CF397F15014F9BEA59F667A633E7F832DB7C78* ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3156,7 +3156,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_SWIG_OnC
 
 	return returnValue;
 }
-// Method Definition Index: 149254
+// Method Definition Index: 149278
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_User_SWIG_FreeCompletionData_m16CD2E54C4795526F2E88CAAEF710CB068C1C42C (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3178,7 +3178,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_User_SWIG_FreeCom
 	#endif
 
 }
-// Method Definition Index: 149255
+// Method Definition Index: 149279
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_GetResult_m0C533833AEE8C39D03639B1C4E7118AF22C643F4 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3204,7 +3204,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_GetResul
 
 	return returnValue;
 }
-// Method Definition Index: 149256
+// Method Definition Index: 149280
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_User_mDE5DCFBB612138DDA4A71F05AE25A3FC55385D53 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3229,7 +3229,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_User_mDE5D
 	#endif
 
 }
-// Method Definition Index: 149257
+// Method Definition Index: 149281
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_User_Value_mA1F243F40B6DE48A09531C6A199AE63CDBFBE115 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3252,7 +3252,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_User_Valu
 
 	return returnValue;
 }
-// Method Definition Index: 149258
+// Method Definition Index: 149282
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_SWIG_OnCompletion_m7FB5A301F58ADAAC36FC703D1303AA173E72D7BD (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, SWIG_CompletionDelegate_tAF9E301A88DCA1BC338F672DB240C824229FA144* ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3281,7 +3281,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149259
+// Method Definition Index: 149283
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_User_Value_SWIG_FreeCompletionData_m7EF3FD980F285411B942BC8D8EA82F9A8A4D153C (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3303,7 +3303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_User_Value_SWIG_F
 	#endif
 
 }
-// Method Definition Index: 149260
+// Method Definition Index: 149284
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_GetResult_m1C550DEE942CEF3D7AABEE6E52292D5AC97AE699 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3329,7 +3329,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_Ge
 
 	return returnValue;
 }
-// Method Definition Index: 149261
+// Method Definition Index: 149285
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_User_Value_m8A1407E210F9CEE757D4B04FBDF43F515C0018E6 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3354,7 +3354,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_User_Value
 	#endif
 
 }
-// Method Definition Index: 149262
+// Method Definition Index: 149286
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_FetchProvidersResult_m637E1EED4E17DD07DA2114AF477FE3D91C63AE4E (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3377,7 +3377,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_FetchProv
 
 	return returnValue;
 }
-// Method Definition Index: 149263
+// Method Definition Index: 149287
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvidersResult_SWIG_OnCompletion_m048159AB970F755F9D71A4D20B7A5338D148A0BE (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, SWIG_CompletionDelegate_t74D6A7A9C1563D7F8E5E41689C4ABFB87BDB9554* ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3406,7 +3406,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvider
 
 	return returnValue;
 }
-// Method Definition Index: 149264
+// Method Definition Index: 149288
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_FetchProvidersResult_SWIG_FreeCompletionData_m1B7C09B88E7B7B16FFA5C720C4A1936F6ECC0161 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3428,7 +3428,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_FetchProvidersRes
 	#endif
 
 }
-// Method Definition Index: 149265
+// Method Definition Index: 149289
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvidersResult_GetResult_m55A6802B6786928A1E4C0BA9A73D19E2F09BA45B (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3454,7 +3454,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvider
 
 	return returnValue;
 }
-// Method Definition Index: 149266
+// Method Definition Index: 149290
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_FetchProvidersResult_mEB3A1B0084093E8A8A037FB1F24CEB2D5AC81F2C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3479,7 +3479,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_FetchProvi
 	#endif
 
 }
-// Method Definition Index: 149267
+// Method Definition Index: 149291
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_Credential_m71718D2549474AFC5DA452418375D0317747F4E8 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3502,7 +3502,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_Credentia
 
 	return returnValue;
 }
-// Method Definition Index: 149268
+// Method Definition Index: 149292
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_SWIG_OnCompletion_m2B19DC16E0E135C896B1FC22AA142C1013290F62 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, SWIG_CompletionDelegate_t9E662009E934925D7D7A44DE7174BE598500E257* ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3531,7 +3531,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149269
+// Method Definition Index: 149293
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_Credential_SWIG_FreeCompletionData_m17B6CD38384A8AFC1E0241755D5ABC0A1C0A3026 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3553,7 +3553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_Credential_SWIG_F
 	#endif
 
 }
-// Method Definition Index: 149270
+// Method Definition Index: 149294
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_GetResult_mC63CA8A18E5A33B37818E8231B4CAA0148F882B1 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3579,7 +3579,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_Ge
 
 	return returnValue;
 }
-// Method Definition Index: 149271
+// Method Definition Index: 149295
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_Credential_mEED0DFA6288DCCF59A150A683C98758CDD334C51 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3604,7 +3604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_Credential
 	#endif
 
 }
-// Method Definition Index: 149272
+// Method Definition Index: 149296
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_AuthResult_mEFBB10D0D05EA814925C8511E88C09446AD99FA2 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3627,7 +3627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Future_AuthResul
 
 	return returnValue;
 }
-// Method Definition Index: 149273
+// Method Definition Index: 149297
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_SWIG_OnCompletion_mD799BAA41D01A7E1E2E87FF0C1A49EFAB14D79A9 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, SWIG_CompletionDelegate_tDBA30C5A67741B1019B61FF9D48DD130CE6393DC* ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3656,7 +3656,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149274
+// Method Definition Index: 149298
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_AuthResult_SWIG_FreeCompletionData_m50525B9BEA037ED1D0D073950A07C8691B4FD08F (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3678,7 +3678,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_Future_AuthResult_SWIG_F
 	#endif
 
 }
-// Method Definition Index: 149275
+// Method Definition Index: 149299
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_GetResult_m3199FB842DE67ACD42076EDD1CEBFB292E0E14D5 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3704,7 +3704,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_Ge
 
 	return returnValue;
 }
-// Method Definition Index: 149276
+// Method Definition Index: 149300
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_AuthResult_mC32B8A5A8AA4281450E6EABBCE748BB136B74588 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3729,7 +3729,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Future_AuthResult
 	#endif
 
 }
-// Method Definition Index: 149277
+// Method Definition Index: 149301
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Credential_m610F752E3E54826B1E025F52F377000A9161560F (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3752,7 +3752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_Credential_m610F
 
 	return returnValue;
 }
-// Method Definition Index: 149278
+// Method Definition Index: 149302
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Credential_m9BBFD0335963236DDC1ACD3F4F34C50A395083E7 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3777,7 +3777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_Credential_m9BBFD
 	#endif
 
 }
-// Method Definition Index: 149279
+// Method Definition Index: 149303
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_Credential_IsValid_mAEEBFB81870EECE907E638F93D32D624BFA92F73 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3803,7 +3803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_Credential_IsValid_mAEEB
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149280
+// Method Definition Index: 149304
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_Credential_Provider_get_mDAF5FC55AA8B21C98462BF7E2457533E1AA39D92 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3835,7 +3835,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_Credential_Provider
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149281
+// Method Definition Index: 149305
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthCredential__SWIG_0_mDD9CE35D78F2E9757A8CAC619325FFA69ABAECC0 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3858,7 +3858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthCredent
 
 	return returnValue;
 }
-// Method Definition Index: 149282
+// Method Definition Index: 149306
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthCredential__SWIG_1_mFE3EE8B6E2F4901AF8C217CE9BCFB77DB80F9717 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3884,7 +3884,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthCredent
 
 	return returnValue;
 }
-// Method Definition Index: 149283
+// Method Definition Index: 149307
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthCredential_SmsCodeInternal_get_mAEBBF84646F109268C680F03945959BEA4E16414 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3916,7 +3916,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthCredential
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149284
+// Method Definition Index: 149308
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PhoneAuthCredential_mDA8C34DC7EC371C2C41B972FCC5658ED14A4AB2C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3941,7 +3941,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PhoneAuthCredenti
 	#endif
 
 }
-// Method Definition Index: 149285
+// Method Definition Index: 149309
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_EmailAuthProvider_GetCredential_mC8AA0629B38F1F42960F8E11D50586AF4AF54A17 (String_t* ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3976,7 +3976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_EmailAuthProvider_Ge
 
 	return returnValue;
 }
-// Method Definition Index: 149286
+// Method Definition Index: 149310
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_EmailAuthProvider_ProviderId_get_m6A0D568B734B049A50C9CB6ED1B21677A989DA99 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4005,7 +4005,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_EmailAuthProvider_P
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149287
+// Method Definition Index: 149311
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_EmailAuthProvider_mFE4B85DA3D8D0056C8C568CE7D901BED758A5513 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4030,7 +4030,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_EmailAuthProvider
 	#endif
 
 }
-// Method Definition Index: 149288
+// Method Definition Index: 149312
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FacebookAuthProvider_GetCredential_mAE4DA92C0C4599D635B7E5F9D87BCF2295115E67 (String_t* ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4059,7 +4059,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FacebookAuthProvider
 
 	return returnValue;
 }
-// Method Definition Index: 149289
+// Method Definition Index: 149313
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FacebookAuthProvider_ProviderId_get_m43593ECD251DDEC303945C4473118EC3A8A00FD7 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4088,7 +4088,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FacebookAuthProvide
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149290
+// Method Definition Index: 149314
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FacebookAuthProvider_m8C3E2BCD7782E012189B8631ABA484359760BEC7 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4113,7 +4113,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FacebookAuthProvi
 	#endif
 
 }
-// Method Definition Index: 149291
+// Method Definition Index: 149315
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GameCenterAuthProvider_GetCredential_m96E5BF5E1F8DB4800F3B6F28B82A77149C5901DF (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4136,7 +4136,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GameCenterAuthProvid
 
 	return returnValue;
 }
-// Method Definition Index: 149292
+// Method Definition Index: 149316
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_GameCenterAuthProvider_IsPlayerAuthenticated_mC02993367B38C5571BF493E03CE43E85AE8F3052 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4159,7 +4159,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_GameCenterAuthProvider_I
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149293
+// Method Definition Index: 149317
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GameCenterAuthProvider_ProviderId_get_m8AB5E19BBCA539E1452B974677687CADDDBF12AC (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4188,7 +4188,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GameCenterAuthProvi
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149294
+// Method Definition Index: 149318
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GameCenterAuthProvider_m357F922F282EBFE7631D6F5961AA019BF85C630F (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4213,7 +4213,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GameCenterAuthPro
 	#endif
 
 }
-// Method Definition Index: 149295
+// Method Definition Index: 149319
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GitHubAuthProvider_GetCredential_mC8AD3C0C31E47A8C5955138E9092917FD20547EC (String_t* ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4242,7 +4242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GitHubAuthProvider_G
 
 	return returnValue;
 }
-// Method Definition Index: 149296
+// Method Definition Index: 149320
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GitHubAuthProvider_ProviderId_get_mEE28BBDF64FCF26FD33449A539A83368C7DA34C5 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4271,7 +4271,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GitHubAuthProvider_
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149297
+// Method Definition Index: 149321
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GitHubAuthProvider_mCE6C30FC0F3C295B76B6A21E8DCAC3A326C71A6B (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4296,7 +4296,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GitHubAuthProvide
 	#endif
 
 }
-// Method Definition Index: 149298
+// Method Definition Index: 149322
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GoogleAuthProvider_GetCredential_m98D471DEBF8A1C50200D407F52FF1C73AA74CA95 (String_t* ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4331,7 +4331,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_GoogleAuthProvider_G
 
 	return returnValue;
 }
-// Method Definition Index: 149299
+// Method Definition Index: 149323
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GoogleAuthProvider_ProviderId_get_mA422F1920FD6D0F31226B987968FB97823E59A43 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4360,7 +4360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_GoogleAuthProvider_
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149300
+// Method Definition Index: 149324
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GoogleAuthProvider_mCC7A644A7AFBECA0D791A054682971AB1570C12D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4385,7 +4385,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_GoogleAuthProvide
 	#endif
 
 }
-// Method Definition Index: 149301
+// Method Definition Index: 149325
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_MicrosoftAuthProvider_ProviderId_get_m63FD8380A3E0EBEFE8585E7B5710DDE1371AC9FB (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4414,7 +4414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_MicrosoftAuthProvid
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149302
+// Method Definition Index: 149326
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_MicrosoftAuthProvider_m32C2337EE380D971488314D0AD5B9569A707209A (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4437,7 +4437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_MicrosoftAuthPro
 
 	return returnValue;
 }
-// Method Definition Index: 149303
+// Method Definition Index: 149327
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_MicrosoftAuthProvider_mDC7D173D25F8265E2724ADF7D77942EACC7818B8 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4462,7 +4462,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_MicrosoftAuthProv
 	#endif
 
 }
-// Method Definition Index: 149304
+// Method Definition Index: 149328
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_OAuthProvider_GetCredential__SWIG_0_m9B75B080347BF359E309F935CA73EE4B57A14C69 (String_t* ___0_jarg1, String_t* ___1_jarg2, String_t* ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4503,7 +4503,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_OAuthProvider_GetCre
 
 	return returnValue;
 }
-// Method Definition Index: 149305
+// Method Definition Index: 149329
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_OAuthProvider_GetCredential__SWIG_1_m18AC8A6D36AD9B910FF73EDE81E32320E29D8C28 (String_t* ___0_jarg1, String_t* ___1_jarg2, String_t* ___2_jarg3, String_t* ___3_jarg4, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4550,7 +4550,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_OAuthProvider_GetCre
 
 	return returnValue;
 }
-// Method Definition Index: 149306
+// Method Definition Index: 149330
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_OAuthProvider_m28FFD4E834DA15CD5E33F4E275E1868946B8112E (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4575,7 +4575,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_OAuthProvider_m28
 	#endif
 
 }
-// Method Definition Index: 149307
+// Method Definition Index: 149331
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInternal_GetCredential_mFCACC5EF4DEE6668200113E1025C437D1E1746CA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, String_t* ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4613,7 +4613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInt
 
 	return returnValue;
 }
-// Method Definition Index: 149308
+// Method Definition Index: 149332
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInternal_GetInstance_m632B14F423442FF16C572D8FC1ED26DBC19D48F6 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4639,7 +4639,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInt
 
 	return returnValue;
 }
-// Method Definition Index: 149309
+// Method Definition Index: 149333
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthProviderInternal_ProviderId_get_m268CDD3E72BFB5E6B3D2F383EED6211FBCF9FCB8 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4668,7 +4668,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthProviderIn
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149310
+// Method Definition Index: 149334
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInternal_VerifyPhoneNumberInternal_mEBA260DC549180083B49126F9739C95BEB4148BD (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, int32_t ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4697,7 +4697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthProviderInt
 
 	return returnValue;
 }
-// Method Definition Index: 149311
+// Method Definition Index: 149335
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthProviderInternal_DestroyListenerImplInternal_mD925379203712DFED35B212AE3BB08BB4FFAED56 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, intptr_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4722,7 +4722,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthProviderInterna
 	#endif
 
 }
-// Method Definition Index: 149312
+// Method Definition Index: 149336
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthProviderInternal_SetCallbacks_m303A49078B2A09E6D63C22A5445465C74DDD85D4 (VerificationCompletedDelegate_tF55B9109A15CAB9EF2CAECDEDA082D6FA15C10C4* ___0_jarg1, VerificationFailedDelegate_t0774384FF44CDE5C89A4A85ED4C2CD6045F5CFD5* ___1_jarg2, CodeSentDelegate_t5FE776456B1600539EA3FCADF4F155821F843735* ___2_jarg3, TimeOutDelegate_t96FEFFA515EA85CB7B5C41E3413B7B8C168E2427* ___3_jarg4, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4756,7 +4756,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthProviderInterna
 	#endif
 
 }
-// Method Definition Index: 149313
+// Method Definition Index: 149337
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_ForceResendingToken_m18E6CE43B5A109C55871748835E56723A8D8D435 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4781,7 +4781,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_ForceResendingTok
 	#endif
 
 }
-// Method Definition Index: 149314
+// Method Definition Index: 149338
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthOptions_mC7D7A7B1D61AD4D637CB90539E621052EF08322A (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4804,7 +4804,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_PhoneAuthOptions
 
 	return returnValue;
 }
-// Method Definition Index: 149315
+// Method Definition Index: 149339
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_ForceResendingToken_set_mD983DDFC353E94D1585F9F40DC8E166B8F8F6B17 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4832,7 +4832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_ForceRe
 	#endif
 
 }
-// Method Definition Index: 149316
+// Method Definition Index: 149340
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthOptions_ForceResendingToken_get_mB74FE5ABD0B5BAB4A772BB5E500D56F6B40F10DA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4858,7 +4858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthOptions_For
 
 	return returnValue;
 }
-// Method Definition Index: 149317
+// Method Definition Index: 149341
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_PhoneNumber_set_m9320717016791B27AB93E12D910BB2D11484A7C3 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4889,7 +4889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_PhoneNu
 	____1_jarg2_marshaled = NULL;
 
 }
-// Method Definition Index: 149318
+// Method Definition Index: 149342
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthOptions_PhoneNumber_get_mC4089BD7D023A8CF8F139ABE728BDE77D9DDD00A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4921,7 +4921,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PhoneAuthOptions_Ph
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149319
+// Method Definition Index: 149343
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_TimeoutInMilliseconds_set_mADCCF985BCC073834737FBCE30A0CB5CE633F7E0 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, uint32_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4946,7 +4946,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_PhoneAuthOptions_Timeout
 	#endif
 
 }
-// Method Definition Index: 149320
+// Method Definition Index: 149344
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_PhoneAuthOptions_TimeoutInMilliseconds_get_m83203396700EE6D7F1FDF9CB577FBD4757A6009A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4972,7 +4972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t AuthUtilPINVOKE_PhoneAuthOptions_Tim
 
 	return returnValue;
 }
-// Method Definition Index: 149321
+// Method Definition Index: 149345
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PhoneAuthOptions_mBF0E20F7CB3A11766CEEB58A2BC987DBF6EA3E8D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4997,7 +4997,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PhoneAuthOptions_
 	#endif
 
 }
-// Method Definition Index: 149322
+// Method Definition Index: 149346
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PlayGamesAuthProvider_GetCredential_mC9874DABC744BC22B5A2E5F1CE15CBCDC845E7D9 (String_t* ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5026,7 +5026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PlayGamesAuthProvide
 
 	return returnValue;
 }
-// Method Definition Index: 149323
+// Method Definition Index: 149347
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PlayGamesAuthProvider_ProviderId_get_mC3D8AEAB202EE7BD425512DE419358E48502F393 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5055,7 +5055,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_PlayGamesAuthProvid
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149324
+// Method Definition Index: 149348
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PlayGamesAuthProvider_m3A6F8972629AF1BA64546D157020835A17B4280B (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5080,7 +5080,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_PlayGamesAuthProv
 	#endif
 
 }
-// Method Definition Index: 149325
+// Method Definition Index: 149349
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_TwitterAuthProvider_GetCredential_mE51C34A9E3FE46FCD3DCE5C50A7746FF3BBB4C37 (String_t* ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5115,7 +5115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_TwitterAuthProvider_
 
 	return returnValue;
 }
-// Method Definition Index: 149326
+// Method Definition Index: 149350
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_TwitterAuthProvider_ProviderId_get_m26B817B21F3E813CA3DB9D593021683E879D3A57 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5144,7 +5144,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_TwitterAuthProvider
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149327
+// Method Definition Index: 149351
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_TwitterAuthProvider_mF77B55EE6CB687992B6DDFCB95274938DF98C464 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5169,7 +5169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_TwitterAuthProvid
 	#endif
 
 }
-// Method Definition Index: 149328
+// Method Definition Index: 149352
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedProviderData_ProviderId_set_mDC3A54ED17DE535A247F61F60483E5FD2376970D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5200,7 +5200,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedProviderData_Pr
 	____1_jarg2_marshaled = NULL;
 
 }
-// Method Definition Index: 149329
+// Method Definition Index: 149353
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FederatedProviderData_ProviderId_get_m8717097C0A37497BF245478FDEE2EC709934F896 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5232,7 +5232,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FederatedProviderDa
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149330
+// Method Definition Index: 149354
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedProviderData_m8EF4D964B1AD254F7AC37BF9CD15BD76219048E3 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5255,7 +5255,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedProvide
 
 	return returnValue;
 }
-// Method Definition Index: 149331
+// Method Definition Index: 149355
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedProviderData_m5D0DA853EC3C8FDB0D8F3F3DAAFC875E47040CF5 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5280,7 +5280,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedProvider
 	#endif
 
 }
-// Method Definition Index: 149332
+// Method Definition Index: 149356
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthProviderData__SWIG_0_m51C964C60949D2C7DFA7D8D129514F0B2F83BCFA (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5303,7 +5303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthPr
 
 	return returnValue;
 }
-// Method Definition Index: 149333
+// Method Definition Index: 149357
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthProviderData__SWIG_1_m75C7810339A26419CD9B83EFA06C2EB8B1CCA47A (String_t* ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5332,7 +5332,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthPr
 
 	return returnValue;
 }
-// Method Definition Index: 149334
+// Method Definition Index: 149358
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProviderData_Scopes_set_m7BF164A9BF36A0995878EA3BF72D2BDDF23406BB (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5360,7 +5360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProviderDa
 	#endif
 
 }
-// Method Definition Index: 149335
+// Method Definition Index: 149359
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProviderData_Scopes_get_m74A2CA5541ABC2F779142E034A726F6C97D9BBFA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5386,7 +5386,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProvid
 
 	return returnValue;
 }
-// Method Definition Index: 149336
+// Method Definition Index: 149360
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProviderData_CustomParameters_set_m8C921FFB2E88B87900FD05A661D0150692C6A0AF (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5414,7 +5414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProviderDa
 	#endif
 
 }
-// Method Definition Index: 149337
+// Method Definition Index: 149361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProviderData_CustomParameters_get_m0F481B6D48C8AF0109D274CBC483C6A789179CF8 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5440,7 +5440,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProvid
 
 	return returnValue;
 }
-// Method Definition Index: 149338
+// Method Definition Index: 149362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedOAuthProviderData_mB7B58576EECF463CF92FC312EC8B65BDCF03E3AD (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5465,7 +5465,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedOAuthPro
 	#endif
 
 }
-// Method Definition Index: 149339
+// Method Definition Index: 149363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserInfoInterface_m8D0C46DE47E822CA27457B7AFA84FA550F6EE486 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5490,7 +5490,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserInfoInterface
 	#endif
 
 }
-// Method Definition Index: 149340
+// Method Definition Index: 149364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_UserId_get_m3428D7A0C57C6481EF6FB0491DA97F045CEE7C75 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5522,7 +5522,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_U
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149341
+// Method Definition Index: 149365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_Email_get_mD6EBAEDF0B1F5DC104D5781431ABF89C648A9219 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5554,7 +5554,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_E
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149342
+// Method Definition Index: 149366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_DisplayName_get_m41D43B4B54197A1A095B371CD9B9F19F873A689E (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5586,7 +5586,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_D
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149343
+// Method Definition Index: 149367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_PhotoUrlInternal_get_mB065ADB3EA4D4B1EFC997C0C1BFB5F6096A49407 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5618,7 +5618,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_P
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149344
+// Method Definition Index: 149368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_ProviderId_get_m2F29993DD1C4B6710D87D72F9D529CA903CE20E8 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5650,7 +5650,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_P
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149345
+// Method Definition Index: 149369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_PhoneNumberInternal_get_mE75FF6F7308B5F885BA3F14B33F1C354293FD9D9 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5682,7 +5682,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserInfoInterface_P
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149346
+// Method Definition Index: 149370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterface_m58072F4E803A28136CF5970C7AC5ED4EC7D7CF0E (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5705,7 +5705,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserInfoInterfac
 
 	return returnValue;
 }
-// Method Definition Index: 149347
+// Method Definition Index: 149371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_AdditionalUserInfo_ProviderId_get_m5754CD4AD5EDE2F67164515FE0ECDA5817C95B8F (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5737,7 +5737,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_AdditionalUserInfo_
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149348
+// Method Definition Index: 149372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_AdditionalUserInfo_UserName_get_m77E8E2832E2B9E25E45F2AEF4B8ACB71E0D9DFBB (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5769,7 +5769,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_AdditionalUserInfo_
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149349
+// Method Definition Index: 149373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AdditionalUserInfo_ProfileInternal_get_mF79629F43218E38CAD5C57EA0CACC4B44114C621 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5795,7 +5795,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AdditionalUserInfo_P
 
 	return returnValue;
 }
-// Method Definition Index: 149350
+// Method Definition Index: 149374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_AdditionalUserInfo_UpdatedCredential_set_m55702AF91F9496048B894114EE31C95F67136D2F (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5823,7 +5823,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_AdditionalUserInfo_Updat
 	#endif
 
 }
-// Method Definition Index: 149351
+// Method Definition Index: 149375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AdditionalUserInfo_UpdatedCredential_get_m8A28A2D9D35171B7F19525368097FA9D179CC90B (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5849,7 +5849,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AdditionalUserInfo_U
 
 	return returnValue;
 }
-// Method Definition Index: 149352
+// Method Definition Index: 149376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_AdditionalUserInfo_mE46DFA92DEDE9C180361CEEB436DD874DC445098 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5874,7 +5874,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_AdditionalUserInf
 	#endif
 
 }
-// Method Definition Index: 149353
+// Method Definition Index: 149377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserMetadata_m09503E7869131784EAA6FB64E5BA5F2AC2294091 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5897,7 +5897,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserMetadata_m09
 
 	return returnValue;
 }
-// Method Definition Index: 149354
+// Method Definition Index: 149378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t AuthUtilPINVOKE_UserMetadata_LastSignInTimestamp_get_m51EAC297BC64AA505A4C817B7AADD0FE994A577F (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5923,7 +5923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t AuthUtilPINVOKE_UserMetadata_LastSig
 
 	return returnValue;
 }
-// Method Definition Index: 149355
+// Method Definition Index: 149379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t AuthUtilPINVOKE_UserMetadata_CreationTimestamp_get_mBF8C0AE2ECD49CA5B75A69FB46FBF0F4F83DACCF (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5949,7 +5949,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t AuthUtilPINVOKE_UserMetadata_Creatio
 
 	return returnValue;
 }
-// Method Definition Index: 149356
+// Method Definition Index: 149380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserMetadata_m7EB6C81132D23ED631EDC74F612AA9FA3C2F2858 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5974,7 +5974,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserMetadata_m7EB
 	#endif
 
 }
-// Method Definition Index: 149357
+// Method Definition Index: 149381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FirebaseUserInternal__SWIG_0_mBFBB9AB4BD3A6E67B0E4910D28E5642A9655FCC3 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5997,7 +5997,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FirebaseUserInte
 
 	return returnValue;
 }
-// Method Definition Index: 149358
+// Method Definition Index: 149382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FirebaseUserInternal__SWIG_1_mCA2D531E3E47C5D271AE47C16C846B4B36531608 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6023,7 +6023,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FirebaseUserInte
 
 	return returnValue;
 }
-// Method Definition Index: 149359
+// Method Definition Index: 149383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FirebaseUserInternal_m6C6D39E037FE08A390A92EA395502B8E0C94E249 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6048,7 +6048,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FirebaseUserInter
 	#endif
 
 }
-// Method Definition Index: 149360
+// Method Definition Index: 149384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsValid_m9E5A9B7C6FED8F080C9096832A5051FEBB85BC85 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6074,7 +6074,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsV
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149361
+// Method Definition Index: 149385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_Token_m6930A6A38F1858CA6C4BC3B553BF4DFC04FE3ABA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, bool ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6100,7 +6100,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149362
+// Method Definition Index: 149386
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_UpdatePassword_mB7028A77866DB5FF92816F465209B07AD12F0F49 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6132,7 +6132,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149363
+// Method Definition Index: 149387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_Reauthenticate_mA9F51F3CE4D66DEADB9C990F2CA8647BE782A9E3 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6161,7 +6161,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149364
+// Method Definition Index: 149388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_ReauthenticateAndRetrieveDataInternalAsync_mFE14990E4AF06C9EFE578DCCD3D9FFF9A83E4A75 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6190,7 +6190,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149365
+// Method Definition Index: 149389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_ReauthenticateWithProviderInternalAsync_m858F3AAF0C7674FB36F74BA88DEB2D99219DA978 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6219,7 +6219,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149366
+// Method Definition Index: 149390
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_SendEmailVerification_m395F0CCBCC7C3E6D9485666D452645DBD6915023 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6245,7 +6245,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149367
+// Method Definition Index: 149391
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_SendEmailVerificationBeforeUpdatingEmail_mD9DED7429271B815EA38DC75E702313076F6576A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6277,7 +6277,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149368
+// Method Definition Index: 149392
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_UpdateUserProfile_mA16F9D429D771F945FE0DFEE8D5E8A24D2DA503A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6306,7 +6306,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149369
+// Method Definition Index: 149393
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_LinkWithCredentialInternalAsync_m5BCE372465FB759A80158CD36DE6180F6E9ED89C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6335,7 +6335,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149370
+// Method Definition Index: 149394
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_LinkWithProviderInternalAsync_m04282B1447FE075BD53EFA498531CBD11F86FEFA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6364,7 +6364,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149371
+// Method Definition Index: 149395
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_UnlinkInternalAsync_m65209A0D334F67B99E6BAFF62F6E380CA7A55121 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6396,7 +6396,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149372
+// Method Definition Index: 149396
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_UpdatePhoneNumberCredentialInternalAsync_m85EF4BD088D5B1372BCD1993C1B0C9A682DA7001 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6425,7 +6425,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149373
+// Method Definition Index: 149397
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_Reload_m401074EE0530E1F3EFBB69AD384B0001ED734277 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6451,7 +6451,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149374
+// Method Definition Index: 149398
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_Delete_m1D098121D5C271A1D91EE984E90D1C9CDAF1C3FE (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6477,7 +6477,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149375
+// Method Definition Index: 149399
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_EqualToInternal_mE54AA66F967964297E19B0A75D6E7A3FB568B2E1 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6506,7 +6506,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_Equ
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149376
+// Method Definition Index: 149400
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_DisplayName_get_m3C93A8719A628C7A80EE9991F39F425D68948736 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6538,7 +6538,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149377
+// Method Definition Index: 149401
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_Email_get_mE5B1AEB06B6F08BE8CC18DF9F55A5CED3C333084 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6570,7 +6570,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149378
+// Method Definition Index: 149402
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsAnonymous_get_mCFCB3DD28DE2B87F99473B6230BA858C88176F9A (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6596,7 +6596,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsA
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149379
+// Method Definition Index: 149403
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsEmailVerified_get_mA19A238E389F98679CB3FD2534060D15E3695D12 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6622,7 +6622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AuthUtilPINVOKE_FirebaseUserInternal_IsE
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 149380
+// Method Definition Index: 149404
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_Metadata_get_m77CDFC1E6CFDCBA76D795A77459A97D7AF60747B (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6648,7 +6648,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149381
+// Method Definition Index: 149405
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_PhoneNumber_get_mE851EA6780C848F5BDD2E34989F18547BB1BA152 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6680,7 +6680,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149382
+// Method Definition Index: 149406
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_PhotoUrlInternal_get_m3DAFE0F28AC8B8FA8852ACC3230B9F0512900C2D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6712,7 +6712,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149383
+// Method Definition Index: 149407
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_ProviderData_get_m5E39E792A1DD53CEED0AF3EF6176387DEB92DE36 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6738,7 +6738,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149384
+// Method Definition Index: 149408
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_ProviderId_get_m52F978C155E3B24701DF5569B3D31675CB6789B3 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6770,7 +6770,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149385
+// Method Definition Index: 149409
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInternal_UserId_get_mF3F02B5DA3C981AB817960FA8773F4CECDB184CA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6802,7 +6802,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseUserInterna
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149386
+// Method Definition Index: 149410
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserProfile_mE12D222479F06C9BF8BD973F134347E9C9B59C36 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6825,7 +6825,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_UserProfile_mE12
 
 	return returnValue;
 }
-// Method Definition Index: 149387
+// Method Definition Index: 149411
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserProfile_DisplayName_set_m29AC9CB86AFEB2CEB1D5C7FC556892B08330C111 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6856,7 +6856,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserProfile_DisplayName_
 	____1_jarg2_marshaled = NULL;
 
 }
-// Method Definition Index: 149388
+// Method Definition Index: 149412
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserProfile_DisplayName_get_m00E28BD0E8B0F4E9F720F21E85540C50E7E1C2A0 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6888,7 +6888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserProfile_Display
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149389
+// Method Definition Index: 149413
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserProfile_PhotoUrlInternal_set_mDA6B5CA5E997F28250F7C0F845EBC2FC8058B24C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6919,7 +6919,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_UserProfile_PhotoUrlInte
 	____1_jarg2_marshaled = NULL;
 
 }
-// Method Definition Index: 149390
+// Method Definition Index: 149414
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserProfile_PhotoUrlInternal_get_m94C675EF9323FEB5407F3654A544AD330A497E09 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6951,7 +6951,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_UserProfile_PhotoUr
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149391
+// Method Definition Index: 149415
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserProfile_mFF16260FA3516853A2688374ED38CC8AAC04F5A7 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6976,7 +6976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_UserProfile_mFF16
 	#endif
 
 }
-// Method Definition Index: 149392
+// Method Definition Index: 149416
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_AdditionalUserInfoInternal_get_m3AEEBEE862C2B5890DD71A991EB3929C9E4F8FC5 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7002,7 +7002,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_Additiona
 
 	return returnValue;
 }
-// Method Definition Index: 149393
+// Method Definition Index: 149417
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_CredentialInternal_get_m95FD51DEB8AF9B949CA553301AD7165598806CA6 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7028,7 +7028,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_Credentia
 
 	return returnValue;
 }
-// Method Definition Index: 149394
+// Method Definition Index: 149418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_AuthResult_UserInternal_set_mCF940FA517E5FF756BBF1C1A7EC3619B4AD8B31C (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7056,7 +7056,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_AuthResult_UserInternal_
 	#endif
 
 }
-// Method Definition Index: 149395
+// Method Definition Index: 149419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_UserInternal_get_m19CE0FB18756675C5595B8A8FDBE7CA7836E3C24 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7082,7 +7082,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_AuthResult_UserInter
 
 	return returnValue;
 }
-// Method Definition Index: 149396
+// Method Definition Index: 149420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_AuthResult_mFCA43D91B6DB6059BE7AE049FA607B3805A1BC31 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7105,7 +7105,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_AuthResult_mFCA4
 
 	return returnValue;
 }
-// Method Definition Index: 149397
+// Method Definition Index: 149421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_AuthResult_m13BE525C4EA52DAD5AA52F05EC000131F2B1BCB8 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7130,7 +7130,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_AuthResult_m13BE5
 	#endif
 
 }
-// Method Definition Index: 149398
+// Method Definition Index: 149422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FirebaseAuth_m83B6F654B1BAAC524E12D91BB0A77794CE7AD9E5 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7155,7 +7155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FirebaseAuth_m83B
 	#endif
 
 }
-// Method Definition Index: 149399
+// Method Definition Index: 149423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseAuth_LanguageCodeInternal_m3406852A46AB1119DFABF6908824961AC4B594E0 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7187,7 +7187,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AuthUtilPINVOKE_FirebaseAuth_Langua
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149400
+// Method Definition Index: 149424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_SetLanguageCodeInternal_m5845C340F155D2A2A2D5AA8AD2CEF5F384C3CFFF (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7218,7 +7218,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_SetLanguage
 	____1_jarg2_marshaled = NULL;
 
 }
-// Method Definition Index: 149401
+// Method Definition Index: 149425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_UseAppLanguage_mA3EF9E844235D3E1F479851FD07306E9B844D6EE (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7243,7 +7243,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_UseAppLangu
 	#endif
 
 }
-// Method Definition Index: 149402
+// Method Definition Index: 149426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_FetchProvidersForEmailInternal_mC9D56278ABF562FEA09C01108615DD555B5CF8DD (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7275,7 +7275,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_FetchPr
 
 	return returnValue;
 }
-// Method Definition Index: 149403
+// Method Definition Index: 149427
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInWithCustomTokenInternalAsync_m89CAA64F09944706A69244E32CA4EA5FD6BCDE46 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7307,7 +7307,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInW
 
 	return returnValue;
 }
-// Method Definition Index: 149404
+// Method Definition Index: 149428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInWithCredentialInternalAsync_m1EE3877473E6259BBC9B380712AC813CFF7313FA (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7336,7 +7336,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInW
 
 	return returnValue;
 }
-// Method Definition Index: 149405
+// Method Definition Index: 149429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInWithProviderInternalAsync_m23DE1EA674E50994612BAD5B479AAD480EACBCA2 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7365,7 +7365,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInW
 
 	return returnValue;
 }
-// Method Definition Index: 149406
+// Method Definition Index: 149430
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInAndRetrieveDataWithCredentialInternalAsync_m00D288429D890B1DCA7A0ACC27600AE62EB8E637 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7394,7 +7394,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInA
 
 	return returnValue;
 }
-// Method Definition Index: 149407
+// Method Definition Index: 149431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInAnonymouslyInternalAsync_mC6D0C4D586A4F7E722391757843FFE2B7DFCB061 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7420,7 +7420,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInA
 
 	return returnValue;
 }
-// Method Definition Index: 149408
+// Method Definition Index: 149432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInWithEmailAndPasswordInternalAsync_m4A7CF767C10E03689156652E5F11843CB9FB53D4 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, String_t* ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7458,7 +7458,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SignInW
 
 	return returnValue;
 }
-// Method Definition Index: 149409
+// Method Definition Index: 149433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_CreateUserWithEmailAndPasswordInternalAsync_mB1AD0302F86FF2CD9457FEA700008D37997DCE91 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, String_t* ___2_jarg3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7496,7 +7496,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_CreateU
 
 	return returnValue;
 }
-// Method Definition Index: 149410
+// Method Definition Index: 149434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_SignOut_m2A10F7589BABECFD819E06E4DD8BADD83D8512E0 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7521,7 +7521,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_SignOut_m2A
 	#endif
 
 }
-// Method Definition Index: 149411
+// Method Definition Index: 149435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SendPasswordResetEmail_m6DE91F0761CCED9158442479E4A7229FF5DB80EB (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, String_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7553,7 +7553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_SendPas
 
 	return returnValue;
 }
-// Method Definition Index: 149412
+// Method Definition Index: 149436
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_GetAuthInternal_m3E83970E2674AEC5DDD01FD9818845156FE134AB (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, int32_t* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7579,7 +7579,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_GetAuth
 
 	return returnValue;
 }
-// Method Definition Index: 149413
+// Method Definition Index: 149437
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_LogHeartbeatInternal_m66F0D6932BA24BBFF5FB02522D1F901C1AA87D1D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7604,7 +7604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_LogHeartbea
 	#endif
 
 }
-// Method Definition Index: 149414
+// Method Definition Index: 149438
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_ReleaseReferenceInternal_mFED7F33D46743757B5DE19BF3D91C701F5671876 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7629,7 +7629,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FirebaseAuth_ReleaseRefe
 	#endif
 
 }
-// Method Definition Index: 149415
+// Method Definition Index: 149439
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_CurrentUserInternal_get_mB1ED6160407E8C4982746296099A9B1DE21D5DAC (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7655,7 +7655,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseAuth_Current
 
 	return returnValue;
 }
-// Method Definition Index: 149416
+// Method Definition Index: 149440
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FetchProvidersResult_Providers_get_m15FF5FFD13E0DE6DD326639C5C6EA2F3AAAAA086 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7681,7 +7681,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FetchProvidersResult
 
 	return returnValue;
 }
-// Method Definition Index: 149417
+// Method Definition Index: 149441
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FetchProvidersResult_m0BF6A06C828DF036972D9ACB428F85F805E7CDF3 (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7704,7 +7704,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FetchProvidersRe
 
 	return returnValue;
 }
-// Method Definition Index: 149418
+// Method Definition Index: 149442
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FetchProvidersResult_m93D46C24A5030BA1413D52D1A26EC05B850E8E05 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7729,7 +7729,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FetchProvidersRes
 	#endif
 
 }
-// Method Definition Index: 149419
+// Method Definition Index: 149443
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedAuthProvider_mFFAF5AC262CB697E85EF526569F935E814C06384 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7754,7 +7754,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedAuthProv
 	#endif
 
 }
-// Method Definition Index: 149420
+// Method Definition Index: 149444
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthProvider__SWIG_0_m4840076A9EB400503DEBBDB9D066B2830B61104B (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7777,7 +7777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthPr
 
 	return returnValue;
 }
-// Method Definition Index: 149421
+// Method Definition Index: 149445
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthProvider__SWIG_1_m2A2B6CF92FD4C6FB4DDA7F82F58EB372375F3888 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7803,7 +7803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_new_FederatedOAuthPr
 
 	return returnValue;
 }
-// Method Definition Index: 149422
+// Method Definition Index: 149446
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedOAuthProvider_mF7B6161AD3BA614A9BDEF30D90DA9ECF48657B50 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7828,7 +7828,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_delete_FederatedOAuthPro
 	#endif
 
 }
-// Method Definition Index: 149423
+// Method Definition Index: 149447
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProvider_SetProviderData_mC8BC038C8464C69A62E8AF08F6ED4720EF34881D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7856,7 +7856,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_FederatedOAuthProvider_S
 	#endif
 
 }
-// Method Definition Index: 149424
+// Method Definition Index: 149448
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_CreateAuthStateListener_m0A51BCF7288AC201F2774CB5506D5F5DEFFD2682 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7885,7 +7885,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_CreateAuthStateListe
 
 	return returnValue;
 }
-// Method Definition Index: 149425
+// Method Definition Index: 149449
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_DestroyAuthStateListener_m79297782C9683325F91FB03C0577B3B02664EC31 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, intptr_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7910,7 +7910,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_DestroyAuthStateListener
 	#endif
 
 }
-// Method Definition Index: 149426
+// Method Definition Index: 149450
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_CreateIdTokenListener_m38F412B973371F0CFF8D891D71C97CE99022FDC5 (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7939,7 +7939,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_CreateIdTokenListene
 
 	return returnValue;
 }
-// Method Definition Index: 149427
+// Method Definition Index: 149451
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_DestroyIdTokenListener_mACBDFF676A4BC45B7951C31647CFBDCED08D1B4D (HandleRef_t4B05E32B68797F702257D4E838B85A976313F08F ___0_jarg1, intptr_t ___1_jarg2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7964,7 +7964,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE_DestroyIdTokenListener_m
 	#endif
 
 }
-// Method Definition Index: 149428
+// Method Definition Index: 149452
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_SWIGUpcast_m8351BB3FFF59BBB0E79A615DE27479EE2D490B27 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7987,7 +7987,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_SWIGUpca
 
 	return returnValue;
 }
-// Method Definition Index: 149429
+// Method Definition Index: 149453
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_SWIGUpcast_mF415E84A8F57AEE800312B9F5764E5FCD05051B5 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8010,7 +8010,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_User_Value_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149430
+// Method Definition Index: 149454
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvidersResult_SWIGUpcast_m9D3A7E3E2F8CD2A9C5C5276DEC316F8A8EEF79A1 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8033,7 +8033,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_FetchProvider
 
 	return returnValue;
 }
-// Method Definition Index: 149431
+// Method Definition Index: 149455
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_SWIGUpcast_m4C455D1D06160DC07B3ED7290BDAB8E7B696CE48 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8056,7 +8056,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_Credential_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149432
+// Method Definition Index: 149456
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_SWIGUpcast_m146C300378B5CA71E97B6D2C260F4269996991B3 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8079,7 +8079,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_Future_AuthResult_SW
 
 	return returnValue;
 }
-// Method Definition Index: 149433
+// Method Definition Index: 149457
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthCredential_SWIGUpcast_m028339E41A14922D865CFBAFDCADC43905340DAD (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8102,7 +8102,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_PhoneAuthCredential_
 
 	return returnValue;
 }
-// Method Definition Index: 149434
+// Method Definition Index: 149458
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProviderData_SWIGUpcast_m0CA5EEDF5F8D803F9D14BC066B9577B552BBEB88 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8125,7 +8125,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProvid
 
 	return returnValue;
 }
-// Method Definition Index: 149435
+// Method Definition Index: 149459
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal_SWIGUpcast_m62B657C34E2DD35E3717CF8E6CD231EF471ED2F1 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8148,7 +8148,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FirebaseUserInternal
 
 	return returnValue;
 }
-// Method Definition Index: 149436
+// Method Definition Index: 149460
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProvider_SWIGUpcast_m0300FCC0CB5547BF55ABD3B9BE146CB2CCA3D1A9 (intptr_t ___0_jarg1, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8171,7 +8171,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtilPINVOKE_FederatedOAuthProvid
 
 	return returnValue;
 }
-// Method Definition Index: 149437
+// Method Definition Index: 149461
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtilPINVOKE__ctor_m50AA67112642AE22D29BA511BDF64840DF69E31D (AuthUtilPINVOKE_t1F2E0415FF5D0F19282D5F618361E28FC401F7A6* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8337,7 +8337,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_SWIGExceptionHelper_SetPendin
 	SWIGExceptionHelper_SetPendingArgumentOutOfRangeException_m7111A0768AC3707D3151755C7456E30482F974DF(____0_message_unmarshaled, ____1_paramName_unmarshaled, NULL);
 
 }
-// Method Definition Index: 149438
+// Method Definition Index: 149462
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptionCallbacks_AuthUtil_m5A0AC467CB894DA14A8D5FC72E1C4C0923C12E61 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___0_applicationDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___1_arithmeticDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___2_divideByZeroDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___3_indexOutOfRangeDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___4_invalidCastDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___5_invalidOperationDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___6_ioDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___7_nullReferenceDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___8_outOfMemoryDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___9_overflowDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___10_systemExceptionDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8392,7 +8392,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptio
 	#endif
 
 }
-// Method Definition Index: 149439
+// Method Definition Index: 149463
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptionCallbacksArgument_AuthUtil_mAD9B1407D55B00A38D10D3CE2B615942F9BDDF0B (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___0_argumentDelegate, ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___1_argumentNullDelegate, ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___2_argumentOutOfRangeDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8423,7 +8423,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptio
 	#endif
 
 }
-// Method Definition Index: 149440
+// Method Definition Index: 149464
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingApplicationException_mD3D5DF4565F2D8B785CECDDE06C94EB1AF3B7ACD (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8446,7 +8446,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingApplicatio
 		return;
 	}
 }
-// Method Definition Index: 149441
+// Method Definition Index: 149465
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArithmeticException_m6D48FAE1D40F739EBE2EB7B7A2D35A4C38E273D2 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8469,7 +8469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArithmetic
 		return;
 	}
 }
-// Method Definition Index: 149442
+// Method Definition Index: 149466
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingDivideByZeroException_m5E4DFAD8B4B70C66EA34EC78307E69F6B0D8F7E7 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8492,7 +8492,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingDivideByZe
 		return;
 	}
 }
-// Method Definition Index: 149443
+// Method Definition Index: 149467
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIndexOutOfRangeException_m05738E7A913471982107EC9DAFF8E575AD16D09D (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8515,7 +8515,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIndexOutOf
 		return;
 	}
 }
-// Method Definition Index: 149444
+// Method Definition Index: 149468
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidCastException_m7CEBADF8ADECB392731AD0215CA9D2162344E3EB (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8538,7 +8538,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidCas
 		return;
 	}
 }
-// Method Definition Index: 149445
+// Method Definition Index: 149469
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidOperationException_m946F88971C00DC640C4A7FEFB4D820E03AFCBA8A (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8561,7 +8561,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidOpe
 		return;
 	}
 }
-// Method Definition Index: 149446
+// Method Definition Index: 149470
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIOException_m097E27E1B950DDEDBE75ECAA525FBA1F9CCC55FC (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8584,7 +8584,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIOExceptio
 		return;
 	}
 }
-// Method Definition Index: 149447
+// Method Definition Index: 149471
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingNullReferenceException_m7103FEC1AD9831462CD640AF2BD4BD51B457BE24 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8607,7 +8607,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingNullRefere
 		return;
 	}
 }
-// Method Definition Index: 149448
+// Method Definition Index: 149472
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOutOfMemoryException_m477DE4F591DB31AFA8DFACEBACA2CCA81CD28367 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8630,7 +8630,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOutOfMemor
 		return;
 	}
 }
-// Method Definition Index: 149449
+// Method Definition Index: 149473
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOverflowException_m5E2F92E1488F0943C4B43806F9F6EF812073D384 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8653,7 +8653,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOverflowEx
 		return;
 	}
 }
-// Method Definition Index: 149450
+// Method Definition Index: 149474
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingSystemException_m988E84E7A45B7FCE1EC1597585471AFA78B06887 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8676,7 +8676,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingSystemExce
 		return;
 	}
 }
-// Method Definition Index: 149451
+// Method Definition Index: 149475
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentException_m21B2170535EECF45751C6F48948BC1322346A5F0 (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8700,7 +8700,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentEx
 		return;
 	}
 }
-// Method Definition Index: 149452
+// Method Definition Index: 149476
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentNullException_m09944997FE4F760BD1423A7DC3082736F605535C (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8753,7 +8753,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 149453
+// Method Definition Index: 149477
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentOutOfRangeException_m7111A0768AC3707D3151755C7456E30482F974DF (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8806,7 +8806,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 149454
+// Method Definition Index: 149478
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__cctor_m082E44E87C697836CECA0760676EF7FC0FFCC789 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8924,7 +8924,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__cctor_m082E44E87C69
 		return;
 	}
 }
-// Method Definition Index: 149455
+// Method Definition Index: 149479
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__ctor_m6709B95358A2A3B65272194E10E6AFD106926A1C (SWIGExceptionHelper_t05DAD01A90446484A21E9CC1112DA02202C77270* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8976,7 +8976,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ExceptionDelegate_tBD5E636A02BB2A87
 	____0_message_marshaled = NULL;
 
 }
-// Method Definition Index: 149456
+// Method Definition Index: 149480
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate__ctor_m499CCC99321ACEAB5A59666F10B707010802EFE5 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9014,14 +9014,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate__ctor_m499CCC99321ACEA
 	}
 	__this->___extra_arg = (intptr_t)&ExceptionDelegate_Invoke_m46C9C9C3E1F3AE938DC4A5F07B91AE94FED25E0C_Multicast;
 }
-// Method Definition Index: 149457
+// Method Definition Index: 149481
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate_Invoke_m46C9C9C3E1F3AE938DC4A5F07B91AE94FED25E0C (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, String_t* ___0_message, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 149458
+// Method Definition Index: 149482
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionDelegate_BeginInvoke_m2EBE3CD9BB14674DC3E760EEDAFF050BBA8A866E (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, String_t* ___0_message, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9029,7 +9029,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionDelegate_BeginInvoke_
 	__d_args[0] = ___0_message;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 149459
+// Method Definition Index: 149483
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate_EndInvoke_m458C25DA2853AF600A46042E0A39B7F0508B1178 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9084,7 +9084,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ExceptionArgumentDelegate_t2CB92E15
 	____1_paramName_marshaled = NULL;
 
 }
-// Method Definition Index: 149460
+// Method Definition Index: 149484
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate__ctor_m3F2FB66273FFCF78BE237864E1209316F6FC195A (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9122,14 +9122,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate__ctor_m3F2FB66
 	}
 	__this->___extra_arg = (intptr_t)&ExceptionArgumentDelegate_Invoke_m62CBEE541DBAA197B82571A6D8125143F4469C0D_Multicast;
 }
-// Method Definition Index: 149461
+// Method Definition Index: 149485
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_Invoke_m62CBEE541DBAA197B82571A6D8125143F4469C0D (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, ___1_paramName, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 149462
+// Method Definition Index: 149486
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionArgumentDelegate_BeginInvoke_m0C5E05C3BDC4300D73E0709FF3721E1D57E25A0D (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, String_t* ___0_message, String_t* ___1_paramName, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9138,7 +9138,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionArgumentDelegate_Begi
 	__d_args[1] = ___1_paramName;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 149463
+// Method Definition Index: 149487
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_EndInvoke_m53AFD960614BAB41DECF1717C8B96D5221CC57E0 (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9152,7 +9152,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_EndInvoke_m53A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149464
+// Method Definition Index: 149488
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SWIGPendingException_get_Pending_m882B63921C8EAF5A22A08AFD6851BE6F4400A48C (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9209,7 +9209,7 @@ IL_0021:
 		return L_5;
 	}
 }
-// Method Definition Index: 149465
+// Method Definition Index: 149489
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException_Set_m7DB36E92553934D1116607493BD5D44F78710D9B (Exception_t* ___0_e, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9305,7 +9305,7 @@ IL_005f:
 		return;
 	}
 }
-// Method Definition Index: 149466
+// Method Definition Index: 149490
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* SWIGPendingException_Retrieve_mAC5AB6C8BD341602F66565E1E8B2DAB5B03E172E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9420,7 +9420,7 @@ IL_005e:
 		return L_11;
 	}
 }
-// Method Definition Index: 149467
+// Method Definition Index: 149491
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__cctor_mE0D00CBC7AAB9C703CD919329322A196DB282FA9 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9448,7 +9448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__cctor_mE0D00CBC7AA
 		return;
 	}
 }
-// Method Definition Index: 149468
+// Method Definition Index: 149492
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__ctor_m7C3AF942003962FA57D87D2635BC859DC0F2C6D0 (SWIGPendingException_tE736A8E3A7119D121CB6D496E3E1C282C8C9B89A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9480,7 +9480,7 @@ extern "C" char* DEFAULT_CALL ReversePInvokeWrapper_SWIGStringHelper_CreateStrin
 
 	return _returnValue_marshaled;
 }
-// Method Definition Index: 149469
+// Method Definition Index: 149493
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper_SWIGRegisterStringCallback_AuthUtil_mF1E51D0E5816C991DC9BD57E0668EEDCF81CA902 (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* ___0_stringDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9505,7 +9505,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper_SWIGRegisterStringCallb
 	#endif
 
 }
-// Method Definition Index: 149470
+// Method Definition Index: 149494
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringHelper_CreateString_m973E9F1971668A0D3BEA767B3479889D49CC39E3 (String_t* ___0_cString, const RuntimeMethod* method) 
 {
 	String_t* V_0 = NULL;
@@ -9523,7 +9523,7 @@ IL_0005:
 		return L_1;
 	}
 }
-// Method Definition Index: 149471
+// Method Definition Index: 149495
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__cctor_m4233D189A57454B02357CBCC668E53E2B93F71D1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9547,7 +9547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__cctor_m4233D189A57454B
 		return;
 	}
 }
-// Method Definition Index: 149472
+// Method Definition Index: 149496
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__ctor_mC8327633A09D4DD655AA5FEA5A2A7BF7C841430E (SWIGStringHelper_t54C89246F8AD42733FDD4305243013933303AE2D* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9608,7 +9608,7 @@ IL2CPP_EXTERN_C  String_t* DelegatePInvokeWrapper_SWIGStringDelegate_t9CD01F3A48
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 149473
+// Method Definition Index: 149497
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringDelegate__ctor_m39AE1969D572DCB5A0266DC4EAE96243DFFEDE6D (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9646,14 +9646,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringDelegate__ctor_m39AE1969D572DC
 	}
 	__this->___extra_arg = (intptr_t)&SWIGStringDelegate_Invoke_m2D64F3CEBF8E1B722FE1679E830742A423261D1E_Multicast;
 }
-// Method Definition Index: 149474
+// Method Definition Index: 149498
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_Invoke_m2D64F3CEBF8E1B722FE1679E830742A423261D1E (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, String_t* ___0_message, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef String_t* (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 149475
+// Method Definition Index: 149499
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SWIGStringDelegate_BeginInvoke_m6CAA25E7F5165C319041F1B9F8B33086ECBD5274 (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, String_t* ___0_message, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9661,7 +9661,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SWIGStringDelegate_BeginInvoke
 	__d_args[0] = ___0_message;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 149476
+// Method Definition Index: 149500
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_EndInvoke_m80A2424DD4BDDAC9F906545F99213105FC0A9CFB (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9676,7 +9676,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_EndInvoke_m80A24
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 149477
+// Method Definition Index: 149501
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_ExportFix_m836B2E2171DF1B537CAB3E9C1D6124FB2CFF27F1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9693,7 +9693,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_ExportFix_m836B2E2171DF1B537CAB
 		return;
 	}
 }
-// Method Definition Index: 149478
+// Method Definition Index: 149502
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtil_CreateAuthStateListener_mD22744C56BD1CE6B28D72EF8C0C4E6EAD33419D6 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_state_changed_delegate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9754,7 +9754,7 @@ IL_0021:
 		return L_8;
 	}
 }
-// Method Definition Index: 149479
+// Method Definition Index: 149503
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_DestroyAuthStateListener_m6F9EC8163EEEEEF16C95440A873991C3E90E2D83 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, intptr_t ___1_listener, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9800,7 +9800,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 149480
+// Method Definition Index: 149504
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtil_CreateIdTokenListener_m8C6F2E7117ACC51D7CF40F116E11CD28609EE616 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_state_changed_delegate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9861,7 +9861,7 @@ IL_0021:
 		return L_8;
 	}
 }
-// Method Definition Index: 149481
+// Method Definition Index: 149505
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_DestroyIdTokenListener_m087ED37EF1A7E0FCBDC0EFD4D4AD649C5046A504 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, intptr_t ___1_listener, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9907,7 +9907,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 149482
+// Method Definition Index: 149506
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil__ctor_mCB85234B20007ED27C9D8D16D626AE9BA98ECF6A (AuthUtil_t8EE1E6800343A54D198ED93603284F34262CB222* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>

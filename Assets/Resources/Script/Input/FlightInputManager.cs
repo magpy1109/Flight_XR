@@ -30,6 +30,14 @@ public class FlightInputManager : MonoBehaviour
     {
         inputProvider.UpdateInput();
 
+        if (PauseManager.BlockGameInput)
+        {
+            TurnInput = 0f;
+            BlowInput = 0f;
+            LaunchPressed = false;
+            return;
+        }
+
         TurnInput = inputProvider.TurnInput;
         BlowInput = inputProvider.BlowInput;
         LaunchPressed = inputProvider.LaunchPressed;

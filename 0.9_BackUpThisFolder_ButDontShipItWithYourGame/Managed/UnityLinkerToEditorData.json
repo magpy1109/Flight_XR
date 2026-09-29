@@ -142,6 +142,7 @@
             "scenes": [
               "Assets/Scenes/LeaderBoardScene.unity",
               "Assets/Scenes/MainMenuScene.unity",
+              "Assets/Scenes/SampleScene.unity",
               "Assets/Scenes/SettingScene.unity",
               "Assets/Scenes/SkinScene.unity"
             ],
@@ -198,6 +199,7 @@
             "scenes": [
               "Assets/Scenes/LeaderBoardScene.unity",
               "Assets/Scenes/MainMenuScene.unity",
+              "Assets/Scenes/SampleScene.unity",
               "Assets/Scenes/SettingScene.unity",
               "Assets/Scenes/SkinScene.unity"
             ],
@@ -209,6 +211,7 @@
             "scenes": [
               "Assets/Scenes/LeaderBoardScene.unity",
               "Assets/Scenes/MainMenuScene.unity",
+              "Assets/Scenes/SampleScene.unity",
               "Assets/Scenes/SettingScene.unity",
               "Assets/Scenes/SkinScene.unity"
             ],
@@ -1201,7 +1204,8 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/MainMenuScene.unity"
+              "Assets/Scenes/MainMenuScene.unity",
+              "Assets/Scenes/SampleScene.unity"
             ],
             "dependencyType": 0,
             "icon": null

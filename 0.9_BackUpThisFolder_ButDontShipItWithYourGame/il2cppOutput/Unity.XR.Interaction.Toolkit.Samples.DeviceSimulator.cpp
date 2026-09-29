@@ -3072,7 +3072,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Vector2_get_sqrMagnitude_mA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 157852
+// Method Definition Index: 157877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAEA0CF46D0DFD3581A45AEE24D8DEFB34E4420DF UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_m2D2E10B41F3F49FB02D2BB7CB00DE530799CD907 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3107,7 +3107,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_tAEA0CF46D0DFD3581A45AEE24D8DE
 		return L_6;
 	}
 }
-// Method Definition Index: 157853
+// Method Definition Index: 157878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m9F7000F9F08CB85873745FCFD743589E80CED75F (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tBE2190360D3EC88503751B2DE1B0297112C485B2* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3194,7 +3194,7 @@ IL2CPP_EXTERN_C void MonoScriptData_tAEA0CF46D0DFD3581A45AEE24D8DEFB34E4420DF_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 157854
+// Method Definition Index: 157879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_Awake_mA1BF495C9EC4CE979FE6D58F1BCC3BD576CD56D0 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3213,7 +3213,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_Awake_mA1B
 		return;
 	}
 }
-// Method Definition Index: 157855
+// Method Definition Index: 157880
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_Initialize_m82ACC05D1F298764A40B8B1D9D56A9179EBFC363 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___0_simulator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3355,7 +3355,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_Initialize
 		return;
 	}
 }
-// Method Definition Index: 157856
+// Method Definition Index: 157881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_SetAsActiveController_m1550E62F7727558E451C7E260C3769AA2E33E56C (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_active, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___1_simulator, bool ___2_isRestingHand, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3767,7 +3767,7 @@ IL_0322:
 		return;
 	}
 }
-// Method Definition Index: 157857
+// Method Definition Index: 157882
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_UpdateDisableControllerButton_mA5125F7A6B0E371F21B4AE2390F381542E4ADED2 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_active, Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___1_button, Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___2_buttonIcon, Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___3_buttonText, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -3839,7 +3839,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 157858
+// Method Definition Index: 157883
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_UpdateButtonVisuals_m9306235EE681ED0997D1C78182441CAB45121E26 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_active, Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___1_buttonIcon, Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___2_buttonText, InputControl_t74F06B623518F992BF8E38656A5E0857169E3E2E* ___3_control, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4012,7 +4012,7 @@ IL_00d6:
 		return;
 	}
 }
-// Method Definition Index: 157859
+// Method Definition Index: 157884
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_UpdateButtonColor_mB1B3D999A05CA5CDD05002FBCCB49A10482FD815 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___0_image, bool ___1_activated, const RuntimeMethod* method) 
 {
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B2_0 = NULL;
@@ -4059,7 +4059,7 @@ IL_001c:
 		return;
 	}
 }
-// Method Definition Index: 157860
+// Method Definition Index: 157885
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnPrimaryButton_m075B91C55B4A84AFC0D921B8786A0941948742AC (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4074,7 +4074,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnPrimaryB
 		return;
 	}
 }
-// Method Definition Index: 157861
+// Method Definition Index: 157886
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnSecondaryButton_mA6BE705CCB42BD041CD2D585D25E606ACAD1FF03 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4089,7 +4089,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnSecondar
 		return;
 	}
 }
-// Method Definition Index: 157862
+// Method Definition Index: 157887
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnTrigger_m815F2CDF6DBF3D5CE8AD89986DA3B4EEB07F344B (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4104,7 +4104,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnTrigger_
 		return;
 	}
 }
-// Method Definition Index: 157863
+// Method Definition Index: 157888
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnGrip_m86A43B1AE7E99FA688F86F9B74E3C3D629D854A0 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4119,7 +4119,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnGrip_m86
 		return;
 	}
 }
-// Method Definition Index: 157864
+// Method Definition Index: 157889
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnMenu_m85ED56869E8B75EB4D26B4D2B240FF97EF9E706E (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4134,7 +4134,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnMenu_m85
 		return;
 	}
 }
-// Method Definition Index: 157865
+// Method Definition Index: 157890
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnXAxisTranslatePerformed_mEF728B26A740B89F8AD987D528F1E63564B95A92 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4149,7 +4149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnXAxisTra
 		return;
 	}
 }
-// Method Definition Index: 157866
+// Method Definition Index: 157891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnZAxisTranslatePerformed_m71730B8575DA5B161DAC1B7DFBA89B3FF190ACFA (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -4164,7 +4164,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI_OnZAxisTra
 		return;
 	}
 }
-// Method Definition Index: 157867
+// Method Definition Index: 157892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI__ctor_mE9C2B2D1F065C804B6C091104BA6971591C85E70 (XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4181,7 +4181,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorControllerUI__ctor_mE9C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 157868
+// Method Definition Index: 157893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_Awake_m18C4A7DAB4AA05A5330EBC973E99EEBC396E4B00 (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4200,7 +4200,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_Awake_m18C4A7DA
 		return;
 	}
 }
-// Method Definition Index: 157869
+// Method Definition Index: 157894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_Initialize_m05C76F596E6794512FB73F7D34F14610067842EA (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___0_simulator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4421,7 +4421,7 @@ IL_00e2:
 		return;
 	}
 }
-// Method Definition Index: 157870
+// Method Definition Index: 157895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_SetActive_m935D3CC41AD4F62C742218FFC62A62F681AFCD60 (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, bool ___0_active, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___1_simulator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4734,7 +4734,7 @@ IL_0124:
 		return;
 	}
 }
-// Method Definition Index: 157871
+// Method Definition Index: 157896
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_ToggleExpression_mB2A2B8EEA8A6096EE1C386930BE9F141BFD7EBC0 (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, SimulatedHandExpression_tBA4D65D32580EECD62C6571E039188133339097B* ___0_simulatedExpression, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___1_simulator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4814,7 +4814,7 @@ IL_004c:
 		return;
 	}
 }
-// Method Definition Index: 157872
+// Method Definition Index: 157897
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_ToggleExpression_m9DE097D6F4F1E37DDAA4C46F063A299C67BCDFAB (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* ___0_expression, const RuntimeMethod* method) 
 {
 	{
@@ -4869,7 +4869,7 @@ IL_003f:
 		return;
 	}
 }
-// Method Definition Index: 157873
+// Method Definition Index: 157898
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI_SetExpressionActiveStatus_m0255732DCFD927168628DBAF4B212F8932D5023A (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, bool ___0_isActive, HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* ___1_expression, const RuntimeMethod* method) 
 {
 	HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* G_B2_0 = NULL;
@@ -4936,7 +4936,7 @@ IL_0035:
 		return;
 	}
 }
-// Method Definition Index: 157874
+// Method Definition Index: 157899
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI__ctor_mE807E50BF13B58C6842A39AEB842DECCCEC94133 (XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4964,7 +4964,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorHandsUI__ctor_mE807E50B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 157875
+// Method Definition Index: 157900
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* HandExpressionUI_get_sprite_m02DA9002C80B580908B081989EB1F471E6BD4F49 (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4973,7 +4973,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		return L_0;
 	}
 }
-// Method Definition Index: 157876
+// Method Definition Index: 157901
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_set_sprite_m7450E5FE94DD96021F1917B759AA248FF8C1753A (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -4984,7 +4984,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_set_sprite_m7450E5FE94D
 		return;
 	}
 }
-// Method Definition Index: 157877
+// Method Definition Index: 157902
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_Initialize_m1C71990BCFA46FE69A9A0B318F743D484A3F0C06 (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___0_action, String_t* ___1_name, Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___2_icon, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5077,7 +5077,7 @@ IL_005d:
 		return;
 	}
 }
-// Method Definition Index: 157878
+// Method Definition Index: 157903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_UpdateButtonVisuals_mC69078846BC4FD8A03B69A81EEA75C2BD0C07AE3 (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, bool ___0_active, XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* ___1_uiManager, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5216,7 +5216,7 @@ IL_0074:
 		return;
 	}
 }
-// Method Definition Index: 157879
+// Method Definition Index: 157904
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_SetButtonColor_m07655CF9779BE7E63BC9BC299219DDA9C156E8EC (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_color, const RuntimeMethod* method) 
 {
 	{
@@ -5229,7 +5229,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_SetButtonColor_m07655CF
 		return;
 	}
 }
-// Method Definition Index: 157880
+// Method Definition Index: 157905
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_UpdateButtonActive_m9D797F02CA444574DE52D9F9886EBF5C59D0BB54 (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, bool ___0_active, const RuntimeMethod* method) 
 {
 	{
@@ -5261,7 +5261,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI_UpdateButtonActive_m9D7
 		return;
 	}
 }
-// Method Definition Index: 157881
+// Method Definition Index: 157906
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI__ctor_m434283CB13C4EE3BB29D13931F85098A444A97DF (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5278,7 +5278,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HandExpressionUI__ctor_m434283CB13C4EE3B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 157882
+// Method Definition Index: 157907
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRDeviceSimulatorUI_get_isMenuOpen_m7BF140ABDA90813062F19E0387E03CEC3FB824FF (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5287,7 +5287,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool XRDeviceSimulatorUI_get_isMenuOpen_m7BF1
 		return L_0;
 	}
 }
-// Method Definition Index: 157883
+// Method Definition Index: 157908
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_set_isMenuOpen_m839BAEEDE92E048CA2EF33ADEF1950C54A4B3A05 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -5298,7 +5298,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_set_isMenuOpen_m839B
 		return;
 	}
 }
-// Method Definition Index: 157884
+// Method Definition Index: 157909
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_keyboardSprite_m3A43AAFB3F31DDF61E398E6C39AD06909F3B02F4 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5307,7 +5307,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		return L_0;
 	}
 }
-// Method Definition Index: 157885
+// Method Definition Index: 157910
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_mouseSprite_m555D8F18EEB48C7D1FBD596960855E2C4A08FE9E (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5316,7 +5316,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		return L_0;
 	}
 }
-// Method Definition Index: 157886
+// Method Definition Index: 157911
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_rMouseSpriteDark_m313DA442C957779187A66FFFD759D526F72BCDD2 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5325,7 +5325,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		return L_0;
 	}
 }
-// Method Definition Index: 157887
+// Method Definition Index: 157912
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_rMouseSpriteLight_mB3B29C649156EAA17AA7084017C18687E44636B0 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5334,7 +5334,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 		return L_0;
 	}
 }
-// Method Definition Index: 157888
+// Method Definition Index: 157913
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_rMouseSprite_m0412C31A1AE04A801E9A246F1FBD07CAD246DE48 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5368,7 +5368,7 @@ IL_001a:
 		return L_3;
 	}
 }
-// Method Definition Index: 157889
+// Method Definition Index: 157914
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_enabledColor_mB975913853742DC6B1CF8A6BDB1A12C28FE37318 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5403,7 +5403,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157890
+// Method Definition Index: 157915
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_disabledColor_mC000FAFE05980DA097DC89580B9EDFB22FE80C78 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5438,7 +5438,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157891
+// Method Definition Index: 157916
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_buttonColor_m9AB451B5FA796E3E6FA1FD994567E972D15D06E9 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5473,7 +5473,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157892
+// Method Definition Index: 157917
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_disabledButtonColor_m875DDF89DE23A6A769EBBBE4E9689BBBA1E5CC18 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5508,7 +5508,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157893
+// Method Definition Index: 157918
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_selectedColor_m1A0333F7892987F43D726871D74A1A979CF16F7E (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5543,7 +5543,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157894
+// Method Definition Index: 157919
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_backgroundColor_mF378ACE3D75AB279378BBED48C249E19154EFC8A (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5578,7 +5578,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157895
+// Method Definition Index: 157920
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_deviceColor_m112E6DA8155859BBD13FF31769641B057480B54D (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5613,7 +5613,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157896
+// Method Definition Index: 157921
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F XRDeviceSimulatorUI_get_disabledDeviceColor_m43DBF92FBE52AC2755AE9555D3AD677D33DA8FAA (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5648,7 +5648,7 @@ IL_001d:
 		return L_4;
 	}
 }
-// Method Definition Index: 157897
+// Method Definition Index: 157922
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Start_m739C7F6F32D7C886F60D6A5FF5E1A2912AAA550D (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5686,7 +5686,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 157898
+// Method Definition Index: 157923
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Update_m7F0EC6DBB3BD87209ACCB88C3BCB0CCC7D8C9547 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5815,7 +5815,7 @@ IL_0074:
 		return;
 	}
 }
-// Method Definition Index: 157899
+// Method Definition Index: 157924
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnDestroy_mF98E3E18D765CD201F467EE9431E8D1AC618D6E1 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6036,7 +6036,7 @@ IL_025d:
 		return;
 	}
 }
-// Method Definition Index: 157900
+// Method Definition Index: 157925
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Initialize_m425B01133D22C13F1D38B878155DDFC94406872B (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, XRDeviceSimulator_t2BEF1AB226D797BE78F5B291FCCB8A8B4274B30C* ___0_simulator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6137,7 +6137,7 @@ IL_008f:
 		return;
 	}
 }
-// Method Definition Index: 157901
+// Method Definition Index: 157926
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_InitColorTheme_m83254C50763AF914736363495F36A2A11593C0F3 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6145,7 +6145,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_InitColorTheme_m8325
 		return;
 	}
 }
-// Method Definition Index: 157902
+// Method Definition Index: 157927
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Initialize_mE0A53F5111B2AC5A0B2A36BE979BE21DD802F241 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7091,7 +7091,7 @@ IL_0385:
 		return;
 	}
 }
-// Method Definition Index: 157903
+// Method Definition Index: 157928
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_UpdateDeviceInputMethod_m03BC2018A877F28CD0AB84221DEC08E24EF467CA (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7353,7 +7353,7 @@ IL_0126:
 		return;
 	}
 }
-// Method Definition Index: 157904
+// Method Definition Index: 157929
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_GetInputIcon_mB9CDF23EC95E89E38BA562EEE9B9872D76088986 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, InputControl_t74F06B623518F992BF8E38656A5E0857169E3E2E* ___0_control, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7450,7 +7450,7 @@ IL_0054:
 		return L_14;
 	}
 }
-// Method Definition Index: 157905
+// Method Definition Index: 157930
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnClickCloseSimulatorUIPanel_mCC552AA6E8926EF7CA0F5D3509D6C778492A8893 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7468,7 +7468,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnClickCloseSimulato
 		return;
 	}
 }
-// Method Definition Index: 157906
+// Method Definition Index: 157931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnClickOpenSimulatorUIPanel_m32AF47151801F8D282AE1889FCC8320AE0C72513 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7486,7 +7486,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnClickOpenSimulator
 		return;
 	}
 }
-// Method Definition Index: 157907
+// Method Definition Index: 157932
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateLeftDevice_m56B6D15341F34C3E729C6845D3364366C043B6F3 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7529,7 +7529,7 @@ IL_0028:
 		return;
 	}
 }
-// Method Definition Index: 157908
+// Method Definition Index: 157933
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateRightDevice_m09805C7C0E11317F07DC2F9BF896DA85A512F020 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7572,7 +7572,7 @@ IL_0028:
 		return;
 	}
 }
-// Method Definition Index: 157909
+// Method Definition Index: 157934
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateBothDevices_mAEB3893E3C004325009189DF5FF12EE9E001E086 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7615,7 +7615,7 @@ IL_0028:
 		return;
 	}
 }
-// Method Definition Index: 157910
+// Method Definition Index: 157935
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateLeftController_mF17E09AD2336CD0F1E1960C354853F049828DC66 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7636,7 +7636,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateLeftContro
 		return;
 	}
 }
-// Method Definition Index: 157911
+// Method Definition Index: 157936
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateRightController_mB0B47BD67827B6B9544918A99F8AF64DD9DEBB45 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7657,7 +7657,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateRightContr
 		return;
 	}
 }
-// Method Definition Index: 157912
+// Method Definition Index: 157937
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateController_m617F507A893841B1C489A2E5129966DDC48749EB (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* ___0_controller, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7715,7 +7715,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 157913
+// Method Definition Index: 157938
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateBothControllers_m1AE770B344C11718515901DAD7F2EBBD2FC16554 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7755,7 +7755,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateBothContro
 		return;
 	}
 }
-// Method Definition Index: 157914
+// Method Definition Index: 157939
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_PushCurrentButtonState_m44B81E41997DD79216A1268FED8E1A8CACEC9D8D (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, XRDeviceSimulatorControllerUI_t9748C4B40D05E0409282C9AA2921E78339D0D0B1* ___0_controller, const RuntimeMethod* method) 
 {
 	{
@@ -7861,7 +7861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_PushCurrentButtonSta
 		return;
 	}
 }
-// Method Definition Index: 157915
+// Method Definition Index: 157940
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateLeftHand_mCF5FCCBEE928FD7B78C41BCEE3289B2DC89ED794 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7882,7 +7882,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateLeftHand_m
 		return;
 	}
 }
-// Method Definition Index: 157916
+// Method Definition Index: 157941
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateRightHand_m9BF8116CB253160AAA28D173B5071938BA75A52B (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7903,7 +7903,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateRightHand_
 		return;
 	}
 }
-// Method Definition Index: 157917
+// Method Definition Index: 157942
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateHand_mE87C0DFD3387AC668301538ABEF764FFED58CE0F (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, XRDeviceSimulatorHandsUI_t1BE09C7DB972DF8CF28AF0FDABE67DA9EF68070C* ___0_hand, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7958,7 +7958,7 @@ IL_0031:
 		return;
 	}
 }
-// Method Definition Index: 157918
+// Method Definition Index: 157943
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateBothHands_m6BA911DBB465CDE0844408F3C9793953B07711C7 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7992,7 +7992,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateBothHands_
 		return;
 	}
 }
-// Method Definition Index: 157919
+// Method Definition Index: 157944
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnActivateHeadsetDevice_m10763B4667D62E69C21E889D1227DD11C78AE071 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8112,7 +8112,7 @@ IL_00b4:
 		return;
 	}
 }
-// Method Definition Index: 157920
+// Method Definition Index: 157945
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_HeadDeviceSetActive_m0392A433693A2558E34413A42FEBA15A6A498F8F (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_active, const RuntimeMethod* method) 
 {
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
@@ -8246,7 +8246,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 157921
+// Method Definition Index: 157946
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_HandsSetActive_m5E9FF5FBB235313B1B9FD736797C10D210181545 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_isActive, bool ___1_showCanvasGroup, const RuntimeMethod* method) 
 {
 	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* G_B2_0 = NULL;
@@ -8320,7 +8320,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 157922
+// Method Definition Index: 157947
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_ControllersSetActive_mDCC0928409C8F1EA403972142D6329963AA37B47 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_isActive, bool ___1_showCanvasGroup, const RuntimeMethod* method) 
 {
 	CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* G_B2_0 = NULL;
@@ -8394,7 +8394,7 @@ IL_0033:
 		return;
 	}
 }
-// Method Definition Index: 157923
+// Method Definition Index: 157948
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Subscribe_m862226F72498E4BAE4DD6653FF879B2361B29B39 (InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___0_reference, Action_1_tEB0353AA1A112B6F2D921B58DCC9D9D4C0498E6E* ___1_performedOrCanceled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8466,7 +8466,7 @@ IL_0027:
 		return;
 	}
 }
-// Method Definition Index: 157924
+// Method Definition Index: 157949
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_Unsubscribe_mE56100C367B596785956AF3AC5BD05D26EE19A0F (InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___0_reference, Action_1_tEB0353AA1A112B6F2D921B58DCC9D9D4C0498E6E* ___1_performedOrCanceled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8538,7 +8538,7 @@ IL_0027:
 		return;
 	}
 }
-// Method Definition Index: 157925
+// Method Definition Index: 157950
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnManipulateLeftAction_m4B6A407FA44F0F0D9780F2D94A23B309BBEC3832 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -8631,7 +8631,7 @@ IL_0068:
 		return;
 	}
 }
-// Method Definition Index: 157926
+// Method Definition Index: 157951
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnManipulateRightAction_m312F96E19C9256B6FA40E2A09F99540B340BBF47 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -8724,7 +8724,7 @@ IL_0068:
 		return;
 	}
 }
-// Method Definition Index: 157927
+// Method Definition Index: 157952
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnToggleManipulateLeftAction_m4425E496DDEACF85F83685BB8B0D07CB382E0676 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -8767,7 +8767,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 157928
+// Method Definition Index: 157953
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnToggleManipulateRightAction_m08E50EFFF01396EC2C00B78CD1BF70187B8CFB65 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -8810,7 +8810,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 157929
+// Method Definition Index: 157954
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnToggleManipulateBodyAction_m3E2FF42E6E229E0B52D7212E98A40539D8D68942 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -8835,7 +8835,7 @@ IL_0015:
 		return;
 	}
 }
-// Method Definition Index: 157930
+// Method Definition Index: 157955
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnManipulateHeadAction_m562653ABA3A03416C37690E25BD3D4941BF676E1 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -8959,7 +8959,7 @@ IL_0072:
 		return;
 	}
 }
-// Method Definition Index: 157931
+// Method Definition Index: 157956
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnHandControllerModeAction_m19010BBFC5E2679B59904AF60665B84066F5128C (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9078,7 +9078,7 @@ IL_009d:
 		return;
 	}
 }
-// Method Definition Index: 157932
+// Method Definition Index: 157957
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnCycleDevicesAction_m06D5E6B758F0962ED8DF77F44F160F2AF27CFABB (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9148,7 +9148,7 @@ IL_0048:
 		return;
 	}
 }
-// Method Definition Index: 157933
+// Method Definition Index: 157958
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnStopManipulationAction_m212983E80F4D415F2476EA74358748F5D1EB7235 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9177,7 +9177,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 157934
+// Method Definition Index: 157959
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnToggleMouseTransformationModeAction_mBCD407AAD41886BAEE366E3523251CD14BF222C7 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9202,7 +9202,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 157935
+// Method Definition Index: 157960
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnNegateModeAction_mC48377DE1D0E36F2E4DF4A61B8FD1E09081752EC (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9212,7 +9212,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnNegateModeAction_m
 		return;
 	}
 }
-// Method Definition Index: 157936
+// Method Definition Index: 157961
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnToggleCursorLockAction_m0CD3BD8878447C011FC2A804BBF88AF03D729E06 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9237,7 +9237,7 @@ IL_0014:
 		return;
 	}
 }
-// Method Definition Index: 157937
+// Method Definition Index: 157962
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardXTranslateAction_mD15F59FAAE0813CB8FB290DC92366EDEBEE17CD9 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9251,7 +9251,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardXTranslate
 		return;
 	}
 }
-// Method Definition Index: 157938
+// Method Definition Index: 157963
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardYTranslateAction_m1E41187896D73B09F2693D94227BB9440B43D46C (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9265,7 +9265,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardYTranslate
 		return;
 	}
 }
-// Method Definition Index: 157939
+// Method Definition Index: 157964
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardZTranslateAction_m878A205BB14E48CEF4D1323360F9B1BEC0B32BB3 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9279,7 +9279,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnKeyboardZTranslate
 		return;
 	}
 }
-// Method Definition Index: 157940
+// Method Definition Index: 157965
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnRestingHandAxis2DAction_mFD0FEAF0EF6E3581F7E7F420D68BFCB0047323C6 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9373,7 +9373,7 @@ IL_0075:
 		return;
 	}
 }
-// Method Definition Index: 157941
+// Method Definition Index: 157966
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnGripAction_m33135607635A751290AADD67F007A452216A56F7 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9387,7 +9387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnGripAction_m331356
 		return;
 	}
 }
-// Method Definition Index: 157942
+// Method Definition Index: 157967
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnTriggerAction_mBC71C10EB435D0FF5AFD68605BC8BCEBB9AA6099 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9401,7 +9401,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnTriggerAction_mBC7
 		return;
 	}
 }
-// Method Definition Index: 157943
+// Method Definition Index: 157968
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnMenuAction_m06014E5810FBF8B8CB8575204F6C0B33D69F46AC (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9415,7 +9415,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnMenuAction_m06014E
 		return;
 	}
 }
-// Method Definition Index: 157944
+// Method Definition Index: 157969
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnPrimaryButtonAction_mAEA274E9DE7E1EC10955EC2B4914B95C8B009F5F (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9429,7 +9429,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnPrimaryButtonActio
 		return;
 	}
 }
-// Method Definition Index: 157945
+// Method Definition Index: 157970
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnSecondaryButtonAction_m1E86508C1CC1AD1FBC2C5BBBC5B3DEDB0B07882E (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, CallbackContext_tB251EE41F509C6E8A6B05EC97C029A45DF4F5FA8 ___0_context, const RuntimeMethod* method) 
 {
 	{
@@ -9443,7 +9443,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnSecondaryButtonAct
 		return;
 	}
 }
-// Method Definition Index: 157946
+// Method Definition Index: 157971
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnSetMouseMode_mEF57C0283E7FE9D7265692970D0A61619D0F06D0 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9549,7 +9549,7 @@ IL_0070:
 		return;
 	}
 }
-// Method Definition Index: 157947
+// Method Definition Index: 157972
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnCursorLockChanged_mAC74593A9B0335BF439B40C306218C2F83005D9C (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B2_0 = NULL;
@@ -9593,7 +9593,7 @@ IL_001c:
 		return;
 	}
 }
-// Method Definition Index: 157948
+// Method Definition Index: 157973
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnXAxisTranslatePerformed_m9ABE4BB056D160E1891409BB9199FD00A498C772 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, bool ___1_restingHand, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -9756,7 +9756,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 157949
+// Method Definition Index: 157974
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnYAxisTranslatePerformed_mCA1B216AD5902D0070A7C66370EE80F408EAD189 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B3_0 = NULL;
@@ -9814,7 +9814,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 157950
+// Method Definition Index: 157975
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnZAxisTranslatePerformed_m82EB0AC6832C7DDB021FE98A10C3CB84A22315D5 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, bool ___1_restingHand, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -9977,7 +9977,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 157951
+// Method Definition Index: 157976
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnMenuPerformed_mFC6D382875DCFA6A8F0334E689756F9DFBCED699 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -10025,7 +10025,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 157952
+// Method Definition Index: 157977
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnGripPerformed_m1A6210B656389E1522F1F95AE934D1426AAE8268 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -10073,7 +10073,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 157953
+// Method Definition Index: 157978
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnTriggerPerformed_m1ECBB93FF7681376A594992C37C9181DC3F39ADE (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -10121,7 +10121,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 157954
+// Method Definition Index: 157979
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnPrimaryButtonPerformed_m0488603E1F0A4136D6FB07B136705A4B371C05F1 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -10169,7 +10169,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 157955
+// Method Definition Index: 157980
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_OnSecondaryButtonPerformed_m8DE0AD38CD973260A8F15F08418C6687F57F97E1 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_activated, const RuntimeMethod* method) 
 {
 	{
@@ -10217,7 +10217,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 157956
+// Method Definition Index: 157981
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI__ctor_mA10A376757C28B721BC6FF62B5D5EAB460C2FDE8 (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10259,7 +10259,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI__ctor_mA10A376757C28
 		return;
 	}
 }
-// Method Definition Index: 157957
+// Method Definition Index: 157982
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI__cctor_m69A8D348C2A1C5A3204264C9B753643C1D9FEECA (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10484,7 +10484,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999E
 		return;
 	}
 }
-// Method Definition Index: 157884
+// Method Definition Index: 157909
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_keyboardSprite_m3A43AAFB3F31DDF61E398E6C39AD06909F3B02F4_inline (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10538,7 +10538,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR InputAction_t1B550AD2B55AF322AFB5
 		return L_0;
 	}
 }
-// Method Definition Index: 157875
+// Method Definition Index: 157900
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* HandExpressionUI_get_sprite_m02DA9002C80B580908B081989EB1F471E6BD4F49_inline (HandExpressionUI_tE9AE042B2CBC3FF2ACD826C99B43C0B6BDAE2CDA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10547,7 +10547,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F
 		return L_0;
 	}
 }
-// Method Definition Index: 128260
+// Method Definition Index: 128261
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* Image_get_sprite_mB2AA377708722E100574F6F75BC102513BB3BCB1_inline (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10786,7 +10786,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR InputDevice_t8BCF67533E872A75779C
 		return L_0;
 	}
 }
-// Method Definition Index: 157882
+// Method Definition Index: 157907
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XRDeviceSimulatorUI_get_isMenuOpen_m7BF140ABDA90813062F19E0387E03CEC3FB824FF_inline (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10795,7 +10795,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool XRDeviceSimulatorUI_get_isMe
 		return L_0;
 	}
 }
-// Method Definition Index: 157885
+// Method Definition Index: 157910
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* XRDeviceSimulatorUI_get_mouseSprite_m555D8F18EEB48C7D1FBD596960855E2C4A08FE9E_inline (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10804,7 +10804,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F
 		return L_0;
 	}
 }
-// Method Definition Index: 157883
+// Method Definition Index: 157908
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void XRDeviceSimulatorUI_set_isMenuOpen_m839BAEEDE92E048CA2EF33ADEF1950C54A4B3A05_inline (XRDeviceSimulatorUI_t83558A12FEB0C923A821ED77A9214E829ABA8E53* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{

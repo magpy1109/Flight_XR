@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
 {
+    if (PauseManager.BlockGameInput)
+        return;
+
     if (FlightInputManager.Instance == null)
         return;
 
@@ -112,7 +115,31 @@ public class GameManager : MonoBehaviour
             );
         }
 
-        Destroy(plane);
+        // 비행기는 바닥에 남겨두고 움직임만 정지
+        if (plane != null)
+        {
+            PlaneController controller =
+                plane.GetComponent<PlaneController>();
+
+            if (controller != null)
+                controller.enabled = false;
+
+            Rigidbody rb =
+                plane.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.isKinematic = true;
+            }
+        }
+
+        // 다음 게임에서 새 비행기를 생성할 수 있도록 상태 해제
+        if (launcher != null)
+        {
+            launcher.PlaneFinished(plane);
+        }
     }
 
     public void ResetGame()

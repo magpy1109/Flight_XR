@@ -70,4 +70,12 @@ public class PlaneLauncher : MonoBehaviour
             currentPlane = null;
         }
     }
+
+    public void PlaneFinished(GameObject plane)
+    {
+        if (currentPlane == plane)
+        {
+            currentPlane = null;
+        }
+    }
 }

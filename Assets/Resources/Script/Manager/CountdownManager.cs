@@ -14,6 +14,10 @@ public class CountdownManager : MonoBehaviour
     private TMP_Text countdownText;
     private bool isCounting;
 
+    private Coroutine countdownRoutine;
+
+    public bool IsCounting => isCounting;
+
     private void Awake()
     {
         if (Instance == null)
@@ -81,21 +85,30 @@ public class CountdownManager : MonoBehaviour
         if (isCounting)
             return;
 
-        // 혹시 Awake 때 못 찾았으면 다시 찾기
         if (countdownText == null)
-        {
             FindCountdownText();
-        }
 
         if (countdownText == null)
         {
-            Debug.LogError(
-                "Countdown 시작 실패 : CountdownText가 없습니다."
-            );
+            Debug.LogError("Countdown 시작 실패 : CountdownText가 없습니다.");
             return;
         }
 
-        StartCoroutine(CountdownCoroutine(onFinish));
+        countdownRoutine = StartCoroutine(CountdownCoroutine(onFinish));
+    }
+
+    public void CancelCountdown()
+    {
+        if (countdownRoutine != null)
+        {
+            StopCoroutine(countdownRoutine);
+            countdownRoutine = null;
+        }
+
+        isCounting = false;
+
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(false);
     }
 
     private IEnumerator CountdownCoroutine(Action onFinish)
@@ -121,6 +134,7 @@ public class CountdownManager : MonoBehaviour
         onFinish?.Invoke();
 
         isCounting = false;
+        countdownRoutine = null;
     }
 
     private string GetHierarchyPath(Transform target)
