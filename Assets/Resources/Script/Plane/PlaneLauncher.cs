@@ -42,6 +42,10 @@ public class PlaneLauncher : MonoBehaviour
         // 종이비행기 모델 + 장착한 스킨 / 트레일 적용
         PlaneAppearance.Setup(currentPlane);
 
+        // 실시간 공간 인식 충돌 (야외처럼 공간 설정 데이터가 없어도 실제 물체 / 바닥에 부딪히면 추락)
+        if (currentPlane.GetComponent<PlaneEnvironmentCollision>() == null)
+            currentPlane.AddComponent<PlaneEnvironmentCollision>();
+
         // 생성된 비행기의 컨트롤러
         PlaneController controller =
             currentPlane.GetComponent<PlaneController>();

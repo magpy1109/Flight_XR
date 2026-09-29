@@ -5757,7 +5757,7 @@ struct U3CGetEnumeratorU3Ed__18_t3D21A238B89B6FD7744E0134E66ECABD75C6A036  : pub
 	BlockExpressionList_tAD63753518FCCFDCA26EE51E2C0CAD1BF05C4759* ___U3CU3E4__this;
 	int32_t ___U3CiU3E5__2;
 };
-struct U3CStartMicrophoneU3Ed__29_t56CD37F504B3666E891AA0447E48651C8AD47192  : public RuntimeObject
+struct U3CStartMicrophoneU3Ed__53_t10209131FD187C92E87FA3C370F06EA3CF29A709  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -46254,6 +46254,23 @@ struct BreathDetector_t04896696CDB1780C77F5AA6331D7B5AC68205144  : public MonoBe
 	float ___minVolume;
 	float ___maxVolume;
 	float ___smoothing;
+	bool ___windFilter;
+	int32_t ___steadinessBlocks;
+	float ___steadyVariation;
+	float ___gustyVariation;
+	float ___breathHighRatio;
+	float ___highPassHz;
+	float ___U3CBreathLikelihoodU3Ek__BackingField;
+	float ___U3CAmbientLevelU3Ek__BackingField;
+	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___block;
+	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___blockRms;
+	int32_t ___blockIndex;
+	int32_t ___blockCount;
+	int32_t ___lastReadPosition;
+	float ___hpPrevIn;
+	float ___hpPrevOut;
+	float ___lastHighRatio;
+	float ___breathConfidence;
 	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___microphoneClip;
 	String_t* ___microphoneDevice;
 	float ___targetPower;
@@ -67186,7 +67203,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize16196 = { sizeof(U3CLogAppli
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16197;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize16197 = { sizeof(FrameRateSettingsManager_t1EF5F64D1DCD4C0E72BF370FB3CBA0C1CE3FEC75), -1, sizeof(FrameRateSettingsManager_t1EF5F64D1DCD4C0E72BF370FB3CBA0C1CE3FEC75_StaticFields), 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16198;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize16198 = { sizeof(U3CStartMicrophoneU3Ed__29_t56CD37F504B3666E891AA0447E48651C8AD47192), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize16198 = { sizeof(U3CStartMicrophoneU3Ed__53_t10209131FD187C92E87FA3C370F06EA3CF29A709), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize16199;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize16199 = { sizeof(BreathDetector_t04896696CDB1780C77F5AA6331D7B5AC68205144), -1, sizeof(BreathDetector_t04896696CDB1780C77F5AA6331D7B5AC68205144_StaticFields), 0 };
 #ifdef __clang__

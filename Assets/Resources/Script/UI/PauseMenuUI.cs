@@ -92,6 +92,9 @@ public class PauseMenuUI : MonoBehaviour
         PauseMenuUI ui = root.AddComponent<PauseMenuUI>();
         ui.Build(pauseCanvas);
 
+        // HUD처럼 사용자 시야에 고정 (고개를 돌리면 따라옴)
+        HeadLockedPanel.Attach(pauseCanvas.gameObject, 1.5f);
+
         root.SetActive(true);
 
         Debug.Log("[PauseMenuUI] 새 일시정지 화면 생성");

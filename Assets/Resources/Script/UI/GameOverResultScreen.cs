@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 /// 게임오버 결과 화면. (Resources/Prefab/ResultPanel.prefab 사용)
 ///
 /// - 게임오버 시 ResultUI.ShowResult에서 호출된다.
-/// - 일시정지 화면처럼 사용자 정면 1.5m 앞에 고정해서 띄운다. (머리를 따라다니지 않음)
+/// - 사용자 시야 정면 1.5m에 HUD처럼 고정해서 띄운다. (고개를 돌리면 따라옴, HeadLockedPanel)
 /// - 최종 거리 / 최고 기록 표시, 이번 기록이 최고 기록이면 "신기록!" 표시
 /// - 다시도전 → ResultUI.RestartGame / 메인으로 → ResultUI.GoHome
 /// - 버튼 호버 시 살짝 커지고 색이 진해짐
@@ -85,6 +85,9 @@ public class GameOverResultScreen : MonoBehaviour
 
         GameObject panel = Instantiate(prefab, rootRect, false);
         panel.name = "ResultPanel";
+
+        // HUD처럼 사용자 시야에 고정 (고개를 돌리면 따라옴)
+        HeadLockedPanel.Attach(root, 1.5f);
 
         GameOverResultScreen screen = root.AddComponent<GameOverResultScreen>();
         screen.canvas = canvas;
