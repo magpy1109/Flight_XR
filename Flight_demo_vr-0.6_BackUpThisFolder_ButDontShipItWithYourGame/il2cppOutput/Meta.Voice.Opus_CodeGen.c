@@ -74,7 +74,7 @@ static Il2CppMethodPointer s_methodPointers[31] =
 };
 static const int32_t s_InvokerIndices[31] = 
 {
-	40663,
+	40664,
 	25087,
 	9128,
 	2358,
@@ -92,18 +92,18 @@ static const int32_t s_InvokerIndices[31] =
 	18886,
 	25087,
 	25087,
-	28852,
-	26826,
-	26826,
-	39022,
-	33554,
-	33554,
-	33554,
-	30358,
+	28853,
+	26827,
+	26827,
+	39023,
+	33555,
+	33555,
+	33555,
+	30359,
 	26179,
 	26179,
-	39022,
-	29278,
+	39023,
+	29279,
 	25087,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Meta_Voice_Opus_CodeGenModule;

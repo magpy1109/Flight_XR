@@ -224,7 +224,7 @@ static Il2CppMethodPointer s_methodPointers[106] =
 };
 static const int32_t s_InvokerIndices[106] = 
 {
-	40708,
+	40709,
 	25087,
 	25087,
 	19152,
@@ -295,8 +295,8 @@ static const int32_t s_InvokerIndices[106] =
 	18886,
 	8167,
 	8167,
-	35082,
-	35082,
+	35083,
+	35083,
 	19663,
 	19663,
 	19663,
@@ -329,7 +329,7 @@ static const int32_t s_InvokerIndices[106] =
 	18886,
 	18886,
 	25087,
-	40595,
+	40596,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_XR_Interaction_Toolkit_Samples_DeviceSimulator_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_XR_Interaction_Toolkit_Samples_DeviceSimulator_CodeGenModule = 
