@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanePhysics
   forwardForce: 3
-  turnSpeed: 90
-  liftForce: 5
+  turnSpeed: 60
+  liftForce: 3
 --- !u!114 &6769016914008843869
 MonoBehaviour:
   m_ObjectHideFlags: 0

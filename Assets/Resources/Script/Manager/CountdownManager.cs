@@ -126,9 +126,7 @@ public class CountdownManager : MonoBehaviour
         countdownText.text = "1";
         yield return new WaitForSeconds(1f);
 
-        countdownText.text = "GO!";
-        yield return new WaitForSeconds(0.5f);
-
+        // "1"이 사라지는 순간 비행기 발사 (GameHUD가 숫자를 크게 / 튀어나오게 표시)
         countdownText.gameObject.SetActive(false);
 
         onFinish?.Invoke();
@@ -149,4 +147,4 @@ public class CountdownManager : MonoBehaviour
 
         return path;
     }
-}
+}

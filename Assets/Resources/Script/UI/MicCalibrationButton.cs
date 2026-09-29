@@ -56,6 +56,24 @@ public class MicCalibrationButton : MonoBehaviour
         ColorUtility.TryParseHtmlString("#0C8CE9", out Color blue);
         image.color = blue;
 
+        // 호버 시 진하게, 누를 때 더 진하게 (Color Tint)
+        Button button = go.GetComponent<Button>();
+        button.targetGraphic = image;
+        button.transition = Selectable.Transition.ColorTint;
+
+        // 클릭 후 "선택됨" 상태로 남아 호버 효과가 안 보이는 것을 방지
+        button.navigation = new Navigation { mode = Navigation.Mode.None };
+
+        ColorBlock colors = button.colors;
+        colors.normalColor = Color.white;
+        colors.highlightedColor = new Color(0.7f, 0.7f, 0.7f, 1f);
+        colors.pressedColor = new Color(0.55f, 0.55f, 0.55f, 1f);
+        colors.selectedColor = Color.white;
+        colors.disabledColor = new Color(0.8f, 0.8f, 0.8f, 0.5f);
+        colors.colorMultiplier = 1f;
+        colors.fadeDuration = 0.1f;
+        button.colors = colors;
+
         // 버튼 글자
         GameObject labelGo = new GameObject("Label", typeof(RectTransform), typeof(TextMeshProUGUI));
         labelGo.transform.SetParent(go.transform, false);
@@ -74,7 +92,7 @@ public class MicCalibrationButton : MonoBehaviour
         label.raycastTarget = false;
 
         MicCalibrationButton calibration = go.AddComponent<MicCalibrationButton>();
-        calibration.button = go.GetComponent<Button>();
+        calibration.button = button;
         calibration.buttonLabel = label;
         calibration.descriptionText = desc != null ? desc.GetComponent<TMP_Text>() : null;
         calibration.originalDescription = calibration.descriptionText != null ? calibration.descriptionText.text : "";

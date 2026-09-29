@@ -105,6 +105,14 @@ public class QuestUIRayInteractor : MonoBehaviour
 
     private void Update()
     {
+        // 메타 공식 레이(OfficialRay)를 사용 중이면 이 레이는 숨기고 입력도 처리하지 않는다.
+        // (씬에 따라 GameCanvas를 켜고 끄는 SetupCanvas 기능은 그대로 동작)
+        if (OfficialRay.IsActive)
+        {
+            HideForOfficialRay();
+            return;
+        }
+
         GetRightHand();
 
         if (targetCanvas == null || targetCamera == null)
@@ -477,6 +485,24 @@ public class QuestUIRayInteractor : MonoBehaviour
             "UI Hover : " +
             currentButton.name
         );
+    }
+
+    private void HideForOfficialRay()
+    {
+        if (lineRenderer != null && lineRenderer.enabled)
+            lineRenderer.enabled = false;
+
+        if (reticle != null && reticle.activeSelf)
+            reticle.SetActive(false);
+
+        if (currentButton != null)
+            ClearHover();
+
+        if (currentSlider != null)
+            UpdateSliderHover(null);
+
+        draggingSlider = null;
+        wasPressed = false;
     }
 
     private void ClearHover()
