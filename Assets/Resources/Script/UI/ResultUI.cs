@@ -22,7 +22,9 @@ public class ResultUI : MonoBehaviour
     [Header("Scene")]
     [SerializeField] private string homeSceneName = "MainMenuScene";
 
-    public bool IsResultShown => resultPanel != null && resultPanel.activeSelf;
+    public bool IsResultShown =>
+        GameOverResultScreen.IsShown ||
+        (resultPanel != null && resultPanel.activeSelf);
 
     private void Awake()
     {
@@ -43,6 +45,23 @@ public class ResultUI : MonoBehaviour
             resultPanel.SetActive(false);
     }
 
+    // GameCanvas는 씬이 바뀌어도 유지되는데, 홈으로 갈 때(GoHome) HUD를 꺼 두기 때문에
+    // 다시 게임씬에 들어와 GameCanvas가 켜질 때마다 HUD를 켜고 결과창을 닫는다.
+    // (예전에는 Awake에서 한 번만 켜서 두 번째 플레이부터 HUD가 보이지 않았음)
+    private void OnEnable()
+    {
+        if (Instance != this)
+            return;
+
+        if (hud != null)
+            hud.SetActive(true);
+
+        if (resultPanel != null)
+            resultPanel.SetActive(false);
+
+        GameOverResultScreen.Hide();
+    }
+
     public void ShowResult(
         int score,
         float distance,
@@ -51,11 +70,16 @@ public class ResultUI : MonoBehaviour
     {
         Debug.Log("ResultUI.ShowResult 호출");
 
-        if (resultPanel != null)
-            resultPanel.SetActive(true);
-
         if (hud != null)
             hud.SetActive(false);
+
+        // 새 결과 화면 (Resources/Prefab/ResultPanel.prefab)
+        // 프리팹을 찾지 못한 경우에만 GameCanvas 안의 예전 결과창 사용
+        if (GameOverResultScreen.Show(distance))
+            return;
+
+        if (resultPanel != null)
+            resultPanel.SetActive(true);
 
         if (finalScoreText != null)
             finalScoreText.text = score.ToString();
@@ -73,6 +97,8 @@ public class ResultUI : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("RestartGame 실행");
+
+        GameOverResultScreen.Hide();
 
         if (resultPanel != null)
             resultPanel.SetActive(false);
@@ -121,6 +147,8 @@ public class ResultUI : MonoBehaviour
     {
         Debug.Log("홈 이동 : " + homeSceneName);
 
+        GameOverResultScreen.Hide();
+
         // Persistent GameCanvas 끄기
         if (gameCanvas != null)
             gameCanvas.SetActive(false);
@@ -133,4 +161,4 @@ public class ResultUI : MonoBehaviour
 
         SceneManager.LoadScene(homeSceneName);
     }
-}
+}

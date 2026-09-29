@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     if (FlightInputManager.Instance == null)
         return;
 
+    // 결과 화면이 떠 있을 때는 발사 버튼으로 새 게임이 시작되지 않게 (다시도전 버튼 사용)
+    if (ResultUI.Instance != null && ResultUI.Instance.IsResultShown)
+        return;
+
     if (FlightInputManager.Instance.LaunchPressed)
     {
         Debug.Log(
@@ -179,4 +183,4 @@ public class GameManager : MonoBehaviour
         if (height > MaxHeight)
             MaxHeight = height;
     }
-}
+}

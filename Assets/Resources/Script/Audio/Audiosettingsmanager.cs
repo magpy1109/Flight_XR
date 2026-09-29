@@ -82,6 +82,9 @@ public class AudioSettingsManager : MonoBehaviour
         lastSFXVolume = value01;
         if (!GetSavedSFXMute()) ApplyVolume(sfxParam, value01);
         PlayerPrefs.SetFloat(KEY_SFX, value01);
+
+        // 바뀐 크기로 확인음 재생 (설정씬 / 일시정지 설정 공통)
+        SfxPreview.Play();
     }
 
     private void ApplyVolume(string param, float value01)
@@ -119,4 +122,4 @@ public class AudioSettingsManager : MonoBehaviour
     public bool GetSavedMasterMute() => PlayerPrefs.GetInt(KEY_MASTER_MUTE, 0) == 1;
     public bool GetSavedBGMMute() => PlayerPrefs.GetInt(KEY_BGM_MUTE, 0) == 1;
     public bool GetSavedSFXMute() => PlayerPrefs.GetInt(KEY_SFX_MUTE, 0) == 1;
-}
+}

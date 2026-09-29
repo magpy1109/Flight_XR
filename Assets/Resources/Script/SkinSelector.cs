@@ -24,23 +24,28 @@ public class SkinSelector : MonoBehaviour
     private int currentAppliedSkinID = 0;
     private int previewingSkinID = 0;
 
-    private IEnumerator Start()
+    /// <summary>
+    /// 트레일 탭인지 (TrailPanel에 붙은 SkinSelector, 또는 미리보기 모델이 파티클 트레일인 경우)
+    /// 트레일은 비행기 스킨과 따로 저장한다. (예전에는 같은 칸에 저장돼서 트레일을 적용하면 비행기 스킨이 바뀌었음)
+    /// </summary>
+    private bool IsTrailSelector
     {
-        // SaveManager가 생성될 때까지 대기
-        while (SaveManager.Instance == null)
+        get
         {
-            yield return null;
+            if (gameObject.name.Contains("Trail"))
+                return true;
+
+            if (planeModels != null && planeModels.Length > 0 && planeModels[0] != null)
+                return planeModels[0].GetComponentInChildren<ParticleSystem>(true) != null;
+
+            return false;
         }
+    }
 
-        // Firebase에서 유저 데이터가 모두 로드될 때까지 대기
-        while (!SaveManager.Instance.IsLoaded)
-        {
-            yield return null;
-        }
-
-        Debug.Log("SkinSelector : 게임 데이터 로드 확인");
-
-        // Firebase에 저장된 장착 스킨 가져오기
+    private void Start()
+    {
+        // Firebase 로드를 기다리지 않고 바로 표시한다.
+        // (보유 스킨 / 장착 스킨은 지난번에 저장해 둔 값 사용 → 로드가 끝나면 최신 값으로 갱신)
         currentAppliedSkinID = GetEquippedSkinID();
 
         // 기존처럼 화면 진입 시 0번을 미리보기
@@ -53,8 +58,20 @@ public class SkinSelector : MonoBehaviour
         }
 
         Update3DModel(previewingSkinID);
+        UpdateButtonState(previewingSkinID);
 
-        // 실제 Firebase 보유 여부 기준으로 버튼 상태 결정
+        SaveManager.Loaded += OnSaveDataLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        SaveManager.Loaded -= OnSaveDataLoaded;
+    }
+
+    /// <summary>Firebase 데이터가 늦게 도착하면 버튼 상태만 최신으로</summary>
+    private void OnSaveDataLoaded()
+    {
+        currentAppliedSkinID = GetEquippedSkinID();
         UpdateButtonState(previewingSkinID);
     }
 
@@ -95,25 +112,16 @@ public class SkinSelector : MonoBehaviour
         if (applyButton == null || applyButtonText == null)
             return;
 
-        if (SaveManager.Instance == null ||
-            !SaveManager.Instance.IsLoaded)
-        {
-            applyButtonText.text = "불러오는 중...";
-            applyButton.interactable = false;
-            return;
-        }
-
         string firestoreSkinID = ConvertSkinID(skinID);
 
-        bool isOwned =
-            SaveManager.Instance.HasSkin(firestoreSkinID);
+        bool isOwned = IsOwned(firestoreSkinID);
 
         if (!isOwned)
         {
             applyButtonText.text = "조건을 달성하세요";
             applyButton.interactable = false;
         }
-        else if (skinID == currentAppliedSkinID)
+        else if (NormalizeID(skinID) == NormalizeID(currentAppliedSkinID))
         {
             applyButtonText.text = "적용 중";
             applyButton.interactable = false;
@@ -127,18 +135,11 @@ public class SkinSelector : MonoBehaviour
 
     public void OnApplyButtonClicked()
     {
-        if (SaveManager.Instance == null ||
-            !SaveManager.Instance.IsLoaded)
-        {
-            Debug.LogWarning("SaveManager 데이터가 아직 로드되지 않았습니다.");
-            return;
-        }
-
         string firestoreSkinID =
             ConvertSkinID(previewingSkinID);
 
-        // 실제 보유 스킨인지 다시 확인
-        if (!SaveManager.Instance.HasSkin(firestoreSkinID))
+        // 보유 스킨인지 다시 확인 (로드 전이면 저장해 둔 보유 목록 기준)
+        if (!IsOwned(firestoreSkinID))
         {
             Debug.LogWarning(
                 $"보유하지 않은 스킨입니다 : {firestoreSkinID}"
@@ -149,8 +150,22 @@ public class SkinSelector : MonoBehaviour
 
         currentAppliedSkinID = previewingSkinID;
 
-        // Firebase users 문서에 장착 스킨 저장
-        SaveManager.Instance.EquipSkin(firestoreSkinID);
+        // 바로 적용(로컬 저장) + Firebase users 문서에 저장 (로드 전이면 로드 후 저장)
+        int normalized = NormalizeID(previewingSkinID);
+
+        if (IsTrailSelector)
+        {
+            PlayerPrefs.SetInt(PlaneSkinState.TrailKey, normalized);
+            if (SaveManager.Instance != null)
+                SaveManager.Instance.EquipTrail(firestoreSkinID);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(PlaneSkinState.PlaneKey, normalized);
+            if (SaveManager.Instance != null)
+                SaveManager.Instance.EquipSkin(firestoreSkinID);
+        }
+        PlayerPrefs.Save();
 
         Debug.Log(
             $"🎉 스킨 장착 완료! 저장된 스킨 ID: {firestoreSkinID}"
@@ -168,11 +183,14 @@ public class SkinSelector : MonoBehaviour
         if (SaveManager.Instance == null ||
             SaveManager.Instance.CurrentUser == null)
         {
-            return 0;
+            // Firebase 로드 전 : 지난번에 장착한 값
+            return PlayerPrefs.GetInt(
+                IsTrailSelector ? PlaneSkinState.TrailKey : PlaneSkinState.PlaneKey, 0);
         }
 
-        string equippedID =
-            SaveManager.Instance.CurrentUser.equipped_skin_id;
+        string equippedID = IsTrailSelector
+            ? SaveManager.Instance.CurrentUser.equipped_trail_id
+            : SaveManager.Instance.CurrentUser.equipped_skin_id;
 
         if (string.IsNullOrEmpty(equippedID))
             return 0;
@@ -192,8 +210,28 @@ public class SkinSelector : MonoBehaviour
         return 0;
     }
 
+    /// <summary>
+    /// 페이지마다 같은 스킨이 반복되므로(버튼 번호 0~44) 실제 스킨 번호(0~8)로 바꾼다.
+    /// (3D 모델 표시와 같은 규칙. 예전에는 2페이지 이후 버튼이 항상 "조건을 달성하세요"였음)
+    /// </summary>
+    private int NormalizeID(int skinID)
+    {
+        int count = planeModels != null && planeModels.Length > 0 ? planeModels.Length : PlaneSkinState.SkinCount;
+        return ((skinID % count) + count) % count;
+    }
+
+    private static bool IsOwned(string firestoreSkinID)
+    {
+        if (SaveManager.Instance != null)
+            return SaveManager.Instance.HasSkin(firestoreSkinID);
+
+        return SaveManager.HasSkinCached(firestoreSkinID);
+    }
+
     private string ConvertSkinID(int skinID)
     {
+        skinID = NormalizeID(skinID);
+
         // UI의 0번 = Firebase의 default
         if (skinID == 0)
             return "default";
@@ -238,4 +276,4 @@ public class SkinSelector : MonoBehaviour
         );
     }
 #endif
-}
+}

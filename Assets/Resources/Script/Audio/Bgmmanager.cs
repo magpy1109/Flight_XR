@@ -69,6 +69,8 @@ public class BGMManager : MonoBehaviour
         {
             src.loop = false;
             src.playOnAwake = false;
+            // 일시정지(AudioListener.pause) 중에도 BGM은 계속 재생
+            src.ignoreListenerPause = true;
             if (bgmMixerGroup != null) src.outputAudioMixerGroup = bgmMixerGroup;
         }
         activeSource = sourceA;
@@ -129,7 +131,8 @@ public class BGMManager : MonoBehaviour
     private IEnumerator AutoAdvanceRoutine(float clipLength)
     {
         float wait = Mathf.Max(0.1f, clipLength - crossfadeDuration);
-        yield return new WaitForSeconds(wait);
+        // 일시정지(Time.timeScale = 0) 중에도 곡이 끝나면 다음 곡으로 넘어가도록 실제 시간 사용
+        yield return new WaitForSecondsRealtime(wait);
 
         // 설정에서 곡을 골랐으면 그 곡 반복, 전체 랜덤 재생이면 다음 곡
         int next = IsSingleSongSelected ? currentIndex : GetNextIndex();
@@ -153,7 +156,7 @@ public class BGMManager : MonoBehaviour
 
         while (t < crossfadeDuration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             float ratio = t / crossfadeDuration;
             inactiveSource.volume = Mathf.Lerp(0f, 1f, ratio);
             activeSource.volume = Mathf.Lerp(startVolActive, 0f, ratio);
@@ -249,4 +252,4 @@ public class BGMManager : MonoBehaviour
         sourceA.Stop();
         sourceB.Stop();
     }
-}
+}
