@@ -648,7 +648,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 754906001}
-  - component: {fileID: 754906000}
   m_Layer: 0
   m_Name: TestGameTester
   m_TagString: Untagged
@@ -656,18 +655,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &754906000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754905999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d27743ae4377c4b42be3de3715679542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestGameResult
 --- !u!4 &754906001
 Transform:
   m_ObjectHideFlags: 0
@@ -2546,6 +2533,14 @@ MonoBehaviour:
   minVolume: 0.003
   maxVolume: 0.03
   smoothing: 8
+  windFilter: 1
+  minPassThrough: 0.45
+  maxAmbientRatio: 0.35
+  steadinessBlocks: 14
+  steadyVariation: 0.5
+  gustyVariation: 1.1
+  breathHighRatio: 0.35
+  highPassHz: 1000
 --- !u!114 &1768151976
 MonoBehaviour:
   m_ObjectHideFlags: 0
