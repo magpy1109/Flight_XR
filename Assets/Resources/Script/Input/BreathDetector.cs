@@ -31,17 +31,25 @@ public class BreathDetector : MonoBehaviour
     // 2) 소리 성분 : 입으로 부는 소리에는 "후~" 하는 높은 음역(쉬익) 성분이 섞여 있고, 바람은 낮은 음역 위주다.
     // 3) 배경 세기 : 계속 부는 바람 / 소음은 배경으로 학습해서 그만큼 빼고 계산한다.
     [Header("Wind Filter")]
-    [Tooltip("바람 소리 필터 사용 (야외 플레이용)")]
+    [Tooltip("바람 소리 필터 사용 (야외 모드일 때만 동작, 실내에서는 기존과 동일)")]
     [SerializeField] private bool windFilter = true;
 
+    [Tooltip("바람으로 판단해도 입력을 이 비율까지는 남긴다 (입김이 전혀 안 먹는 일 방지)")]
+    [Range(0f, 1f)]
+    [SerializeField] private float minPassThrough = 0.45f;
+
+    [Tooltip("배경(바람/소음) 세기는 최대 입김 기준의 이 비율까지만 뺀다")]
+    [Range(0f, 1f)]
+    [SerializeField] private float maxAmbientRatio = 0.35f;
+
     [Tooltip("분석 구간 길이 (블록 수, 블록 1개 = 약 23ms)")]
-    [SerializeField] private int steadinessBlocks = 8;
+    [SerializeField] private int steadinessBlocks = 14;
 
     [Tooltip("세기 변동률이 이 값 이하면 꾸준한 입김으로 봄")]
-    [SerializeField] private float steadyVariation = 0.3f;
+    [SerializeField] private float steadyVariation = 0.5f;
 
     [Tooltip("세기 변동률이 이 값 이상이면 불규칙한 바람으로 봄")]
-    [SerializeField] private float gustyVariation = 0.7f;
+    [SerializeField] private float gustyVariation = 1.1f;
 
     [Tooltip("높은 음역 비율이 이 값 이상이면 입김 소리 특징이 뚜렷함")]
     [SerializeField] private float breathHighRatio = 0.35f;
@@ -222,7 +230,9 @@ public class BreathDetector : MonoBehaviour
 
             float volume = RawVolume;
 
-            if (windFilter)
+            bool filterOn = windFilter && OutdoorMode.Enabled;
+
+            if (filterOn)
             {
                 AnalyzeNewBlocks();
                 volume = ApplyWindFilter(RawVolume);
@@ -234,10 +244,11 @@ public class BreathDetector : MonoBehaviour
                 minVolume,
                 maxVolume);
 
-            if (windFilter)
+            if (filterOn)
             {
-                // 입김으로 확신할수록 그대로, 바람 / 소음으로 보이면 줄인다
-                targetPower *= Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(0.3f, 0.7f, breathConfidence));
+                // 입김으로 확신할수록 그대로, 바람 / 소음으로 보이면 줄인다 (완전히 막지는 않음)
+                float pass = Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(0.25f, 0.6f, breathConfidence));
+                targetPower *= Mathf.Lerp(minPassThrough, 1f, pass);
             }
         }
 
@@ -357,18 +368,22 @@ public class BreathDetector : MonoBehaviour
         blockCount = Mathf.Min(blockCount + 1, blockRms.Length);
 
         // 짧은 구간 세기 변동률 (표준편차 / 평균)
+        // 입김도 23ms 단위로는 조금씩 흔들리므로, 이웃한 블록을 평균낸 값으로 비교한다
         float mean = 0f;
         for (int i = 0; i < blockCount; i++)
             mean += blockRms[i];
         mean /= Mathf.Max(1, blockCount);
 
         float variance = 0f;
-        for (int i = 0; i < blockCount; i++)
+        int pairs = 0;
+        for (int i = 0; i + 1 < blockCount; i += 2)
         {
-            float d = blockRms[i] - mean;
+            float pairMean = (blockRms[i] + blockRms[i + 1]) * 0.5f;
+            float d = pairMean - mean;
             variance += d * d;
+            pairs++;
         }
-        variance /= Mathf.Max(1, blockCount);
+        variance /= Mathf.Max(1, pairs);
 
         float variation = mean > 1e-5f ? Mathf.Sqrt(variance) / mean : 0f;
 
@@ -387,8 +402,8 @@ public class BreathDetector : MonoBehaviour
         // 배경 세기 학습 : 조용해지면 빠르게 내려가고, 바람처럼 불규칙한 소리일 때만 천천히 올라간다
         if (rms < AmbientLevel)
             AmbientLevel = Mathf.Lerp(AmbientLevel, rms, 1f - Mathf.Exp(-blockTime / 0.5f));
-        else if (BreathLikelihood < 0.5f)
-            AmbientLevel = Mathf.Lerp(AmbientLevel, rms, 1f - Mathf.Exp(-blockTime / 3f));
+        else if (BreathLikelihood < 0.3f)
+            AmbientLevel = Mathf.Lerp(AmbientLevel, rms, 1f - Mathf.Exp(-blockTime / 4f));
         else
             AmbientLevel = Mathf.Lerp(AmbientLevel, rms, 1f - Mathf.Exp(-blockTime / 30f));
     }
@@ -402,7 +417,9 @@ public class BreathDetector : MonoBehaviour
             ? Mathf.Max(MicSensitivity.NoiseFloor * 2f, 0.0005f)
             : minVolume;
 
-        float extra = Mathf.Max(0f, AmbientLevel * 1.3f - baseline);
+        // 너무 많이 빼면 입김까지 사라지므로 최대 입김 기준의 일부까지만 뺀다
+        float fullBlow = MicSensitivity.HasCalibration ? MicSensitivity.BlowPeak : maxVolume;
+        float extra = Mathf.Clamp(AmbientLevel * 1.1f - baseline, 0f, fullBlow * maxAmbientRatio);
         return Mathf.Max(0f, rms - extra);
     }
 
