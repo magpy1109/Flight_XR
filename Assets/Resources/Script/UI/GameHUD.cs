@@ -53,6 +53,17 @@ public class GameHUD : MonoBehaviour
 
     private CanvasGroup hintGroup;
 
+    // ---------- 처음 하는 사람 안내 (첫 플레이 때만) ----------
+    // 다시 보고 싶으면 PlayerPrefs의 "Tutorial_FlightGuide_Shown" 키를 지우면 된다.
+    private const string GuideShownKey = "Tutorial_FlightGuide_Shown";
+    private const float GuideFlightSeconds = 6f;      // 첫 비행 시작 후 이 시간 동안 더 보여 줌
+    private static readonly Vector2 GuideCenter = new Vector2(0f, -240f);
+
+    private CanvasGroup guideGroup;
+    private bool guideDone;
+    private bool wasPlaying;
+    private float flightStartTime = -1f;
+
     private TMP_Text countdownText;
     private string lastCountdown;
     private float countdownPopTime = -10f;
@@ -162,6 +173,7 @@ public class GameHUD : MonoBehaviour
         BuildScoreboard();
         BuildWindGauge();
         BuildHint();
+        BuildGuide();
 
         try
         {
@@ -250,6 +262,72 @@ public class GameHUD : MonoBehaviour
         // 퍼센트
         windPercent = CreateText("Percent", card.rectTransform, "0%", 26f, TextDark, FontStyles.Bold);
         Place(windPercent.rectTransform, new Vector2(0f, -top + 34f), new Vector2(WindSize.x, 36f));
+    }
+
+    private void BuildGuide()
+    {
+        guideDone = PlayerPrefs.GetInt(GuideShownKey, 0) == 1;
+        if (guideDone)
+            return;
+
+        Image card = CreateImage("FirstPlayGuide", transform, Color.white, RoundedSprites.Rect, 28f);
+        Place(card.rectTransform, GuideCenter, new Vector2(620f, 150f));
+
+        AddGuideRow(card.rectTransform, 33f, WindIconSprite.Get(), "입으로 불면 떠올라요");
+        AddGuideRow(card.rectTransform, -33f, JoystickIconSprite.Get(), "오른쪽 조이스틱으로 방향 전환");
+
+        guideGroup = card.gameObject.AddComponent<CanvasGroup>();
+        guideGroup.alpha = 0f;
+        guideGroup.blocksRaycasts = false;
+        guideGroup.interactable = false;
+    }
+
+    private void AddGuideRow(RectTransform card, float y, Sprite iconSprite, string message)
+    {
+        Image iconBg = CreateImage("IconBg", card, IconBg, RoundedSprites.Circle, 0f);
+        Place(iconBg.rectTransform, new Vector2(-250f, y), new Vector2(50f, 50f));
+
+        Image icon = CreateImage("Icon", iconBg.rectTransform, Primary, iconSprite, 0f);
+        Place(icon.rectTransform, Vector2.zero, new Vector2(32f, 32f));
+
+        TMP_Text text = CreateText("Text", card, message, 30f, TextDark, FontStyles.Bold);
+        text.alignment = TextAlignmentOptions.MidlineLeft;
+        Place(text.rectTransform, new Vector2(20f, y), new Vector2(460f, 50f));
+    }
+
+    private void UpdateGuide(GameManager gm)
+    {
+        if (guideGroup == null)
+            return;
+
+        bool playing = gm != null && gm.IsPlaying;
+
+        if (playing && !wasPlaying)
+            flightStartTime = Time.unscaledTime;
+        wasPlaying = playing;
+
+        // 첫 비행을 몇 초 해 보면 다시는 보여 주지 않음
+        if (!guideDone && playing && flightStartTime >= 0f &&
+            Time.unscaledTime - flightStartTime >= GuideFlightSeconds)
+        {
+            guideDone = true;
+            PlayerPrefs.SetInt(GuideShownKey, 1);
+            PlayerPrefs.Save();
+        }
+
+        bool show =
+            !guideDone && gm != null &&
+            (ResultUI.Instance == null || !ResultUI.Instance.IsResultShown) &&
+            !PauseManager.IsPaused;
+
+        float target = show ? 1f : 0f;
+        guideGroup.alpha = Mathf.MoveTowards(guideGroup.alpha, target, Time.unscaledDeltaTime * 4f);
+
+        if (guideDone && guideGroup.alpha <= 0f)
+        {
+            Destroy(guideGroup.gameObject);
+            guideGroup = null;
+        }
     }
 
     private void BuildHint()
@@ -351,6 +429,9 @@ public class GameHUD : MonoBehaviour
 
         if (windPercent != null)
             windPercent.text = Mathf.RoundToInt(shownWind * 100f) + "%";
+
+        // 처음 하는 사람 안내
+        UpdateGuide(gm);
 
         // 시작 안내
         if (hintGroup != null)
@@ -538,6 +619,85 @@ public static class WindIconSprite
             float deg = Mathf.Lerp(fromDeg, toDeg, i / (float)steps);
             Vector2 next = center + radius * new Vector2(Mathf.Cos(deg * Mathf.Deg2Rad), Mathf.Sin(deg * Mathf.Deg2Rad));
             AddLine(list, prev, next);
+            prev = next;
+        }
+    }
+
+    private static float DistanceToSegment(Vector2 p, Vector2 a, Vector2 b)
+    {
+        Vector2 ab = b - a;
+        float t = Mathf.Clamp01(Vector2.Dot(p - a, ab) / Mathf.Max(ab.sqrMagnitude, 0.0001f));
+        return Vector2.Distance(p, a + ab * t);
+    }
+}
+
+/// <summary>조이스틱 아이콘 (동그란 조이스틱 + 좌우 화살표) 스프라이트를 실행 시 그려서 사용</summary>
+public static class JoystickIconSprite
+{
+    private static Sprite sprite;
+
+    public static Sprite Get()
+    {
+        if (sprite != null)
+            return sprite;
+
+        const int size = 128;
+        const float unit = size / 24f;
+        const float halfStroke = 1.0f * unit;
+
+        var segments = new System.Collections.Generic.List<Vector4>();
+
+        // 조이스틱 테두리
+        AddArc(segments, new Vector2(12f, 12f), 5.5f, 0f, 360f);
+
+        // 왼쪽 / 오른쪽 화살표
+        segments.Add(new Vector4(4f, 9f, 1.5f, 12f));
+        segments.Add(new Vector4(1.5f, 12f, 4f, 15f));
+        segments.Add(new Vector4(20f, 9f, 22.5f, 12f));
+        segments.Add(new Vector4(22.5f, 12f, 20f, 15f));
+
+        Vector2 stick = new Vector2(12f, 12f);
+        const float stickRadius = 2.6f;
+
+        Texture2D tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+        tex.wrapMode = TextureWrapMode.Clamp;
+        tex.filterMode = FilterMode.Bilinear;
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                Vector2 p = new Vector2((x + 0.5f) / unit, (size - y - 0.5f) / unit);
+
+                float d = float.MaxValue;
+                foreach (Vector4 s in segments)
+                    d = Mathf.Min(d, DistanceToSegment(p, new Vector2(s.x, s.y), new Vector2(s.z, s.w)));
+
+                float a = Mathf.Clamp01(halfStroke - d * unit + 0.5f);
+
+                // 가운데 채워진 스틱
+                float stickAlpha = Mathf.Clamp01((stickRadius - Vector2.Distance(p, stick)) * unit + 0.5f);
+                a = Mathf.Max(a, stickAlpha);
+
+                tex.SetPixel(x, y, new Color(1f, 1f, 1f, a));
+            }
+        }
+
+        tex.Apply();
+        sprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f);
+        return sprite;
+    }
+
+    private static void AddArc(System.Collections.Generic.List<Vector4> list, Vector2 center, float radius, float fromDeg, float toDeg)
+    {
+        const int steps = 40;
+        Vector2 prev = center + radius * new Vector2(Mathf.Cos(fromDeg * Mathf.Deg2Rad), Mathf.Sin(fromDeg * Mathf.Deg2Rad));
+
+        for (int i = 1; i <= steps; i++)
+        {
+            float deg = Mathf.Lerp(fromDeg, toDeg, i / (float)steps);
+            Vector2 next = center + radius * new Vector2(Mathf.Cos(deg * Mathf.Deg2Rad), Mathf.Sin(deg * Mathf.Deg2Rad));
+            list.Add(new Vector4(prev.x, prev.y, next.x, next.y));
             prev = next;
         }
     }

@@ -79,6 +79,9 @@ public class GameManager : MonoBehaviour
 
         IsPlaying = false;
 
+        // 게임오버 진동
+        ControllerHaptics.GameOver();
+
         int flightTime =
             Mathf.RoundToInt(Time.time - startTime);
 

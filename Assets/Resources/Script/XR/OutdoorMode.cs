@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// - 방 공간 인식(MRUK)으로 만든 벽 / 가구 충돌을 끈다. (작게 스캔한 방 밖으로 나가도 허공에서 추락하지 않게)
 /// - 방 데이터가 없을 때 예시 방(프리팹)으로 대신 쓰지 않는다.
 /// - World Lock(방 기준 위치 보정)을 끈다.
+/// - 방 데이터가 없어도 "공간 설정을 하시겠습니까?" 창을 띄우지 않는다.
 /// → 충돌은 실시간 공간 인식(PlaneEnvironmentCollision)과 트래킹 바닥으로만 판정한다.
 ///
 /// 끄면 기존과 같다. (실내 : 방 공간 인식 벽 충돌 + 실시간 공간 인식)
@@ -51,7 +52,18 @@ public static class OutdoorMode
             mruk.EnableWorldLock = false;
 
             if (mruk.SceneSettings != null)
+            {
                 mruk.SceneSettings.DataSource = MRUK.SceneDataSource.Device;
+
+                // MRUK가 시작할 때 자동으로 방을 불러오면, 방 데이터가 없을 때
+                // "공간 설정을 하시겠습니까?" 창을 띄운다 → 자동 불러오기를 끄고
+                // 창 없이(requestSceneCaptureIfNoDataFound = false) 직접 불러온다.
+                if (mruk.SceneSettings.LoadSceneOnStartup)
+                {
+                    mruk.SceneSettings.LoadSceneOnStartup = false;
+                    mruk.StartCoroutine(LoadSceneWithoutPrompt(mruk));
+                }
+            }
 
             // 이미 불러온 방이 있거나 나중에 불러와도 충돌이 생기지 않게
             mruk.SceneLoadedEvent.AddListener(DisableRoomColliders);
@@ -64,6 +76,22 @@ public static class OutdoorMode
 
         if (mruk != null)
             Debug.Log("[OutdoorMode] 야외 모드 적용 : 방 벽 충돌 끔, 예시 방 사용 안 함, World Lock 끔");
+    }
+
+    private static System.Collections.IEnumerator LoadSceneWithoutPrompt(MRUK mruk)
+    {
+        // MRUK 초기화(Start)가 끝난 다음 프레임에 실행
+        yield return null;
+
+        if (mruk == null)
+            yield break;
+
+        var task = mruk.LoadSceneFromDevice(requestSceneCaptureIfNoDataFound: false);
+
+        while (!task.IsCompleted)
+            yield return null;
+
+        Debug.Log($"[OutdoorMode] 방 데이터 불러오기 (공간 설정 창 없이) : {(task.IsFaulted ? "실패" : task.Result.ToString())}");
     }
 
     private static void DisableRoomColliders()

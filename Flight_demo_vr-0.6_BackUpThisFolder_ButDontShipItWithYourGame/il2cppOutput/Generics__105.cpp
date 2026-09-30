@@ -14331,7 +14331,7 @@ String_t* ExtractKeyDelegate_Invoke_m3214A3F92C2EB22088AB7738E8DFE1BE70925148_Op
 	NullCheck(___0_value);
 	return GenericInterfaceFuncInvoker0< String_t* >::Invoke(method, ___0_value);
 }
-// Method Definition Index: 157612
+// Method Definition Index: 157647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtractKeyDelegate__ctor_m71776A39921DB2D04FFE7A628E616EB1A27D7CA4_gshared (ExtractKeyDelegate_t9BADAD4BDEEE5FEB8CBD095F1EA307C3DA921583* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -14385,7 +14385,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtractKeyDelegate__ctor_m71776A39921DB2
 	}
 	__this->___extra_arg = (intptr_t)&ExtractKeyDelegate_Invoke_m3214A3F92C2EB22088AB7738E8DFE1BE70925148_Multicast;
 }
-// Method Definition Index: 157613
+// Method Definition Index: 157648
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ExtractKeyDelegate_Invoke_m3214A3F92C2EB22088AB7738E8DFE1BE70925148_gshared (ExtractKeyDelegate_t9BADAD4BDEEE5FEB8CBD095F1EA307C3DA921583* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -14450,7 +14450,7 @@ String_t* ExtractKeyDelegate_Invoke_m299616CF7575CD317723CE89D3BA8B8F04A9B722_Op
 	NullCheck(___0_value);
 	return GenericInterfaceFuncInvoker0Invoker< String_t* >::Invoke(method, (RuntimeObject*)___0_value);
 }
-// Method Definition Index: 157612
+// Method Definition Index: 157647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtractKeyDelegate__ctor_m5E13E9801D274AB1B35D7859F4ED656AA3BD1593_gshared (ExtractKeyDelegate_t0FCB0690B76E40F52DC9D05708A8FC488624E3CD* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -14500,7 +14500,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExtractKeyDelegate__ctor_m5E13E9801D274A
 	}
 	__this->___extra_arg = (intptr_t)&ExtractKeyDelegate_Invoke_m299616CF7575CD317723CE89D3BA8B8F04A9B722_Multicast;
 }
-// Method Definition Index: 157613
+// Method Definition Index: 157648
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ExtractKeyDelegate_Invoke_m299616CF7575CD317723CE89D3BA8B8F04A9B722_gshared (ExtractKeyDelegate_t0FCB0690B76E40F52DC9D05708A8FC488624E3CD* __this, Il2CppFullySharedGenericAny ___0_value, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -30098,7 +30098,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FindTransform_Invoke_m3C8CD5E4D961170B94
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 139051
+// Method Definition Index: 139086
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FirestoreConverter_1__ctor_m1FF55626C996286819901418A08A8C9AF5F73BAC_gshared (FirestoreConverter_1_t39239D5886477E1A56848C81AADEF96EC9F302CE* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30126,7 +30126,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FirestoreConverter_1__ctor_m1FF55626C996
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 138857
+// Method Definition Index: 138892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FirestoreEnumNameConverter_1__cctor_m3F95DF63A9A59E38D5F17110E2E0D3FA9229B7D4_gshared (const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_T_tB5C397F5C6185C45A3BAA6F6EC949DF3F4137FC9 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 9));
@@ -30250,7 +30250,7 @@ IL_00a1:
 		return;
 	}
 }
-// Method Definition Index: 138858
+// Method Definition Index: 138893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FirestoreEnumNameConverter_1_FromFirestore_mF44EA2834283AD7AEA8443AAC01570C5AFD01470_gshared (FirestoreEnumNameConverter_1_tE72F18E44EEF39DCEA17041AE51436985D0B1A50* __this, RuntimeObject* ___0_value, Il2CppFullySharedGenericStruct* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_T_tB5C397F5C6185C45A3BAA6F6EC949DF3F4137FC9 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 9));
@@ -30309,7 +30309,7 @@ IL_003d:
 		return;
 	}
 }
-// Method Definition Index: 138859
+// Method Definition Index: 138894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FirestoreEnumNameConverter_1_ToFirestore_mEFF900E603F627868F17D3D1324BD2481EC7BF82_gshared (FirestoreEnumNameConverter_1_tE72F18E44EEF39DCEA17041AE51436985D0B1A50* __this, Il2CppFullySharedGenericStruct ___0_value, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_T_tB5C397F5C6185C45A3BAA6F6EC949DF3F4137FC9 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 9));
@@ -30366,7 +30366,7 @@ IL_003d:
 		return L_12;
 	}
 }
-// Method Definition Index: 138860
+// Method Definition Index: 138895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FirestoreEnumNameConverter_1__ctor_mD8C0D3F6E3CBE26A036634F0EEE45D3F44DF23F9_gshared (FirestoreEnumNameConverter_1_tE72F18E44EEF39DCEA17041AE51436985D0B1A50* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
