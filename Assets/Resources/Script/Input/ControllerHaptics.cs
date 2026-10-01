@@ -5,6 +5,7 @@ using UnityEngine.XR;
 /// <summary>
 /// 컨트롤러 진동.
 /// - GameOver() : 게임오버 때 양손 컨트롤러에 "쿵-쿵" 진동
+/// - Tick() : 노란 네모를 먹었을 때 짧은 "톡" 진동
 ///
 /// Meta OVRInput으로 진동을 주고, 안 되는 환경에서는 Unity XR 진동으로 한 번 더 시도한다.
 /// 일시정지(Time.timeScale = 0)와 상관없이 실제 시간 기준으로 동작한다.
@@ -23,6 +24,12 @@ public class ControllerHaptics : MonoBehaviour
     public static void GameOver()
     {
         Run(GameOverPattern());
+    }
+
+    /// <summary>노란 네모를 먹었을 때 : 아주 짧고 약한 "톡"</summary>
+    public static void Tick()
+    {
+        Run(Pulse(0.3f, 0.04f));
     }
 
     private static IEnumerator GameOverPattern()

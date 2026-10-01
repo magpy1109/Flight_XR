@@ -94,6 +94,13 @@ public class SkinUnlockManager : MonoBehaviour
         {
             Unlock("8", "갤럭시");
         }
+
+        // 9. 스텔스 폭격기
+        // 최고 점수 500 (노란 네모 점수)
+        if (stats.best_score >= 500)
+        {
+            Unlock("9", "스텔스 폭격기");
+        }
     }
 
     private void Unlock(string skinId, string skinName)
@@ -107,4 +114,4 @@ public class SkinUnlockManager : MonoBehaviour
 
         SaveManager.Instance.UnlockSkin(skinId);
     }
-}
+}

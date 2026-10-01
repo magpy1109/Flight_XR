@@ -736,6 +736,12 @@
             "icon": null
           },
           {
+            "name": "TrailRenderer",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Transform",
             "scenes": [],
             "dependencyType": 1,
@@ -1279,10 +1285,7 @@
           },
           {
             "name": "MeshCollider",
-            "scenes": [
-              "Assets/Scenes/MainMenuScene.unity",
-              "Assets/Scenes/SampleScene.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },

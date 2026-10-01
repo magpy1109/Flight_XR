@@ -664,7 +664,7 @@ extern "C" void DEFAULT_CALL ReversePInvokeWrapper_SWIGExceptionHelper_SetPendin
 	SWIGExceptionHelper_SetPendingArgumentOutOfRangeException_m7111A0768AC3707D3151755C7456E30482F974DF(____0_message_unmarshaled, ____1_paramName_unmarshaled, NULL);
 
 }
-// Method Definition Index: 150603
+// Method Definition Index: 150730
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptionCallbacks_AuthUtil_m5A0AC467CB894DA14A8D5FC72E1C4C0923C12E61 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___0_applicationDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___1_arithmeticDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___2_divideByZeroDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___3_indexOutOfRangeDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___4_invalidCastDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___5_invalidOperationDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___6_ioDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___7_nullReferenceDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___8_outOfMemoryDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___9_overflowDelegate, ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* ___10_systemExceptionDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -719,7 +719,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptio
 	#endif
 
 }
-// Method Definition Index: 150604
+// Method Definition Index: 150731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptionCallbacksArgument_AuthUtil_mAD9B1407D55B00A38D10D3CE2B615942F9BDDF0B (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___0_argumentDelegate, ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___1_argumentNullDelegate, ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* ___2_argumentOutOfRangeDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -750,7 +750,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SWIGRegisterExceptio
 	#endif
 
 }
-// Method Definition Index: 150605
+// Method Definition Index: 150732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingApplicationException_mD3D5DF4565F2D8B785CECDDE06C94EB1AF3B7ACD (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -773,7 +773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingApplicatio
 		return;
 	}
 }
-// Method Definition Index: 150606
+// Method Definition Index: 150733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArithmeticException_m6D48FAE1D40F739EBE2EB7B7A2D35A4C38E273D2 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -796,7 +796,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArithmetic
 		return;
 	}
 }
-// Method Definition Index: 150607
+// Method Definition Index: 150734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingDivideByZeroException_m5E4DFAD8B4B70C66EA34EC78307E69F6B0D8F7E7 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -819,7 +819,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingDivideByZe
 		return;
 	}
 }
-// Method Definition Index: 150608
+// Method Definition Index: 150735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIndexOutOfRangeException_m05738E7A913471982107EC9DAFF8E575AD16D09D (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -842,7 +842,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIndexOutOf
 		return;
 	}
 }
-// Method Definition Index: 150609
+// Method Definition Index: 150736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidCastException_m7CEBADF8ADECB392731AD0215CA9D2162344E3EB (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -865,7 +865,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidCas
 		return;
 	}
 }
-// Method Definition Index: 150610
+// Method Definition Index: 150737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidOperationException_m946F88971C00DC640C4A7FEFB4D820E03AFCBA8A (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -888,7 +888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingInvalidOpe
 		return;
 	}
 }
-// Method Definition Index: 150611
+// Method Definition Index: 150738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIOException_m097E27E1B950DDEDBE75ECAA525FBA1F9CCC55FC (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -911,7 +911,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingIOExceptio
 		return;
 	}
 }
-// Method Definition Index: 150612
+// Method Definition Index: 150739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingNullReferenceException_m7103FEC1AD9831462CD640AF2BD4BD51B457BE24 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -934,7 +934,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingNullRefere
 		return;
 	}
 }
-// Method Definition Index: 150613
+// Method Definition Index: 150740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOutOfMemoryException_m477DE4F591DB31AFA8DFACEBACA2CCA81CD28367 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -957,7 +957,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOutOfMemor
 		return;
 	}
 }
-// Method Definition Index: 150614
+// Method Definition Index: 150741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOverflowException_m5E2F92E1488F0943C4B43806F9F6EF812073D384 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -980,7 +980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingOverflowEx
 		return;
 	}
 }
-// Method Definition Index: 150615
+// Method Definition Index: 150742
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingSystemException_m988E84E7A45B7FCE1EC1597585471AFA78B06887 (String_t* ___0_message, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1003,7 +1003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingSystemExce
 		return;
 	}
 }
-// Method Definition Index: 150616
+// Method Definition Index: 150743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentException_m21B2170535EECF45751C6F48948BC1322346A5F0 (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1027,7 +1027,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentEx
 		return;
 	}
 }
-// Method Definition Index: 150617
+// Method Definition Index: 150744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentNullException_m09944997FE4F760BD1423A7DC3082736F605535C (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1080,7 +1080,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 150618
+// Method Definition Index: 150745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper_SetPendingArgumentOutOfRangeException_m7111A0768AC3707D3151755C7456E30482F974DF (String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1133,7 +1133,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 150619
+// Method Definition Index: 150746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__cctor_m082E44E87C697836CECA0760676EF7FC0FFCC789 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1251,7 +1251,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__cctor_m082E44E87C69
 		return;
 	}
 }
-// Method Definition Index: 150620
+// Method Definition Index: 150747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGExceptionHelper__ctor_m6709B95358A2A3B65272194E10E6AFD106926A1C (SWIGExceptionHelper_t05DAD01A90446484A21E9CC1112DA02202C77270* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1303,7 +1303,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ExceptionDelegate_tBD5E636A02BB2A87
 	____0_message_marshaled = NULL;
 
 }
-// Method Definition Index: 150621
+// Method Definition Index: 150748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate__ctor_m499CCC99321ACEAB5A59666F10B707010802EFE5 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1341,14 +1341,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate__ctor_m499CCC99321ACEA
 	}
 	__this->___extra_arg = (intptr_t)&ExceptionDelegate_Invoke_m46C9C9C3E1F3AE938DC4A5F07B91AE94FED25E0C_Multicast;
 }
-// Method Definition Index: 150622
+// Method Definition Index: 150749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate_Invoke_m46C9C9C3E1F3AE938DC4A5F07B91AE94FED25E0C (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, String_t* ___0_message, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 150623
+// Method Definition Index: 150750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionDelegate_BeginInvoke_m2EBE3CD9BB14674DC3E760EEDAFF050BBA8A866E (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, String_t* ___0_message, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1356,7 +1356,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionDelegate_BeginInvoke_
 	__d_args[0] = ___0_message;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 150624
+// Method Definition Index: 150751
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDelegate_EndInvoke_m458C25DA2853AF600A46042E0A39B7F0508B1178 (ExceptionDelegate_tBD5E636A02BB2A87476121A0D154ABDE69916D8A* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1411,7 +1411,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ExceptionArgumentDelegate_t2CB92E15
 	____1_paramName_marshaled = NULL;
 
 }
-// Method Definition Index: 150625
+// Method Definition Index: 150752
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate__ctor_m3F2FB66273FFCF78BE237864E1209316F6FC195A (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1449,14 +1449,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate__ctor_m3F2FB66
 	}
 	__this->___extra_arg = (intptr_t)&ExceptionArgumentDelegate_Invoke_m62CBEE541DBAA197B82571A6D8125143F4469C0D_Multicast;
 }
-// Method Definition Index: 150626
+// Method Definition Index: 150753
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_Invoke_m62CBEE541DBAA197B82571A6D8125143F4469C0D (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, ___1_paramName, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 150627
+// Method Definition Index: 150754
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionArgumentDelegate_BeginInvoke_m0C5E05C3BDC4300D73E0709FF3721E1D57E25A0D (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, String_t* ___0_message, String_t* ___1_paramName, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1465,7 +1465,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ExceptionArgumentDelegate_Begi
 	__d_args[1] = ___1_paramName;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 150628
+// Method Definition Index: 150755
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_EndInvoke_m53AFD960614BAB41DECF1717C8B96D5221CC57E0 (ExceptionArgumentDelegate_t2CB92E157C904122629802F9D5EBAC4BBF5981A1* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1479,7 +1479,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionArgumentDelegate_EndInvoke_m53A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 150629
+// Method Definition Index: 150756
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SWIGPendingException_get_Pending_m882B63921C8EAF5A22A08AFD6851BE6F4400A48C (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1536,7 +1536,7 @@ IL_0021:
 		return L_5;
 	}
 }
-// Method Definition Index: 150630
+// Method Definition Index: 150757
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException_Set_m7DB36E92553934D1116607493BD5D44F78710D9B (Exception_t* ___0_e, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1632,7 +1632,7 @@ IL_005f:
 		return;
 	}
 }
-// Method Definition Index: 150631
+// Method Definition Index: 150758
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t* SWIGPendingException_Retrieve_mAC5AB6C8BD341602F66565E1E8B2DAB5B03E172E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1747,7 +1747,7 @@ IL_005e:
 		return L_11;
 	}
 }
-// Method Definition Index: 150632
+// Method Definition Index: 150759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__cctor_mE0D00CBC7AAB9C703CD919329322A196DB282FA9 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1775,7 +1775,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__cctor_mE0D00CBC7AA
 		return;
 	}
 }
-// Method Definition Index: 150633
+// Method Definition Index: 150760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGPendingException__ctor_m7C3AF942003962FA57D87D2635BC859DC0F2C6D0 (SWIGPendingException_tE736A8E3A7119D121CB6D496E3E1C282C8C9B89A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1807,7 +1807,7 @@ extern "C" char* DEFAULT_CALL ReversePInvokeWrapper_SWIGStringHelper_CreateStrin
 
 	return _returnValue_marshaled;
 }
-// Method Definition Index: 150634
+// Method Definition Index: 150761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper_SWIGRegisterStringCallback_AuthUtil_mF1E51D0E5816C991DC9BD57E0668EEDCF81CA902 (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* ___0_stringDelegate, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1832,7 +1832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper_SWIGRegisterStringCallb
 	#endif
 
 }
-// Method Definition Index: 150635
+// Method Definition Index: 150762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringHelper_CreateString_m973E9F1971668A0D3BEA767B3479889D49CC39E3 (String_t* ___0_cString, const RuntimeMethod* method) 
 {
 	String_t* V_0 = NULL;
@@ -1850,7 +1850,7 @@ IL_0005:
 		return L_1;
 	}
 }
-// Method Definition Index: 150636
+// Method Definition Index: 150763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__cctor_m4233D189A57454B02357CBCC668E53E2B93F71D1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1874,7 +1874,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__cctor_m4233D189A57454B
 		return;
 	}
 }
-// Method Definition Index: 150637
+// Method Definition Index: 150764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringHelper__ctor_mC8327633A09D4DD655AA5FEA5A2A7BF7C841430E (SWIGStringHelper_t54C89246F8AD42733FDD4305243013933303AE2D* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1935,7 +1935,7 @@ IL2CPP_EXTERN_C  String_t* DelegatePInvokeWrapper_SWIGStringDelegate_t9CD01F3A48
 
 	return _returnValue_unmarshaled;
 }
-// Method Definition Index: 150638
+// Method Definition Index: 150765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringDelegate__ctor_m39AE1969D572DCB5A0266DC4EAE96243DFFEDE6D (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1973,14 +1973,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SWIGStringDelegate__ctor_m39AE1969D572DC
 	}
 	__this->___extra_arg = (intptr_t)&SWIGStringDelegate_Invoke_m2D64F3CEBF8E1B722FE1679E830742A423261D1E_Multicast;
 }
-// Method Definition Index: 150639
+// Method Definition Index: 150766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_Invoke_m2D64F3CEBF8E1B722FE1679E830742A423261D1E (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, String_t* ___0_message, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef String_t* (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_message, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 150640
+// Method Definition Index: 150767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SWIGStringDelegate_BeginInvoke_m6CAA25E7F5165C319041F1B9F8B33086ECBD5274 (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, String_t* ___0_message, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -1988,7 +1988,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SWIGStringDelegate_BeginInvoke
 	__d_args[0] = ___0_message;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 150641
+// Method Definition Index: 150768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_EndInvoke_m80A2424DD4BDDAC9F906545F99213105FC0A9CFB (SWIGStringDelegate_t9CD01F3A48BC7BC15A65A0BB2B7DAC5DF7608820* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2003,7 +2003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SWIGStringDelegate_EndInvoke_m80A24
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 150642
+// Method Definition Index: 150769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_ExportFix_m836B2E2171DF1B537CAB3E9C1D6124FB2CFF27F1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2020,7 +2020,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_ExportFix_m836B2E2171DF1B537CAB
 		return;
 	}
 }
-// Method Definition Index: 150643
+// Method Definition Index: 150770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtil_CreateAuthStateListener_mD22744C56BD1CE6B28D72EF8C0C4E6EAD33419D6 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_state_changed_delegate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2081,7 +2081,7 @@ IL_0021:
 		return L_8;
 	}
 }
-// Method Definition Index: 150644
+// Method Definition Index: 150771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_DestroyAuthStateListener_m6F9EC8163EEEEEF16C95440A873991C3E90E2D83 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, intptr_t ___1_listener, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2127,7 +2127,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 150645
+// Method Definition Index: 150772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t AuthUtil_CreateIdTokenListener_m8C6F2E7117ACC51D7CF40F116E11CD28609EE616 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, StateChangedDelegate_t5BEFB485EC0FAFB6678FE8F50A5153BAF0D4E051* ___1_state_changed_delegate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2188,7 +2188,7 @@ IL_0021:
 		return L_8;
 	}
 }
-// Method Definition Index: 150646
+// Method Definition Index: 150773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil_DestroyIdTokenListener_m087ED37EF1A7E0FCBDC0EFD4D4AD649C5046A504 (FirebaseAuth_tD2FC1EC1E5B6EF920276AFABA103B8B7E2AE2DAF* ___0_auth, intptr_t ___1_listener, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2234,7 +2234,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 150647
+// Method Definition Index: 150774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AuthUtil__ctor_mCB85234B20007ED27C9D8D16D626AE9BA98ECF6A (AuthUtil_t8EE1E6800343A54D198ED93603284F34262CB222* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
