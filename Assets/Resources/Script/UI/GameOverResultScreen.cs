@@ -8,7 +8,7 @@ using Debug = UnityEngine.Debug;
 ///
 /// - 게임오버 시 ResultUI.ShowResult에서 호출된다.
 /// - 사용자 시야 정면 1.5m에 HUD처럼 고정해서 띄운다. (고개를 돌리면 따라옴, HeadLockedPanel)
-/// - 최종 거리 / 최고 기록 표시, 이번 기록이 최고 기록이면 "신기록!" 표시
+/// - 최종 거리 / 획득 점수(노란 네모) / 최고 기록 표시, 이번 기록이 최고 기록이면 "신기록!" 표시
 /// - 다시도전 → ResultUI.RestartGame / 메인으로 → ResultUI.GoHome
 /// - 버튼 호버 시 살짝 커지고 색이 진해짐
 ///
@@ -30,6 +30,10 @@ public class GameOverResultScreen : MonoBehaviour
     private TMP_Text bestDistance;
     private TMP_Text bestDistanceLabel;
     private string bestLabelDefault;
+    private TMP_Text scoreValue;
+
+    // 획득 점수 줄 : 최고 기록 줄 바로 위 (최고 기록 줄은 그대로)
+    private const float ScoreRowOffset = 42f;
 
     private QuestUIRayInteractor legacyRay;
 
@@ -39,13 +43,13 @@ public class GameOverResultScreen : MonoBehaviour
     // ---------- 표시 / 숨김 ----------
 
     /// <summary>결과 화면 표시. 프리팹을 못 찾으면 false</summary>
-    public static bool Show(float distance)
+    public static bool Show(float distance, int score = 0)
     {
         GameOverResultScreen screen = GetOrCreate();
         if (screen == null)
             return false;
 
-        screen.ShowInternal(distance);
+        screen.ShowInternal(distance, score);
         return true;
     }
 
@@ -109,6 +113,8 @@ public class GameOverResultScreen : MonoBehaviour
         bestDistanceLabel = FindText(panel, "BestDistanceText");
         bestLabelDefault = bestDistanceLabel != null ? bestDistanceLabel.text : "최고 기록";
 
+        CreateScoreRow();
+
         SetupButton(panel, "RetryButton", () =>
         {
             if (ResultUI.Instance != null)
@@ -133,8 +139,11 @@ public class GameOverResultScreen : MonoBehaviour
         }
     }
 
-    private void ShowInternal(float distance)
+    private void ShowInternal(float distance, int score)
     {
+        if (scoreValue != null)
+            scoreValue.text = $"{score:N0}점";
+
         // 최고 기록 (이번 기록 반영 전 값과 비교)
         float previousBest = GetPreviousBest();
         bool newRecord = distance > previousBest && distance > 0f;
@@ -219,6 +228,32 @@ public class GameOverResultScreen : MonoBehaviour
     {
         // 짧은 거리는 소수 첫째 자리까지, 100m 이상은 1,234m 형식
         return meters >= 100f ? $"{meters:N0}m" : $"{meters:0.0}m";
+    }
+
+    /// <summary>최고 기록 줄(글자 / 값)을 복사해서 "획득 점수" 줄을 만든다</summary>
+    private void CreateScoreRow()
+    {
+        if (bestDistanceLabel == null || bestDistance == null)
+            return;
+
+        try
+        {
+            TMP_Text label = Instantiate(bestDistanceLabel, bestDistanceLabel.transform.parent, false);
+            label.name = "ScoreText";
+            label.text = "획득 점수";
+            label.rectTransform.anchoredPosition = bestDistanceLabel.rectTransform.anchoredPosition + new Vector2(0f, ScoreRowOffset);
+
+            scoreValue = Instantiate(bestDistance, bestDistance.transform.parent, false);
+            scoreValue.name = "ScoreValue";
+            scoreValue.text = "0점";
+            scoreValue.color = new Color(0.047f, 0.549f, 0.914f);   // 파란색 (#0C8CE9)
+            scoreValue.rectTransform.anchoredPosition = bestDistance.rectTransform.anchoredPosition + new Vector2(0f, ScoreRowOffset);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("[GameOverResultScreen] 획득 점수 줄 생성 실패\n" + e);
+            scoreValue = null;
+        }
     }
 
     private static TMP_Text FindText(Transform root, string name)

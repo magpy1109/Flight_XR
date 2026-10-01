@@ -80,34 +80,19 @@ public class PlayerInfoUI : MonoBehaviour
             return;
         }
 
-        int myBestScore =
-            SaveManager.Instance.CurrentStats.best_score;
+        // 메인 화면 등수 = 리더보드 거리 랭킹 기준 순위
+        // (예전에는 최고 점수 기준이었는데 점수가 모두 0이라 다들 1위로 나왔음)
+        float myBestDistance =
+            SaveManager.Instance.CurrentStats.best_distance;
 
-        db.Collection("user_stats")
-            .WhereGreaterThan("best_score", myBestScore)
-            .GetSnapshotAsync()
-            .ContinueWithOnMainThread(task =>
-            {
-                if (task.IsCanceled || task.IsFaulted)
-                {
-                    Debug.LogError(
-                        "등수 조회 실패 : " + task.Exception
-                    );
+        LeaderboardQueries.GetRank(LeaderboardMode.Distance, myBestDistance, rank =>
+        {
+            if (rankText != null)
+                rankText.text = rank > 0 ? rank + "위" : "-";
 
-                    if (rankText != null)
-                        rankText.text = "-";
-
-                    return;
-                }
-
-                int rank = task.Result.Count + 1;
-
-                if (rankText != null)
-                    rankText.text = rank + "위";
-
-                Debug.Log(
-                    $"현재 최고 점수 : {myBestScore} / 등수 : {rank}위"
-                );
-            });
+            Debug.Log(
+                $"현재 최고 거리 : {myBestDistance:F1}m / 등수 : {rank}위"
+            );
+        });
     }
-}
+}

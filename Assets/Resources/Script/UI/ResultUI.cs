@@ -75,7 +75,7 @@ public class ResultUI : MonoBehaviour
 
         // 새 결과 화면 (Resources/Prefab/ResultPanel.prefab)
         // 프리팹을 찾지 못한 경우에만 GameCanvas 안의 예전 결과창 사용
-        if (GameOverResultScreen.Show(distance))
+        if (GameOverResultScreen.Show(distance, score))
             return;
 
         if (resultPanel != null)

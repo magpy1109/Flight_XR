@@ -16562,7 +16562,7 @@ Task_1_t824317F4B958F7512E8F7300511752937A6C6043* VRequestDecodeDelegate_1_Invok
 	NullCheck(___0_request);
 	return GenericInterfaceFuncInvoker0< Task_1_t824317F4B958F7512E8F7300511752937A6C6043* >::Invoke(method, ___0_request);
 }
-// Method Definition Index: 112781
+// Method Definition Index: 112811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_m95361E21975B46015A1EA44CA7D235AB2AEFE217_gshared (VRequestDecodeDelegate_1_tD027032E315BC5526434A2C5AD4ADE7A7CBB9C07* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16616,14 +16616,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_m95361E21
 	}
 	__this->___extra_arg = (intptr_t)&VRequestDecodeDelegate_1_Invoke_m2423D53280D0FFCB9E366B367A93CA18E8760B93_Multicast;
 }
-// Method Definition Index: 112782
+// Method Definition Index: 112812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t824317F4B958F7512E8F7300511752937A6C6043* VRequestDecodeDelegate_1_Invoke_m2423D53280D0FFCB9E366B367A93CA18E8760B93_gshared (VRequestDecodeDelegate_1_tD027032E315BC5526434A2C5AD4ADE7A7CBB9C07* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef Task_1_t824317F4B958F7512E8F7300511752937A6C6043* (*FunctionPointerType) (RuntimeObject*, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_request, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 112783
+// Method Definition Index: 112813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_BeginInvoke_m36A21D9C098BCC40707A459F55EC1D0C1ED74F7F_gshared (VRequestDecodeDelegate_1_tD027032E315BC5526434A2C5AD4ADE7A7CBB9C07* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16631,7 +16631,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_Begin
 	__d_args[0] = ___0_request;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 112784
+// Method Definition Index: 112814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t824317F4B958F7512E8F7300511752937A6C6043* VRequestDecodeDelegate_1_EndInvoke_m441A9E36E5115A08915589139842D6776752CE5D_gshared (VRequestDecodeDelegate_1_tD027032E315BC5526434A2C5AD4ADE7A7CBB9C07* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16690,7 +16690,7 @@ Task_1_t0C4CD3A5BB93A184420D73218644C56C70FDA7E2* VRequestDecodeDelegate_1_Invok
 	NullCheck(___0_request);
 	return GenericInterfaceFuncInvoker0< Task_1_t0C4CD3A5BB93A184420D73218644C56C70FDA7E2* >::Invoke(method, ___0_request);
 }
-// Method Definition Index: 112781
+// Method Definition Index: 112811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_mBB54A4B5CAE92CA67147BD8FCDB3AC89DB8473C3_gshared (VRequestDecodeDelegate_1_t4312BA89EFD4875D6F99F22E3494C7C6C70FE910* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16744,14 +16744,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_mBB54A4B5
 	}
 	__this->___extra_arg = (intptr_t)&VRequestDecodeDelegate_1_Invoke_m4D31E6E139BF67DCE3789F490AEF05E44E16CFD9_Multicast;
 }
-// Method Definition Index: 112782
+// Method Definition Index: 112812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t0C4CD3A5BB93A184420D73218644C56C70FDA7E2* VRequestDecodeDelegate_1_Invoke_m4D31E6E139BF67DCE3789F490AEF05E44E16CFD9_gshared (VRequestDecodeDelegate_1_t4312BA89EFD4875D6F99F22E3494C7C6C70FE910* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef Task_1_t0C4CD3A5BB93A184420D73218644C56C70FDA7E2* (*FunctionPointerType) (RuntimeObject*, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_request, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 112783
+// Method Definition Index: 112813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_BeginInvoke_m70376784A0B2A18B46478AE145B3DACF991D3401_gshared (VRequestDecodeDelegate_1_t4312BA89EFD4875D6F99F22E3494C7C6C70FE910* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16759,7 +16759,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_Begin
 	__d_args[0] = ___0_request;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 112784
+// Method Definition Index: 112814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_t0C4CD3A5BB93A184420D73218644C56C70FDA7E2* VRequestDecodeDelegate_1_EndInvoke_m2AE7F6F058ED5E9CDE4CE52BE46526157E6E2F90_gshared (VRequestDecodeDelegate_1_t4312BA89EFD4875D6F99F22E3494C7C6C70FE910* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16818,7 +16818,7 @@ Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9CF9* VRequestDecodeDelegate_1_Invok
 	NullCheck(___0_request);
 	return GenericInterfaceFuncInvoker0< Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9CF9* >::Invoke(method, ___0_request);
 }
-// Method Definition Index: 112781
+// Method Definition Index: 112811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_m4D7E4E1A5B33EEE1561218120DFA9E6689C7A55A_gshared (VRequestDecodeDelegate_1_t504B351CCBB39DEBB3286187F81581AA8C4EAEB2* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16872,14 +16872,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestDecodeDelegate_1__ctor_m4D7E4E1A
 	}
 	__this->___extra_arg = (intptr_t)&VRequestDecodeDelegate_1_Invoke_m79C1F14A3B2DBA6490C0FEC36B13E724991D387F_Multicast;
 }
-// Method Definition Index: 112782
+// Method Definition Index: 112812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9CF9* VRequestDecodeDelegate_1_Invoke_m79C1F14A3B2DBA6490C0FEC36B13E724991D387F_gshared (VRequestDecodeDelegate_1_t504B351CCBB39DEBB3286187F81581AA8C4EAEB2* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
 	typedef Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9CF9* (*FunctionPointerType) (RuntimeObject*, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_request, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 112783
+// Method Definition Index: 112813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_BeginInvoke_m473A9D2D8B2175BEBD801A807C70F3664A0A1523_gshared (VRequestDecodeDelegate_1_t504B351CCBB39DEBB3286187F81581AA8C4EAEB2* __this, UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_request, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16887,7 +16887,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRequestDecodeDelegate_1_Begin
 	__d_args[0] = ___0_request;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 112784
+// Method Definition Index: 112814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9CF9* VRequestDecodeDelegate_1_EndInvoke_mACEA08F3B920DF858B79B400B4B01B60E1980FC9_gshared (VRequestDecodeDelegate_1_t504B351CCBB39DEBB3286187F81581AA8C4EAEB2* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16902,7 +16902,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Task_1_tDF1FF540D7D2248A08580387A39717B7FB7A9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112792
+// Method Definition Index: 112822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_mEA1EB86F7A06E17AE6AFDC4C7D00EB0B061CF3FD_gshared (VRequestResponse_1_t7674C0DFF7E84D2F5AC62190FACB6FB2D40DBAAA* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -16921,7 +16921,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_mEA1EB86F7A06E17AE6AFDC4C7D00EB0B
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_t7674C0DFF7E84D2F5AC62190FACB6FB2D40DBAAA*>(__this + _offset);
 	VRequestResponse_1__ctor_mEA1EB86F7A06E17AE6AFDC4C7D00EB0B061CF3FD(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 112793
+// Method Definition Index: 112823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_m0E8050D3A04AAEC24A46ECAFA81CE2CE3D96CF7F_gshared (VRequestResponse_1_t7674C0DFF7E84D2F5AC62190FACB6FB2D40DBAAA* __this, int32_t ___0_code, String_t* ___1_error, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -16943,7 +16943,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_m0E8050D3A04AAEC24A46ECAFA81CE2CE
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_t7674C0DFF7E84D2F5AC62190FACB6FB2D40DBAAA*>(__this + _offset);
 	VRequestResponse_1__ctor_m0E8050D3A04AAEC24A46ECAFA81CE2CE3D96CF7F(_thisAdjusted, ___0_code, ___1_error, method);
 }
-// Method Definition Index: 112794
+// Method Definition Index: 112824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_m19044B70E08F709839EC6A77F08EE533DCB9DC73_gshared (VRequestResponse_1_t7674C0DFF7E84D2F5AC62190FACB6FB2D40DBAAA* __this, bool ___0_value, int32_t ___1_code, String_t* ___2_error, const RuntimeMethod* method) 
 {
 	{
@@ -16976,7 +16976,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_m19044B70E08F709839EC6A77F08EE533
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112792
+// Method Definition Index: 112822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_mF061543B3757B3AEED5723685CEBE09A130B74BA_gshared (VRequestResponse_1_tBD5432D991BE12157B5BE0DC6542699D30DF820B* __this, RuntimeObject* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -16995,7 +16995,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_mF061543B3757B3AEED5723685CEBE09A
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_tBD5432D991BE12157B5BE0DC6542699D30DF820B*>(__this + _offset);
 	VRequestResponse_1__ctor_mF061543B3757B3AEED5723685CEBE09A130B74BA(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 112793
+// Method Definition Index: 112823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_mBA470FCA82B53F8F8DDBFD7A70514CC8DC40D900_gshared (VRequestResponse_1_tBD5432D991BE12157B5BE0DC6542699D30DF820B* __this, int32_t ___0_code, String_t* ___1_error, const RuntimeMethod* method) 
 {
 	RuntimeObject* V_0 = NULL;
@@ -17017,7 +17017,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_mBA470FCA82B53F8F8DDBFD7A70514CC8
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_tBD5432D991BE12157B5BE0DC6542699D30DF820B*>(__this + _offset);
 	VRequestResponse_1__ctor_mBA470FCA82B53F8F8DDBFD7A70514CC8DC40D900(_thisAdjusted, ___0_code, ___1_error, method);
 }
-// Method Definition Index: 112794
+// Method Definition Index: 112824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_m594695738433C27B2025229EF9481A9FCAA58E89_gshared (VRequestResponse_1_tBD5432D991BE12157B5BE0DC6542699D30DF820B* __this, RuntimeObject* ___0_value, int32_t ___1_code, String_t* ___2_error, const RuntimeMethod* method) 
 {
 	{
@@ -17051,7 +17051,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_m594695738433C27B2025229EF9481A9F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 112792
+// Method Definition Index: 112822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_mACEC4A0025326784C65941E1AF8695CA1450262D_gshared (VRequestResponse_1_tB2715C2246CCC315DE30F09034978A68238D16D5* __this, Il2CppFullySharedGenericAny ___0_value, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TValue_t11A46F84A3A7DFB53D85237B8EFE8530F0FE459A = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 0));
@@ -17072,7 +17072,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_mACEC4A0025326784C65941E1AF8695CA
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_tB2715C2246CCC315DE30F09034978A68238D16D5*>(__this + _offset);
 	VRequestResponse_1__ctor_mACEC4A0025326784C65941E1AF8695CA1450262D(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 112793
+// Method Definition Index: 112823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_mD0781D8C3CC9D94B9FF4853937B2CB18BA4F4919_gshared (VRequestResponse_1_tB2715C2246CCC315DE30F09034978A68238D16D5* __this, int32_t ___0_code, String_t* ___1_error, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TValue_t11A46F84A3A7DFB53D85237B8EFE8530F0FE459A = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 0));
@@ -17097,7 +17097,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_mD0781D8C3CC9D94B9FF4853937B2CB18
 	_thisAdjusted = reinterpret_cast<VRequestResponse_1_tB2715C2246CCC315DE30F09034978A68238D16D5*>(__this + _offset);
 	VRequestResponse_1__ctor_mD0781D8C3CC9D94B9FF4853937B2CB18BA4F4919(_thisAdjusted, ___0_code, ___1_error, method);
 }
-// Method Definition Index: 112794
+// Method Definition Index: 112824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRequestResponse_1__ctor_m6AB3CB4A1F56C94467F63938A96649FD512C3EEB_gshared (VRequestResponse_1_tB2715C2246CCC315DE30F09034978A68238D16D5* __this, Il2CppFullySharedGenericAny ___0_value, int32_t ___1_code, String_t* ___2_error, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TValue_t11A46F84A3A7DFB53D85237B8EFE8530F0FE459A = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 0));
@@ -17131,7 +17131,7 @@ IL2CPP_EXTERN_C  void VRequestResponse_1__ctor_m6AB3CB4A1F56C94467F63938A96649FD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 135125
+// Method Definition Index: 135252
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1_ValidateAndThrow_mED06A697DF213100F48B7C2B161BD3CBF451516A_gshared (ValidationUtility_1_t944BE028D7711E3424AE989EB21FE5D46042C87B* __this, TrackableChanges_1_t766C81F173FAD10AE2354632C3ED8BC00F0F55FD ___0_changes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17369,7 +17369,7 @@ IL_010d:
 		return;
 	}
 }
-// Method Definition Index: 135126
+// Method Definition Index: 135253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1_ValidateAndDisposeIfThrown_m186C0530B424648DC9163A117AC16C7814021F51_gshared (ValidationUtility_1_t944BE028D7711E3424AE989EB21FE5D46042C87B* __this, TrackableChanges_1_t766C81F173FAD10AE2354632C3ED8BC00F0F55FD ___0_changes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17445,7 +17445,7 @@ IL_002e:
 		return;
 	}
 }
-// Method Definition Index: 135127
+// Method Definition Index: 135254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1_AddToSetAndThrowIfDuplicate_m247D1E714C165A0DE6C0173CEE8D69AEBEB11ADF_gshared (ValidationUtility_1_t944BE028D7711E3424AE989EB21FE5D46042C87B* __this, TrackableId_t49EAE8AA4B9584E314518723DC22B66496D47AD7 ___0_trackableId, bool ___1_shouldBeInDictionary, String_t* ___2_action, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17559,7 +17559,7 @@ IL_0059:
 		return;
 	}
 }
-// Method Definition Index: 135128
+// Method Definition Index: 135255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1__ctor_mF665766EE82FB34B9281209C0E80320FA84FC9F7_gshared (ValidationUtility_1_t944BE028D7711E3424AE989EB21FE5D46042C87B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17579,7 +17579,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1__ctor_mF665766EE82FB
 		return;
 	}
 }
-// Method Definition Index: 135129
+// Method Definition Index: 135256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValidationUtility_1__cctor_m9828D47613A24B519E1558C5FFEB878F8E0300D5_gshared (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

@@ -9,6 +9,7 @@ using Debug = UnityEngine.Debug;
 ///
 /// GameCanvas의 HUD 아래에 실행 시 자동으로 만들어진다. (씬 / 프리팹 수정 없음)
 /// - 왼쪽 위 : 현재 거리 / 최고 기록 (Resources/Prefab/Scoreboard.prefab)
+/// - 그 아래 : 점수 (노란 네모를 먹으면 올라감, 연속으로 먹으면 "N연속" 표시)
 /// - 왼쪽 아래 : 바람 세기 게이지 (입김 세기 0~100%)
 /// - 가운데 아래 : 시작 전 "A버튼을 누르면 시작합니다" 안내
 /// - 정가운데 : 3, 2, 1 카운트다운 (CountdownManager가 숫자를 바꾸고, 여기서 크게 / 튀어나오게 표시)
@@ -31,8 +32,14 @@ public class GameHUD : MonoBehaviour
     private const float SideDepth = 800f;
     private const float SideDepthFactor = (1000f + SideDepth) / 1000f;
 
-    private static readonly Vector2 WindCenter = new Vector2(-360f, -170f);   // 약 왼쪽 20°, 아래 10°
-    private static readonly Vector2 WindSize = new Vector2(84f, 440f);
+    // 점수 카드 : 점수판 바로 아래 (점수판 배경 310 x 0.85 = 약 264 높이)
+    private static readonly Vector2 ScoreCardSize = new Vector2(272f, 84f);
+    private static readonly Vector2 ScoreCardCenter = new Vector2(
+        ScoreboardCenter.x, ScoreboardCenter.y - 310f * ScoreboardScale / 2f - 12f - 84f / 2f);
+
+    // 바람 게이지 : 점수 카드와 겹치지 않게 조금 아래로 / 짧게 (위 끝 약 -50)
+    private static readonly Vector2 WindCenter = new Vector2(-360f, -230f);   // 약 왼쪽 20°, 아래 13°
+    private static readonly Vector2 WindSize = new Vector2(84f, 360f);
 
     private static readonly Vector2 HintCenter = new Vector2(0f, -380f);
 
@@ -52,6 +59,12 @@ public class GameHUD : MonoBehaviour
     private float shownWind;
 
     private CanvasGroup hintGroup;
+
+    private TMP_Text scoreText;
+    private RectTransform comboBadge;
+    private TMP_Text comboText;
+    private int shownScore = -1;
+    private float scorePopTime = -10f;
 
     // ---------- 처음 하는 사람 안내 (첫 플레이 때만) ----------
     // 다시 보고 싶으면 PlayerPrefs의 "Tutorial_FlightGuide_Shown" 키를 지우면 된다.
@@ -171,6 +184,7 @@ public class GameHUD : MonoBehaviour
         }
 
         BuildScoreboard();
+        BuildScoreCard();
         BuildWindGauge();
         BuildHint();
         BuildGuide();
@@ -225,6 +239,85 @@ public class GameHUD : MonoBehaviour
             g.raycastTarget = false;
     }
 
+    private void BuildScoreCard()
+    {
+        if (font == null)
+            font = KoreanFont.Get(null);
+
+        Image card = CreateImage("ScoreCard", transform, Color.white, RoundedSprites.Rect, 28f);
+        Place(card.rectTransform, ScoreCardCenter, ScoreCardSize);
+        card.rectTransform.anchoredPosition3D = new Vector3(
+            ScoreCardCenter.x * SideDepthFactor, ScoreCardCenter.y * SideDepthFactor, SideDepth);
+
+        float left = -ScoreCardSize.x / 2f;
+
+        // 노란 네모 아이콘
+        Image iconBg = CreateImage("CubeIcon", card.rectTransform, new Color(1f, 0.96f, 0.82f), RoundedSprites.Circle, 0f);
+        Place(iconBg.rectTransform, new Vector2(left + 46f, 0f), new Vector2(58f, 58f));
+
+        Image icon = CreateImage("Icon", iconBg.rectTransform, Color.white, CubeIconSprite.Get(), 0f);
+        Place(icon.rectTransform, Vector2.zero, new Vector2(38f, 38f));
+
+        // "점수" / 숫자
+        TMP_Text label = CreateText("Label", card.rectTransform, "점수", 22f, TextDark, FontStyles.Bold);
+        label.alignment = TextAlignmentOptions.MidlineLeft;
+        Place(label.rectTransform, new Vector2(left + 88f + 70f, 20f), new Vector2(140f, 30f));
+
+        scoreText = CreateText("Score", card.rectTransform, "0", 40f, TextDark, FontStyles.Bold);
+        scoreText.alignment = TextAlignmentOptions.MidlineLeft;
+        scoreText.rectTransform.pivot = new Vector2(0f, 0.5f);
+        scoreText.rectTransform.anchorMin = scoreText.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        scoreText.rectTransform.anchoredPosition = new Vector2(left + 88f, -14f);
+        scoreText.rectTransform.sizeDelta = new Vector2(150f, 46f);
+
+        // 연속 배지 (2연속부터)
+        Image badge = CreateImage("Combo", card.rectTransform, Primary, RoundedSprites.Rect, 16f);
+        Place(badge.rectTransform, new Vector2(-left - 50f, 22f), new Vector2(80f, 32f));
+        comboBadge = badge.rectTransform;
+
+        comboText = CreateText("Text", badge.rectTransform, "", 20f, Color.white, FontStyles.Bold);
+        Stretch(comboText.rectTransform);
+
+        badge.gameObject.SetActive(false);
+    }
+
+    private void UpdateScore(GameManager gm)
+    {
+        if (scoreText == null)
+            return;
+
+        int score = gm != null ? gm.Score : 0;
+
+        if (score != shownScore)
+        {
+            if (score > shownScore && shownScore >= 0)
+                scorePopTime = Time.time;
+
+            shownScore = score;
+            scoreText.text = score.ToString("N0");
+        }
+
+        // 점수가 오를 때 톡 튀는 효과
+        float t = Mathf.Clamp01((Time.time - scorePopTime) / 0.25f);
+        scoreText.rectTransform.localScale = Vector3.one * Mathf.Lerp(1.3f, 1f, 1f - (1f - t) * (1f - t));
+
+        // 연속 배지
+        int combo = PathCollectibles.Instance != null ? PathCollectibles.Instance.Combo : 0;
+        bool showCombo = combo >= 2 && gm != null && gm.IsPlaying;
+
+        if (comboBadge != null)
+        {
+            if (comboBadge.gameObject.activeSelf != showCombo)
+                comboBadge.gameObject.SetActive(showCombo);
+
+            if (showCombo)
+            {
+                comboText.text = combo + "연속";
+                comboBadge.localScale = Vector3.one * Mathf.Lerp(1.25f, 1f, t);
+            }
+        }
+    }
+
     private void BuildWindGauge()
     {
         // 카드
@@ -244,8 +337,8 @@ public class GameHUD : MonoBehaviour
         Place(icon.rectTransform, Vector2.zero, new Vector2(34f, 34f));
 
         // 트랙
-        const float trackTop = 140f;
-        const float trackBottom = -150f;
+        const float trackTop = 100f;
+        const float trackBottom = -118f;
         windTrackHeight = trackTop - trackBottom;
 
         Image track = CreateImage("Track", card.rectTransform, Track, RoundedSprites.Rect, 18f);
@@ -430,6 +523,9 @@ public class GameHUD : MonoBehaviour
         if (windPercent != null)
             windPercent.text = Mathf.RoundToInt(shownWind * 100f) + "%";
 
+        // 점수
+        UpdateScore(gm);
+
         // 처음 하는 사람 안내
         UpdateGuide(gm);
 
@@ -437,7 +533,7 @@ public class GameHUD : MonoBehaviour
         if (hintGroup != null)
         {
             bool showHint =
-                gm != null && !gm.IsPlaying &&
+                gm != null && !gm.IsPlaying && !gm.IsEnding &&
                 (CountdownManager.Instance == null || !CountdownManager.Instance.IsCounting) &&
                 (ResultUI.Instance == null || !ResultUI.Instance.IsResultShown) &&
                 !PauseManager.IsPaused;

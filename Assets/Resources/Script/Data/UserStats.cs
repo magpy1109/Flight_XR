@@ -24,7 +24,14 @@ public class UserStats
     [FirestoreProperty]
     public float total_height { get; set; } = 0;
 
+    // 노란 네모 : 누적 개수 / 최대 연속 (예전 문서에 없으면 0)
+    [FirestoreProperty]
+    public int total_cubes { get; set; } = 0;
+
+    [FirestoreProperty]
+    public int best_combo { get; set; } = 0;
+
     [FirestoreProperty]
     public Timestamp updated_at { get; set; } =
         Timestamp.GetCurrentTimestamp();
-}
+}

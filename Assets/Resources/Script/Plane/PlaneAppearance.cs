@@ -8,6 +8,7 @@ using UnityEngine;
 ///   모델 데이터(Resources/PlaneModel/PaperPlaneMesh.bytes)는 스킨씬과 같은 원본(3D_FLIGHT.fbx, 약 195만 삼각형)을
 ///   Quest에서 가볍게 돌도록 약 1만2천 삼각형으로 줄인 것. (기수 +Z, 위 +Y, 길이 1)
 /// - 스킨 색 : 스킨씬의 비행기 스킨과 같은 9가지 색 (장착 번호 % 9)
+/// - 9번 스킨(스텔스 폭격기)은 종이비행기 대신 폭격기 모델(PlaneModels) + 전용 비행운(BomberEffects)
 /// - 트레일 : 스킨씬의 트레일 9종을 그대로 옮긴 Resources/PlaneModel/PlaneTrails 프리팹 사용
 /// - 비행 중 방향을 틀면 기울고, 오르내리면 기수가 들리고 숙여진다. (겉모습만, 물리는 그대로)
 /// - 추락하면 트레일이 멈춘다.
@@ -33,10 +34,23 @@ public class PlaneAppearance : MonoBehaviour
     private Transform visual;
     private Rigidbody rb;
     private ParticleSystem[] trails;
+    private TrailRenderer[] lineTrails;   // 폭격기 비행운
     private bool trailsStopped;
+
+    [Tooltip("스텔스 폭격기 날개폭 (m)")]
+    public float bomberSpan = 0.24f;
 
     private float bank;
     private float pitch;
+
+    /// <summary>기울기용 모델 부모 (충돌 효과에서 사용)</summary>
+    public Transform Visual => visual;
+
+    /// <summary>종이비행기 모델 메시 (충돌 시 찌그러짐 애니메이션에 사용)</summary>
+    public MeshFilter ModelFilter { get; private set; }
+
+    /// <summary>비행기 종류 (충돌 효과음 / 애니메이션 구분, PlaneCategory 참고)</summary>
+    public string Category { get; private set; } = PlaneCategory.Paper;
 
     // ---------- 설치 ----------
 
@@ -57,6 +71,17 @@ public class PlaneAppearance : MonoBehaviour
     private void Build(int skinIndex, int trailIndex)
     {
         rb = GetComponent<Rigidbody>();
+
+        // 비행기 종류 + 충돌 효과음 미리 불러오기 (첫 충돌 때 끊기지 않게)
+        Category = PlaneCategory.OfSkin(skinIndex);
+        CrashSound.Preload(Category);
+
+        // 종이비행기가 아닌 모델 (스텔스 폭격기)
+        if (Category == PlaneCategory.Bomber && BuildBomber())
+        {
+            Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 전용 비행운 적용");
+            return;
+        }
 
         Mesh mesh = LoadMesh();
         if (mesh == null)
@@ -79,7 +104,8 @@ public class PlaneAppearance : MonoBehaviour
 
         GameObject model = new GameObject("PaperPlane", typeof(MeshFilter), typeof(MeshRenderer));
         model.transform.SetParent(visual, false);
-        model.GetComponent<MeshFilter>().sharedMesh = mesh;
+        ModelFilter = model.GetComponent<MeshFilter>();
+        ModelFilter.sharedMesh = mesh;
 
         NormalizeModel(model.transform);
         ApplySkin(model, skinIndex);
@@ -97,6 +123,52 @@ public class PlaneAppearance : MonoBehaviour
         AttachTrail(trailIndex);
 
         Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 트레일 {trailIndex} 적용");
+    }
+
+    /// <summary>스텔스 폭격기 모델 + 전용 비행운. 모델을 못 불러오면 false (종이비행기로 대신 표시)</summary>
+    private bool BuildBomber()
+    {
+        MeshRenderer cubeRenderer = GetComponent<MeshRenderer>();
+
+        GameObject visualObject = new GameObject("Visual");
+        Transform v = visualObject.transform;
+        v.SetParent(transform, false);
+
+        MeshFilter filter;
+        GameObject model = PlaneModels.Create(PlaneModels.BomberMeshPath, v, bomberSpan, out filter);
+        if (model == null)
+        {
+            Destroy(visualObject);
+            return false;
+        }
+
+        if (cubeRenderer != null)
+            cubeRenderer.enabled = false;
+
+        transform.localScale = Vector3.one;
+        visual = v;
+        model.name = "StealthBomber";
+        ModelFilter = filter;
+
+        // 충돌 크기 = 모델 크기
+        BoxCollider box = GetComponent<BoxCollider>();
+        if (box != null)
+        {
+            Bounds b = GetLocalBounds(model.transform, visual);
+            box.center = b.center;
+            box.size = b.size;
+        }
+
+        // 트레일 탭에서 고른 트레일 대신 폭격기 전용 비행운
+        lineTrails = BomberEffects.AttachContrails(model.transform);
+        return true;
+    }
+
+    /// <summary>비행운을 비행기에서 떼어내기 (폭발할 때 남은 꼬리가 자연스럽게 사라지게)</summary>
+    public void ReleaseLineTrails()
+    {
+        BomberEffects.ReleaseContrails(lineTrails);
+        lineTrails = null;
     }
 
     private static Mesh cachedMesh;
@@ -307,8 +379,20 @@ public class PlaneAppearance : MonoBehaviour
 
     private void StopTrails()
     {
+        if (!trailsStopped && lineTrails != null)
+        {
+            foreach (TrailRenderer t in lineTrails)
+            {
+                if (t != null)
+                    t.emitting = false;
+            }
+        }
+
         if (trailsStopped || trails == null)
+        {
+            trailsStopped = true;
             return;
+        }
 
         trailsStopped = true;
 
@@ -325,7 +409,7 @@ public class PlaneAppearance : MonoBehaviour
 ///
 /// - 비행기 스킨 : Firebase users.equipped_skin_id (없으면 PlayerPrefs "EquippedSkin")
 /// - 트레일 : Firebase users.equipped_trail_id (없으면 PlayerPrefs "EquippedTrail")
-/// - 스킨씬 버튼 번호는 페이지마다 이어지므로(0~44) 9로 나눈 나머지로 색을 고른다. (기존 방식과 동일)
+/// - 스킨 번호 : 0~8 종이비행기 색, 9 스텔스 폭격기 (스킨씬 1페이지 0~8, 2페이지 첫 칸 9)
 /// </summary>
 public static class PlaneSkinState
 {
@@ -336,7 +420,8 @@ public static class PlaneSkinState
     private static readonly string[] SkinNames =
     {
         "클래식 화이트", "스카이 블루", "로즈 레드", "선샤인 옐로", "스텔스 블랙",
-        "밀리터리 카모", "오로라", "크래프트", "갤럭시"
+        "밀리터리 카모", "오로라", "크래프트", "갤럭시",
+        "스텔스 폭격기"
     };
 
     private static readonly Color[] SkinColors =
@@ -349,7 +434,8 @@ public static class PlaneSkinState
         new Color(0.3254902f, 0.3882353f, 0.28627452f),   // MillitaryCamo
         new Color(0.8745098f, 1f, 0.9764706f),       // Orora
         new Color(0.56078434f, 0.45882353f, 0.27058825f), // Craft
-        new Color(0.105882354f, 0.007843138f, 0.27450982f) // Galaxy
+        new Color(0.105882354f, 0.007843138f, 0.27450982f), // Galaxy
+        new Color(0.37f, 0.40f, 0.44f)               // StealthBomber (모델 자체 색 사용, 참고용)
     };
 
     public static int SkinCount => SkinColors.Length;
