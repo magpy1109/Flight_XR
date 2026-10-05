@@ -22,6 +22,19 @@ public class RankRow : MonoBehaviour
             rankText.text = label;
     }
 
+    /// <summary>내 줄 강조 (글자 색 + 굵게)</summary>
+    public void SetHighlight(Color color)
+    {
+        foreach (TMP_Text text in new[] { rankText, playerNameText, distanceText })
+        {
+            if (text == null)
+                continue;
+
+            text.color = color;
+            text.fontStyle |= FontStyles.Bold;
+        }
+    }
+
     /// <summary>기록 글자를 그대로 표시 ("1,234.5m" / "1,230점"). 순위가 0 이하면 "-"</summary>
     public void SetDataText(int rank, string playerName, string valueText, Sprite icon)
     {

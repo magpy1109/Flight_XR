@@ -16,6 +16,8 @@ public enum LeaderboardMode
 ///
 /// - 거리 랭킹 / 점수 랭킹을 따로 불러오고, 한 번 불러온 랭킹은 씬에 있는 동안 기억한다. (탭 전환 시 바로 표시)
 /// - 기록이 0인 사람(아직 플레이 안 함)은 랭킹에서 제외
+/// - 기록은 받는 즉시 화면에 보여 주고(Updated), 닉네임은 불러오는 대로 채운다
+/// - 문서 형식이 다르거나 조회가 실패해도 멈추지 않는다 (해당 문서만 건너뜀 / 전체 문서로 재시도)
 /// - 닉네임은 한 번 불러오면 두 랭킹이 함께 사용
 /// - 내 순위 : 나보다 기록이 높은 사람 수만 세서 계산 (전체 문서를 내려받지 않음)
 /// </summary>
@@ -43,6 +45,32 @@ public class LeaderboardManager : MonoBehaviour
     private readonly HashSet<LeaderboardMode> loading = new HashSet<LeaderboardMode>();
 
     private readonly Dictionary<string, string> nicknames = new Dictionary<string, string>();
+
+    /// <summary>랭킹 목록이 바뀜 (기록 로드 완료 / 닉네임 로드 완료)</summary>
+    public event System.Action<LeaderboardMode> Updated;
+
+    /// <summary>랭킹에 보여주는 인원</summary>
+    public int TopCount => topCount;
+
+    /// <summary>내 계정 ID (로그인 전이면 null)</summary>
+    public static string MyUserId
+    {
+        get
+        {
+            try
+            {
+                if (!FirebaseManager.Ready)
+                    return null;
+
+                FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+                return user != null ? user.UserId : null;
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -132,44 +160,84 @@ public class LeaderboardManager : MonoBehaviour
 
         Debug.Log($"===== 리더보드 불러오기 시작 ({mode}) =====");
 
-        db.Collection("user_stats")
-            .WhereGreaterThan(field, 0)
-            .OrderByDescending(field)
-            .Limit(topCount)
-            .GetSnapshotAsync()
-            .ContinueWithOnMainThread(task =>
+        try
+        {
+            db.Collection("user_stats")
+                .WhereGreaterThan(field, 0)
+                .OrderByDescending(field)
+                .Limit(topCount)
+                .GetSnapshotAsync()
+                .ContinueWithOnMainThread(task =>
+                {
+                    if (task.IsCanceled || task.IsFaulted)
+                    {
+                        Debug.LogWarning(
+                            $"리더보드 조회 실패 → 전체 문서로 다시 시도 ({mode}) : " + task.Exception
+                        );
+
+                        LoadByAllDocuments(mode);
+                        return;
+                    }
+
+                    OnDocuments(mode, task.Result.Documents);
+                });
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"리더보드 조회를 시작하지 못함 → 전체 문서로 다시 시도 ({mode}) : " + e);
+            LoadByAllDocuments(mode);
+        }
+    }
+
+    /// <summary>정렬 조회가 실패했을 때 : 문서를 모두 받아 기기에서 정렬</summary>
+    private void LoadByAllDocuments(LeaderboardMode mode)
+    {
+        try
+        {
+            db.Collection("user_stats")
+                .GetSnapshotAsync()
+                .ContinueWithOnMainThread(task =>
+                {
+                    if (task.IsCanceled || task.IsFaulted)
+                    {
+                        Debug.LogError($"리더보드 조회 실패 ({mode}) : " + task.Exception);
+                        Finish(mode, new List<LeaderboardEntry>());
+                        return;
+                    }
+
+                    OnDocuments(mode, task.Result.Documents);
+                });
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"리더보드 조회 실패 ({mode}) : " + e);
+            Finish(mode, new List<LeaderboardEntry>());
+        }
+    }
+
+    /// <summary>
+    /// 받은 문서 → 랭킹 목록. 어떤 경우에도 Finish가 호출된다.
+    /// (예전에는 문서 하나라도 형식이 달라 변환에 실패하면 여기서 멈춰 화면이 계속 "불러오는 중"이었음)
+    /// </summary>
+    private void OnDocuments(LeaderboardMode mode, IEnumerable<DocumentSnapshot> documents)
+    {
+        var entries = new List<LeaderboardEntry>();
+
+        try
+        {
+            foreach (DocumentSnapshot doc in documents)
             {
-                if (task.IsCanceled || task.IsFaulted)
+                try
                 {
-                    Debug.LogError(
-                        $"리더보드 조회 실패 ({mode}) : " + task.Exception
-                    );
-
-                    Finish(mode, new List<LeaderboardEntry>());
-                    return;
-                }
-
-                var entries = new List<LeaderboardEntry>();
-                int rank = 0;
-                float previous = float.NaN;
-                int index = 0;
-
-                foreach (DocumentSnapshot doc in task.Result.Documents)
-                {
-                    UserStats stats = doc.ConvertTo<UserStats>();
+                    Dictionary<string, object> data = doc.ToDictionary();
 
                     LeaderboardEntry entry = new LeaderboardEntry();
                     entry.userId = doc.Id;
-                    entry.bestDistance = stats.best_distance;
-                    entry.bestScore = stats.best_score;
+                    entry.bestDistance = (float)Number(data, "best_distance");
+                    entry.bestScore = (int)System.Math.Round(Number(data, "best_score"));
 
-                    // 같은 기록은 같은 순위
-                    float value = entry.Value(mode);
-                    index++;
-                    if (value != previous)
-                        rank = index;
-                    previous = value;
-                    entry.rank = rank;
+                    if (entry.Value(mode) <= 0f)
+                        continue;   // 기록 없음
 
                     string nickname;
                     entry.nickname = nicknames.TryGetValue(doc.Id, out nickname)
@@ -178,72 +246,133 @@ public class LeaderboardManager : MonoBehaviour
 
                     entries.Add(entry);
                 }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning($"리더보드 문서를 읽지 못해 건너뜀 ({doc.Id}) : " + e.Message);
+                }
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"리더보드 문서 처리 실패 ({mode}) : " + e);
+        }
 
-                Debug.Log($"리더보드 ({mode}) {entries.Count}명 조회 완료");
+        entries.Sort((a, b) => b.Value(mode).CompareTo(a.Value(mode)));
+        if (entries.Count > topCount)
+            entries.RemoveRange(topCount, entries.Count - topCount);
 
-                LoadNicknames(mode, entries);
-            });
+        AssignRanks(entries, mode);
+
+        Debug.Log($"리더보드 ({mode}) {entries.Count}명 조회 완료");
+
+        // 기록은 바로 보여 주고, 닉네임은 불러오는 대로 채움
+        Finish(mode, entries);
+        LoadNicknames(mode, entries);
+    }
+
+    /// <summary>숫자 필드 읽기 (정수 / 실수 어느 쪽으로 저장돼 있어도, 없으면 0)</summary>
+    private static double Number(Dictionary<string, object> data, string field)
+    {
+        object value;
+        if (data == null || !data.TryGetValue(field, out value) || value == null)
+            return 0d;
+
+        try
+        {
+            return System.Convert.ToDouble(value, System.Globalization.CultureInfo.InvariantCulture);
+        }
+        catch (System.Exception)
+        {
+            return 0d;
+        }
+    }
+
+    /// <summary>순위 매기기 (기록 높은 순으로 정렬된 목록, 같은 기록은 같은 순위)</summary>
+    public static void AssignRanks(List<LeaderboardEntry> entries, LeaderboardMode mode)
+    {
+        int rank = 0;
+        float previous = float.NaN;
+
+        for (int i = 0; i < entries.Count; i++)
+        {
+            float value = entries[i].Value(mode);
+            if (value != previous)
+                rank = i + 1;
+            previous = value;
+            entries[i].rank = rank;
+        }
     }
 
     private void LoadNicknames(LeaderboardMode mode, List<LeaderboardEntry> entries)
     {
-        var missing = new List<LeaderboardEntry>();
+        var missing = new List<string>();
         foreach (LeaderboardEntry entry in entries)
         {
-            if (!nicknames.ContainsKey(entry.userId))
-                missing.Add(entry);
+            if (!nicknames.ContainsKey(entry.userId) && !missing.Contains(entry.userId))
+                missing.Add(entry.userId);
         }
 
         if (missing.Count == 0)
-        {
-            Finish(mode, entries);
             return;
-        }
 
         int pending = missing.Count;
 
-        foreach (LeaderboardEntry entry in missing)
+        System.Action<string, string> done = (userId, nickname) =>
         {
-            LeaderboardEntry target = entry;
+            nicknames[userId] = nickname;
 
-            db.Collection("users")
-                .Document(target.userId)
-                .GetSnapshotAsync()
-                .ContinueWithOnMainThread(task =>
-                {
-                    string nickname = "Player";
+            foreach (LeaderboardEntry e in entries)
+            {
+                if (e.userId == userId)
+                    e.nickname = nickname;
+            }
 
-                    if (task.IsCanceled || task.IsFaulted)
-                    {
-                        Debug.LogError("닉네임 조회 실패 : " + task.Exception);
-                        nickname = "Unknown";
-                    }
-                    else if (task.Result.Exists)
-                    {
-                        UserData user = task.Result.ConvertTo<UserData>();
-                        if (!string.IsNullOrEmpty(user.nickname))
-                            nickname = user.nickname;
-                    }
-                    else
-                    {
-                        nickname = "Unknown";
-                    }
+            pending--;
+            if (pending <= 0)
+                Updated?.Invoke(mode);   // 화면 다시 그리기
+        };
 
-                    nicknames[target.userId] = nickname;
+        foreach (string id in missing)
+        {
+            string userId = id;
 
-                    pending--;
-                    if (pending <= 0)
+            try
+            {
+                db.Collection("users")
+                    .Document(userId)
+                    .GetSnapshotAsync()
+                    .ContinueWithOnMainThread(task =>
                     {
-                        foreach (LeaderboardEntry e in entries)
+                        string nickname = "Unknown";
+
+                        try
                         {
-                            string n;
-                            if (nicknames.TryGetValue(e.userId, out n))
-                                e.nickname = n;
+                            if (task.IsCanceled || task.IsFaulted)
+                            {
+                                Debug.LogWarning("닉네임 조회 실패 : " + task.Exception);
+                            }
+                            else if (task.Result.Exists)
+                            {
+                                nickname = "Player";
+
+                                string value;
+                                if (task.Result.TryGetValue("nickname", out value) && !string.IsNullOrEmpty(value))
+                                    nickname = value;
+                            }
+                        }
+                        catch (System.Exception e)
+                        {
+                            Debug.LogWarning("닉네임을 읽지 못함 : " + e.Message);
                         }
 
-                        Finish(mode, entries);
-                    }
-                });
+                        done(userId, nickname);
+                    });
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("닉네임 조회 실패 : " + e.Message);
+                done(userId, "Unknown");
+            }
         }
     }
 
@@ -255,7 +384,9 @@ public class LeaderboardManager : MonoBehaviour
         if (mode == CurrentMode)
             leaderboardEntries = entries;
 
-        Debug.Log($"===== 리더보드 ({mode}) 전체 데이터 로드 완료 =====");
+        Debug.Log($"===== 리더보드 ({mode}) 기록 로드 완료 =====");
+
+        Updated?.Invoke(mode);
     }
 
     // ---------- 내 순위 ----------
@@ -283,12 +414,12 @@ public class LeaderboardManager : MonoBehaviour
         float myValue = MyBest(mode);
 
         // 랭킹 목록 안에 내가 있으면 목록 순위를 그대로 사용 (목록과 내 기록 줄이 항상 같게)
-        FirebaseUser user = FirebaseManager.Ready ? FirebaseAuth.DefaultInstance.CurrentUser : null;
-        if (user != null)
+        string myId = MyUserId;
+        if (myId != null)
         {
             foreach (LeaderboardEntry entry in GetEntries(mode))
             {
-                if (entry.userId == user.UserId)
+                if (entry.userId == myId)
                 {
                     callback?.Invoke(entry.rank, Mathf.Max(myValue, entry.Value(mode)));
                     return;

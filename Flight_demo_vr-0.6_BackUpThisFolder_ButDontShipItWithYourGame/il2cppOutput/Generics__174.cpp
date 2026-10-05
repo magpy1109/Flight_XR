@@ -19583,7 +19583,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1__cctor_m29076953C2EE0A42B56873A7A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 139217
+// Method Definition Index: 139253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListenerRegistrationMap_1__ctor_mE99283C34AF7F2701CC3CC6CC38CB860E758228A_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -19602,7 +19602,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListenerRegistrationMap_1__ctor_mE99283C
 		return;
 	}
 }
-// Method Definition Index: 139218
+// Method Definition Index: 139254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListenerRegistrationMap_1_AssertGenericArgumentIsDelegate_m17AD4D01F6E818BEE3CE8ED340BE470245A5F31A_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19652,7 +19652,7 @@ IL_0042:
 		return;
 	}
 }
-// Method Definition Index: 139219
+// Method Definition Index: 139255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ListenerRegistrationMap_1_Register_mEA761F62A7DD550E198FF873A85F01744FAA03C8_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, RuntimeObject* ___0_owner, RuntimeObject* ___1_callback, const RuntimeMethod* method) 
 {
 	Dictionary_2_tDFD52A581AD3384578883E69980D5A2D9481778A* V_0 = NULL;
@@ -19728,7 +19728,7 @@ IL_004a:
 		return L_13;
 	}
 }
-// Method Definition Index: 139220
+// Method Definition Index: 139256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ListenerRegistrationMap_1_TryGetCallback_mE54D936518EA68B79CF06AF8413BB03071115D15_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, int32_t ___0_uid, RuntimeObject** ___1_callback, const RuntimeMethod* method) 
 {
 	Dictionary_2_tDFD52A581AD3384578883E69980D5A2D9481778A* V_0 = NULL;
@@ -19821,7 +19821,7 @@ IL_0053:
 		return L_12;
 	}
 }
-// Method Definition Index: 139221
+// Method Definition Index: 139257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListenerRegistrationMap_1_Unregister_m3FC52F9CEB5EE53D50CB9A377E968182ECDCDF77_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, int32_t ___0_uid, const RuntimeMethod* method) 
 {
 	Dictionary_2_tDFD52A581AD3384578883E69980D5A2D9481778A* V_0 = NULL;
@@ -19880,7 +19880,7 @@ IL_002f:
 		return;
 	}
 }
-// Method Definition Index: 139222
+// Method Definition Index: 139258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListenerRegistrationMap_1_ClearCallbacksForOwner_m387CEC79A5E2D51F1AF57DAE87AEC2BBC56B1213_gshared (ListenerRegistrationMap_1_tC8A07C633973AE9FC472AC39FFE40C8106D456B3* __this, RuntimeObject* ___0_owner, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
