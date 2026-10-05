@@ -29022,7 +29022,7 @@ IL2CPP_EXTERN_C  void ArrayOfArrays_1_TrimExcess_m194AB512AA77539A26BC45263B6B9E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 144081
+// Method Definition Index: 144117
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_mA11FDA08695E72A12F591D1360A4F0C74B0928F1_gshared (ArrayPool_1_t3B2849093820821CC7AEC1C5AFBBE74C31B52706* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29031,7 +29031,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_mA11FDA08695
 		return L_0;
 	}
 }
-// Method Definition Index: 144082
+// Method Definition Index: 144118
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrayPool_1__ctor_m3113FA7D112302790756AC429BE0A97879090D92_gshared (ArrayPool_1_t3B2849093820821CC7AEC1C5AFBBE74C31B52706* __this, int32_t ___0_capacity, int32_t ___1_preload, const RuntimeMethod* method) 
 {
 	U3CU3Ec__DisplayClass3_0_tCC677540BF1C2B06565FC5F586B07FB63368D7AB* V_0 = NULL;
@@ -29066,7 +29066,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrayPool_1__ctor_m3113FA7D112302790756A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 144081
+// Method Definition Index: 144117
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_m0EE50D183F5D8F041425481743B22DCE88C9507C_gshared (ArrayPool_1_t3E4BFCF06F7C9D7A424444649FD0E5BEEF11E851* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29075,7 +29075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_m0EE50D183F5
 		return L_0;
 	}
 }
-// Method Definition Index: 144082
+// Method Definition Index: 144118
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrayPool_1__ctor_mDF6257FD2DA8F45B4B7806A75C52D5978320E696_gshared (ArrayPool_1_t3E4BFCF06F7C9D7A424444649FD0E5BEEF11E851* __this, int32_t ___0_capacity, int32_t ___1_preload, const RuntimeMethod* method) 
 {
 	U3CU3Ec__DisplayClass3_0_tCEF951BCBDD11FA3C8902E072B34360A62C3BC97* V_0 = NULL;
@@ -29110,7 +29110,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrayPool_1__ctor_mDF6257FD2DA8F45B4B780
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 144081
+// Method Definition Index: 144117
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_m6CF18583619223089833C4938CA9BEC8A72D423F_gshared (ArrayPool_1_t8E3DB9759CD27501CDCCED854C3E3D3A79E2D340* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29119,7 +29119,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ArrayPool_1_get_Capacity_m6CF18583619
 		return L_0;
 	}
 }
-// Method Definition Index: 144082
+// Method Definition Index: 144118
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArrayPool_1__ctor_m6488EA7D43F757966109FF0755FE770439587325_gshared (ArrayPool_1_t8E3DB9759CD27501CDCCED854C3E3D3A79E2D340* __this, int32_t ___0_capacity, int32_t ___1_preload, const RuntimeMethod* method) 
 {
 	U3CU3Ec__DisplayClass3_0_t15A4FD20C995C2F2D0084FCFF6031022B9B24588* V_0 = NULL;

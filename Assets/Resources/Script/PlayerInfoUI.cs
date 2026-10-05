@@ -35,6 +35,20 @@ public class PlayerInfoUI : MonoBehaviour
 
         UpdateNickname();
         UpdateRank();
+
+        // 닉네임 = Meta 프로필 이름. 프로필이 늦게 도착하면 그때 다시 표시
+        MetaProfile.NicknameChanged += OnNicknameChanged;
+    }
+
+    private void OnDestroy()
+    {
+        MetaProfile.NicknameChanged -= OnNicknameChanged;
+    }
+
+    private void OnNicknameChanged(string nickname)
+    {
+        if (nicknameText != null)
+            nicknameText.text = nickname;
     }
 
     private void UpdateNickname()

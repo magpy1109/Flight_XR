@@ -10,6 +10,8 @@ using UnityEngine.UI;
 /// - 오른쪽 위 [거리 | 점수] 버튼으로 거리 랭킹 / 점수 랭킹 전환 (마지막으로 본 랭킹을 기억)
 /// - 상위 3명 카드, 4위부터 목록, 아래 내 기록 줄이 선택한 랭킹 기준으로 바뀐다
 /// - 목록 머리글 "최고기록" → "최고거리" / "최고점수"
+/// - 내 기록은 아래 고정 줄뿐 아니라 랭킹 안(카드 / 목록)에도 파란 글씨로 표시.
+///   상위 목록 밖이면 목록 맨 아래에 내 줄을 덧붙인다
 /// </summary>
 public class LeaderboardSceneUI : MonoBehaviour
 {
@@ -46,6 +48,9 @@ public class LeaderboardSceneUI : MonoBehaviour
     private TMP_Text scoreTabText;
     private TMP_Text bestHeader;
 
+    private LeaderboardManager subscribed;
+    private RankRow myListRow;      // 목록 안의 내 줄 (순위를 나중에 채울 때 사용)
+
     private IEnumerator Start()
     {
         while (LeaderboardManager.Instance == null)
@@ -54,7 +59,23 @@ public class LeaderboardSceneUI : MonoBehaviour
         BuildTabs();
         FindHeader();
 
+        // 기록 / 닉네임이 도착할 때마다 다시 그림
+        subscribed = LeaderboardManager.Instance;
+        subscribed.Updated += OnLeaderboardUpdated;
+
         Show(LeaderboardModeSetting.Saved);
+    }
+
+    private void OnDestroy()
+    {
+        if (subscribed != null)
+            subscribed.Updated -= OnLeaderboardUpdated;
+    }
+
+    private void OnLeaderboardUpdated(LeaderboardMode updated)
+    {
+        if (updated == mode)
+            Render();
     }
 
     // ---------- 전환 ----------
@@ -72,57 +93,121 @@ public class LeaderboardSceneUI : MonoBehaviour
 
         LeaderboardManager.Instance.SetMode(newMode);
 
-        StartCoroutine(ShowWhenLoaded(newMode, ++showRequest));
+        Render();
     }
 
-    private IEnumerator ShowWhenLoaded(LeaderboardMode target, int request)
+    /// <summary>지금 선택한 랭킹을 화면에 그림 (아직 못 불러왔으면 "불러오는 중", 내 기록은 먼저 표시)</summary>
+    private void Render()
     {
-        // 아직 안 불러왔으면 비워 두고 기다림
-        if (!LeaderboardManager.Instance.IsModeLoaded(target))
+        LeaderboardManager manager = LeaderboardManager.Instance;
+        if (manager == null)
+            return;
+
+        int request = ++showRequest;
+        LeaderboardMode target = mode;
+        bool loaded = manager.IsModeLoaded(target);
+
+        string myId = LeaderboardManager.MyUserId;
+        string myNickname = MyNickname();
+        float myValue = manager.MyBest(target);
+
+        // 보여줄 목록 = 서버 랭킹 + (랭킹에 없으면) 나
+        var entries = new List<LeaderboardEntry>();
+        LeaderboardEntry me = null;
+
+        if (loaded)
         {
-            ShowEntries(new List<LeaderboardEntry>(), target, true);
-
-            // 목록을 기다리는 동안에도 내 기록은 먼저 표시
-            UpdateMyRecord(target, request);
-
-            while (LeaderboardManager.Instance != null &&
-                   !LeaderboardManager.Instance.IsModeLoaded(target))
+            foreach (LeaderboardEntry e in manager.GetEntries(target))
             {
-                yield return null;
+                LeaderboardEntry copy = new LeaderboardEntry
+                {
+                    rank = e.rank,
+                    userId = e.userId,
+                    nickname = e.nickname,
+                    bestDistance = e.bestDistance,
+                    bestScore = e.bestScore
+                };
+
+                if (myId != null && e.userId == myId)
+                {
+                    me = copy;
+                    me.nickname = myNickname;
+                    myValue = Mathf.Max(myValue, me.Value(target));
+                }
+
+                entries.Add(copy);
+            }
+
+            if (me == null && myValue > 0f)
+            {
+                me = new LeaderboardEntry { userId = myId, nickname = myNickname, rank = 0 };
+                if (target == LeaderboardMode.Score)
+                    me.bestScore = Mathf.RoundToInt(myValue);
+                else
+                    me.bestDistance = myValue;
+
+                // 내 기록이 들어갈 자리
+                int position = entries.Count;
+                for (int i = 0; i < entries.Count; i++)
+                {
+                    if (entries[i].Value(target) < myValue)
+                    {
+                        position = i;
+                        break;
+                    }
+                }
+
+                if (position < entries.Count || entries.Count < manager.TopCount)
+                {
+                    entries.Insert(position, me);
+                    LeaderboardManager.AssignRanks(entries, target);
+                }
+                else
+                {
+                    entries.Add(me);   // 상위 목록 밖 : 맨 아래에 내 줄 (순위는 따로 조회)
+                }
             }
         }
 
-        // 기다리는 동안 다른 탭을 눌렀으면 무시
-        if (request != showRequest || LeaderboardManager.Instance == null)
-            yield break;
+        SetupCard(rank01, entries, 0, target, !loaded, me);
+        SetupCard(rank02, entries, 1, target, !loaded, me);
+        SetupCard(rank03, entries, 2, target, !loaded, me);
 
-        Debug.Log($"LeaderboardSceneUI : 리더보드 ({target}) 표시");
-
-        ShowEntries(LeaderboardManager.Instance.GetEntries(target), target, false);
-        UpdateMyRecord(target, request);
+        UpdateScrollList(entries, target, me);
+        UpdateMyRecord(target, request, myNickname, myValue, me != null ? me.rank : 0);
     }
 
-    private void ShowEntries(List<LeaderboardEntry> entries, LeaderboardMode target, bool loading)
+    private static string MyNickname()
     {
-        SetupCard(rank01, entries, 0, target, loading);
-        SetupCard(rank02, entries, 1, target, loading);
-        SetupCard(rank03, entries, 2, target, loading);
+        if (SaveManager.Instance != null &&
+            SaveManager.Instance.CurrentUser != null &&
+            !string.IsNullOrEmpty(SaveManager.Instance.CurrentUser.nickname))
+        {
+            return SaveManager.Instance.CurrentUser.nickname;
+        }
 
-        UpdateScrollList(entries, target);
+        return "Player";
     }
 
-    private static void SetupCard(TopRankCard card, List<LeaderboardEntry> entries, int index, LeaderboardMode target, bool loading)
+    private static void SetupCard(TopRankCard card, List<LeaderboardEntry> entries, int index, LeaderboardMode target,
+        bool loading, LeaderboardEntry me)
     {
         if (card == null)
             return;
 
         if (index < entries.Count)
+        {
             card.SetupText(entries[index].nickname, entries[index].ValueText(target));
+            card.SetHighlight(entries[index] == me, Primary);
+        }
         else
+        {
             card.SetupText(loading ? "불러오는 중..." : "-", "");
+            card.SetHighlight(false, Primary);
+        }
     }
 
-    private void UpdateScrollList(List<LeaderboardEntry> entries, LeaderboardMode target)
+    private void UpdateScrollList(List<LeaderboardEntry> entries, LeaderboardMode target, LeaderboardEntry me)
     {
         if (content == null || rowTemplate == null)
         {
@@ -138,8 +223,9 @@ public class LeaderboardSceneUI : MonoBehaviour
         }
 
         generatedRows.Clear();
+        myListRow = null;
 
-        // 4위부터 생성
+        // 4번째부터 생성 (1~3번째는 위 카드)
         for (int i = 3; i < entries.Count; i++)
         {
             LeaderboardEntry entry = entries[i];
@@ -149,11 +235,21 @@ public class LeaderboardSceneUI : MonoBehaviour
             newRow.transform.SetAsLastSibling();
             newRow.SetDataText(entry.rank, entry.nickname, entry.ValueText(target), null);
 
+            if (entry == me)
+            {
+                myListRow = newRow;
+                newRow.SetHighlight(Primary);
+
+                if (entry.rank <= 0)
+                    newRow.SetRankLabel("…");
+            }
+
             generatedRows.Add(newRow);
         }
     }
 
-    private void UpdateMyRecord(LeaderboardMode target, int request)
+    /// <summary>아래 고정 "내 기록" 줄. knownRank가 0이면 순위를 따로 조회한다.</summary>
+    private void UpdateMyRecord(LeaderboardMode target, int request, string nickname, float myValue, int knownRank)
     {
         if (myRecordRow == null)
         {
@@ -161,23 +257,17 @@ public class LeaderboardSceneUI : MonoBehaviour
             return;
         }
 
-        string nickname = "Player";
-        if (SaveManager.Instance != null &&
-            SaveManager.Instance.CurrentUser != null &&
-            !string.IsNullOrEmpty(SaveManager.Instance.CurrentUser.nickname))
-        {
-            nickname = SaveManager.Instance.CurrentUser.nickname;
-        }
+        string valueText = LeaderboardQueries.Format(target, myValue);
 
-        // 1) 내 기록은 바로 표시 (순위는 불러오는 동안 "…")
-        float myValue = LeaderboardManager.Instance.MyBest(target);
-        myRecordRow.SetDataText(0, nickname, LeaderboardQueries.Format(target, myValue), null);
-        myRecordRow.SetRankLabel(myValue > 0f ? "…" : "-");
+        // 1) 내 기록은 바로 표시
+        myRecordRow.SetDataText(knownRank, nickname, valueText, null);
 
-        if (myValue <= 0f)
+        if (myValue <= 0f || knownRank > 0)
             return;
 
-        // 2) 순위
+        // 2) 순위 (불러오는 동안 "…")
+        myRecordRow.SetRankLabel("…");
+
         bool answered = false;
 
         LeaderboardManager.Instance.LoadMyRank(target, (rank, value) =>
@@ -187,11 +277,10 @@ public class LeaderboardSceneUI : MonoBehaviour
             if (request != showRequest || myRecordRow == null)
                 return;
 
-            myRecordRow.SetDataText(
-                rank,
-                nickname,
-                LeaderboardQueries.Format(target, value),
-                null);
+            myRecordRow.SetDataText(rank, nickname, valueText, null);
+
+            if (myListRow != null)
+                myListRow.SetRankLabel(rank > 0 ? rank.ToString() : "-");
         });
 
         // 3) 응답이 너무 늦으면 "-"
@@ -203,8 +292,14 @@ public class LeaderboardSceneUI : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(8f);
 
-        if (!answered() && request == showRequest && myRecordRow != null)
-            myRecordRow.SetRankLabel("-");
+        if (!answered() && request == showRequest)
+        {
+            if (myRecordRow != null)
+                myRecordRow.SetRankLabel("-");
+
+            if (myListRow != null)
+                myListRow.SetRankLabel("-");
+        }
     }
 
     // ---------- 버튼 만들기 ----------

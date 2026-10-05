@@ -477,44 +477,47 @@ public class SaveManager : MonoBehaviour
         Debug.Log("SaveManager : 로컬 스탯 갱신 완료");
     }
 
-    public void UpdateNickname(string newNickname)
+    /// <summary>
+    /// 닉네임을 Meta 프로필 이름으로 맞춤 (MetaProfile에서 호출). 게임 안에서 닉네임을 바꾸는 기능은 없다.
+    /// 이미 같은 이름이면 아무것도 하지 않고 false.
+    /// </summary>
+    public bool ApplyProfileNickname(string profileName)
     {
-        if (string.IsNullOrWhiteSpace(newNickname))
+        if (string.IsNullOrWhiteSpace(profileName) || CurrentUser == null)
+            return false;
+
+        profileName = profileName.Trim();
+
+        if (CurrentUser.nickname == profileName)
+            return false;
+
+        CurrentUser.nickname = profileName;
+
+        FirebaseUser user = FirebaseManager.Ready ? FirebaseAuth.DefaultInstance.CurrentUser : null;
+
+        if (user == null || db == null)
         {
-            Debug.LogWarning("닉네임이 비어 있습니다.");
-            return;
+            Debug.LogWarning("닉네임(프로필 이름)을 서버에 저장하지 못했습니다 : 로그인 전");
+            return true;
         }
 
-        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
-
-        if (user == null)
-        {
-            Debug.LogError("로그인된 유저가 없습니다.");
-            return;
-        }
-
-        newNickname = newNickname.Trim();
-
-        CurrentUser.nickname = newNickname;
-
-        string userId = user.UserId;
-
+        // 문서가 아직 없어도 저장되도록 병합 저장
         db.Collection("users")
-            .Document(userId)
-            .UpdateAsync("nickname", newNickname)
+            .Document(user.UserId)
+            .SetAsync(
+                new System.Collections.Generic.Dictionary<string, object> { { "nickname", profileName } },
+                SetOptions.MergeAll)
             .ContinueWithOnMainThread(task =>
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    Debug.LogError(
-                        "닉네임 저장 실패 : " + task.Exception
-                    );
+                    Debug.LogError("닉네임(프로필 이름) 저장 실패 : " + task.Exception);
                     return;
                 }
 
-                Debug.Log(
-                    "닉네임 저장 완료 : " + newNickname
-                );
+                Debug.Log("닉네임을 Meta 프로필 이름으로 저장 : " + profileName);
             });
+
+        return true;
     }
 }

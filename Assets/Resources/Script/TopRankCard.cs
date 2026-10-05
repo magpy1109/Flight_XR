@@ -15,6 +15,24 @@ public class TopRankCard : MonoBehaviour
         SetupText(playerName, distance.ToString("N1") + "m");
     }
 
+    private bool colorSaved;
+    private Color nameColor;
+
+    /// <summary>내 카드 강조 (닉네임 색). 해제하면 원래 색으로</summary>
+    public void SetHighlight(bool on, Color color)
+    {
+        if (playerNameText == null)
+            return;
+
+        if (!colorSaved)
+        {
+            colorSaved = true;
+            nameColor = playerNameText.color;
+        }
+
+        playerNameText.color = on ? color : nameColor;
+    }
+
     /// <summary>기록 글자를 그대로 표시 ("1,234.5m" / "1,230점")</summary>
     public void SetupText(string playerName, string valueText)
     {
