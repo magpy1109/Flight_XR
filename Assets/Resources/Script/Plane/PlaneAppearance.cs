@@ -7,7 +7,10 @@ using UnityEngine;
 /// - 기존 네모(Cube) 표시는 끄고, 종이비행기 모델을 붙인다.
 ///   모델 데이터(Resources/PlaneModel/PaperPlaneMesh.bytes)는 스킨씬과 같은 원본(3D_FLIGHT.fbx, 약 195만 삼각형)을
 ///   Quest에서 가볍게 돌도록 약 1만2천 삼각형으로 줄인 것. (기수 +Z, 위 +Y, 길이 1)
-/// - 스킨 색 : 스킨씬의 비행기 스킨과 같은 9가지 색 (장착 번호 % 9)
+/// - 스킨 : 0번 기본 종이비행기(클래식 화이트), 9번 스텔스 폭격기, 10번부터 텍스처 모델 스킨(PlaneSkins)
+///   (1~8번 색 스킨은 삭제됨)
+/// - 10번부터의 스킨은 종이비행기 대신 그 스킨의 모델 + 색 텍스처(PlaneModels.CreateTextured)
+/// - 트레일을 "스킨별 기본 트레일"로 두면 스킨에 어울리는 트레일이 붙고, 다른 트레일을 고르면 그 트레일이 붙는다. (TrailCatalog)
 /// - 9번 스킨(스텔스 폭격기)은 종이비행기 대신 폭격기 모델(PlaneModels) + 전용 비행운(BomberEffects)
 /// - 트레일 : 스킨씬의 트레일 9종을 그대로 옮긴 Resources/PlaneModel/PlaneTrails 프리팹 사용
 /// - 비행 중 방향을 틀면 기울고, 오르내리면 기수가 들리고 숙여진다. (겉모습만, 물리는 그대로)
@@ -76,10 +79,28 @@ public class PlaneAppearance : MonoBehaviour
         Category = PlaneCategory.OfSkin(skinIndex);
         CrashSound.Preload(Category);
 
-        // 종이비행기가 아닌 모델 (스텔스 폭격기)
-        if (Category == PlaneCategory.Bomber && BuildBomber())
+        // 실제로 붙일 트레일 ("스킨별 기본 트레일"이면 이 스킨에 어울리는 트레일)
+        int trailId = TrailCatalog.Resolve(trailIndex, skinIndex);
+
+        // 텍스처 모델 스킨 (10번부터)
+        PlaneSkins.Skin skin = PlaneSkins.Get(skinIndex);
+        if (skin != null)
         {
-            Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 전용 비행운 적용");
+            if (BuildModelSkin(skin, trailId))
+            {
+                Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({skin.title}) / 트레일 {trailIndex} → {trailId} 적용");
+                return;
+            }
+
+            // 모델을 못 불러오면 종이비행기로 대신 표시
+            Category = PlaneCategory.Paper;
+            CrashSound.Preload(Category);
+        }
+
+        // 종이비행기가 아닌 모델 (스텔스 폭격기)
+        if (Category == PlaneCategory.Bomber && BuildBomber(trailId))
+        {
+            Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 트레일 {trailIndex} → {trailId} 적용");
             return;
         }
 
@@ -120,13 +141,52 @@ public class PlaneAppearance : MonoBehaviour
         }
 
         // 4) 트레일
-        AttachTrail(trailIndex);
+        AttachTrailById(trailId, planeLength, null);
 
-        Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 트레일 {trailIndex} 적용");
+        Debug.Log($"[PlaneAppearance] 스킨 {skinIndex} ({PlaneSkinState.SkinName(skinIndex)}) / 트레일 {trailIndex} → {trailId} 적용");
+    }
+
+    /// <summary>텍스처 모델 스킨 (모델 + 색 텍스처 + 고른 트레일). 모델을 못 불러오면 false</summary>
+    private bool BuildModelSkin(PlaneSkins.Skin skin, int trailId)
+    {
+        MeshRenderer cubeRenderer = GetComponent<MeshRenderer>();
+
+        GameObject visualObject = new GameObject("Visual");
+        Transform v = visualObject.transform;
+        v.SetParent(transform, false);
+
+        MeshFilter filter;
+        GameObject model = PlaneModels.CreateTextured(skin, v, skin.size, out filter);
+        if (model == null)
+        {
+            Destroy(visualObject);
+            return false;
+        }
+
+        if (cubeRenderer != null)
+            cubeRenderer.enabled = false;
+
+        transform.localScale = Vector3.one;
+        visual = v;
+        model.name = skin.key;
+        ModelFilter = filter;
+
+        // 충돌 크기 = 모델 크기
+        BoxCollider box = GetComponent<BoxCollider>();
+        if (box != null)
+        {
+            Bounds b = GetLocalBounds(model.transform, visual);
+            box.center = b.center;
+            box.size = b.size;
+        }
+
+        // 트레일 (트레일 프리팹은 길이 1 기준 → 모델 길이에 맞춤, 나오는 자리는 이 모델의 꼬리)
+        AttachTrailById(trailId, skin.size, new Vector3(skin.trailX, skin.trailY, TrailZ));
+        return true;
     }
 
     /// <summary>스텔스 폭격기 모델 + 전용 비행운. 모델을 못 불러오면 false (종이비행기로 대신 표시)</summary>
-    private bool BuildBomber()
+    private bool BuildBomber(int trailId)
     {
         MeshRenderer cubeRenderer = GetComponent<MeshRenderer>();
 
@@ -159,8 +219,12 @@ public class PlaneAppearance : MonoBehaviour
             box.size = b.size;
         }
 
-        // 트레일 탭에서 고른 트레일 대신 폭격기 전용 비행운
-        lineTrails = BomberEffects.AttachContrails(model.transform);
+        // 폭격기 비행운(스킨별 기본 트레일 포함)이면 전용 비행운, 다른 트레일을 골랐으면 그 트레일
+        if (trailId == TrailCatalog.BomberId)
+            lineTrails = BomberEffects.AttachContrails(model.transform);
+        else
+            AttachTrailById(trailId, bomberSpan * 0.6f, BomberTrailAnchor);
+
         return true;
     }
 
@@ -267,7 +331,37 @@ public class PlaneAppearance : MonoBehaviour
         }
     }
 
-    private void AttachTrail(int trailIndex)
+    // 트레일이 나오는 앞뒤 위치 (모델 길이 1 기준, 꼬리 끝)
+    private const float TrailZ = -0.5f;
+
+    // 종이비행기에서 트레일이 나오는 자리 (트레일 프리팹의 날개 끝 위치와 같음)
+    private static readonly Vector3 PaperTrailAnchor = new Vector3(0.2f, 0.14f, -0.51f);
+
+    // 스텔스 폭격기에 다른 트레일을 붙일 때 나오는 자리 (엔진 배기구 근처, 날개폭의 0.6배를 길이 1로 봄)
+    private static readonly Vector3 BomberTrailAnchor = new Vector3(0.16f, 0.03f, -0.34f);
+
+    /// <summary>
+    /// 트레일 번호(TrailCatalog)에 맞는 트레일 붙이기.
+    /// 색 트레일(프리팹)은 기존 방식, 스킨별 트레일은 TrailEffects에서 코드로 만든다.
+    /// </summary>
+    private void AttachTrailById(int trailId, float length, Vector3? anchor)
+    {
+        TrailCatalog.Trail trail = TrailCatalog.Get(trailId);
+
+        if (trail == null || trail.prefabIndex >= 0)
+        {
+            AttachTrail(trail != null ? trail.prefabIndex : 0, length, anchor);
+            return;
+        }
+
+        trails = TrailEffects.Attach(visual, trailId, length, anchor ?? PaperTrailAnchor);
+    }
+
+    /// <summary>
+    /// 트레일 붙이기. anchor를 주면 좌우 두 줄기가 나오는 자리를 그 위치로 옮긴다.
+    /// (트레일 프리팹은 종이비행기 날개 끝에 맞춰져 있어서 다른 모델에는 어긋남. x = 가운데에서 좌우 거리)
+    /// </summary>
+    private void AttachTrail(int trailIndex, float length, Vector3? anchor = null)
     {
         GameObject trailPrefab = Resources.Load<GameObject>(TrailPath);
         if (trailPrefab == null)
@@ -282,7 +376,7 @@ public class PlaneAppearance : MonoBehaviour
         // 트레일 프리팹은 길이 1 기준으로 만들어져 있음 → 비행기 길이에 맞춤
         trailRoot.transform.localPosition = Vector3.zero;
         trailRoot.transform.localRotation = Quaternion.identity;
-        trailRoot.transform.localScale = Vector3.one * planeLength;
+        trailRoot.transform.localScale = Vector3.one * length;
 
         int count = trailRoot.transform.childCount;
         if (count == 0)
@@ -295,12 +389,29 @@ public class PlaneAppearance : MonoBehaviour
             Transform child = trailRoot.transform.GetChild(i);
 
             if (i == selected)
+            {
                 child.gameObject.SetActive(true);
+
+                if (anchor.HasValue)
+                    MoveTrailEmitters(child, anchor.Value);
+            }
             else
+            {
                 Destroy(child.gameObject);
+            }
         }
 
         trails = trailRoot.GetComponentsInChildren<ParticleSystem>(true);
+    }
+
+    /// <summary>트레일 줄기(왼쪽 / 오른쪽)가 나오는 자리 옮기기. 원래 왼쪽에 있던 줄기는 왼쪽에 둔다.</summary>
+    private static void MoveTrailEmitters(Transform trail, Vector3 anchor)
+    {
+        foreach (Transform emitter in trail)
+        {
+            float side = emitter.localPosition.x < 0f ? -1f : 1f;
+            emitter.localPosition = new Vector3(side * Mathf.Abs(anchor.x), anchor.y, anchor.z);
+        }
     }
 
     private static Bounds GetLocalBounds(Transform target, Transform space)
@@ -409,36 +520,40 @@ public class PlaneAppearance : MonoBehaviour
 ///
 /// - 비행기 스킨 : Firebase users.equipped_skin_id (없으면 PlayerPrefs "EquippedSkin")
 /// - 트레일 : Firebase users.equipped_trail_id (없으면 PlayerPrefs "EquippedTrail")
-/// - 스킨 번호 : 0~8 종이비행기 색, 9 스텔스 폭격기 (스킨씬 1페이지 0~8, 2페이지 첫 칸 9)
+/// - 스킨 번호 : 0 기본 종이비행기(클래식 화이트), 9 스텔스 폭격기, 10번부터 텍스처 모델 스킨(PlaneSkins)
+///   (1~8번 색 스킨은 삭제됨. 예전에 1~8번을 장착했던 유저는 기본 스킨으로 표시)
+///   Firebase에 번호로 저장돼 있으므로 한 번 정한 번호는 바꾸지 않는다. (새 스킨은 PlaneSkins 목록 끝에 추가)
+/// - 트레일 번호 : TrailCatalog 참고 (0 = 스킨별 기본 트레일, 100 = 클래식 이펙트, 1~8 색 트레일, 9~20 스킨별 트레일)
+///   트레일 보유 여부는 같은 번호의 스킨 ID를 같이 쓴다.
 /// </summary>
 public static class PlaneSkinState
 {
     public const string PlaneKey = "EquippedSkin";
     public const string TrailKey = "EquippedTrail";
 
-    // 스킨씬 FlightPanel의 PlaneColorSetter 색상과 같은 순서
-    private static readonly string[] SkinNames =
-    {
-        "클래식 화이트", "스카이 블루", "로즈 레드", "선샤인 옐로", "스텔스 블랙",
-        "밀리터리 카모", "오로라", "크래프트", "갤럭시",
-        "스텔스 폭격기"
-    };
+    public const int DefaultSkin = 0;   // 기본 종이비행기 (클래식 화이트)
+    public const int BomberSkin = 9;    // 스텔스 폭격기
 
-    private static readonly Color[] SkinColors =
-    {
-        new Color(1f, 1f, 1f),                       // ClassicWhite
-        new Color(0.47058824f, 0.79607844f, 0.90588236f), // SkyBlue
-        new Color(1f, 0f, 0f),                       // RoseRed
-        new Color(1f, 1f, 0f),                       // SunshineYellow
-        new Color(0f, 0f, 0f),                       // StealthBlack
-        new Color(0.3254902f, 0.3882353f, 0.28627452f),   // MillitaryCamo
-        new Color(0.8745098f, 1f, 0.9764706f),       // Orora
-        new Color(0.56078434f, 0.45882353f, 0.27058825f), // Craft
-        new Color(0.105882354f, 0.007843138f, 0.27450982f), // Galaxy
-        new Color(0.37f, 0.40f, 0.44f)               // StealthBomber (모델 자체 색 사용, 참고용)
-    };
+    // 번호 범위 (0 ~ 가장 큰 스킨 번호). PlaneSkins에 스킨을 추가하면 자동으로 늘어난다.
+    private static readonly int IdRange = Mathf.Max(BomberSkin, PlaneSkins.MaxId) + 1;
 
-    public static int SkinCount => SkinColors.Length;
+    private static readonly Color DefaultColor = new Color(1f, 1f, 1f);
+    private static readonly Color BomberColor = new Color(0.37f, 0.40f, 0.44f);   // 모델 자체 색 사용, 참고용
+
+    public static int SkinCount => IdRange;
+
+    /// <summary>지금 쓸 수 있는 스킨 번호인지 (삭제된 1~8번은 false)</summary>
+    public static bool IsAvailable(int index)
+    {
+        return index == DefaultSkin || index == BomberSkin || PlaneSkins.Get(index) != null;
+    }
+
+    /// <summary>삭제된 스킨 번호는 기본 스킨으로 바꾼다</summary>
+    public static int NormalizeSkin(int value)
+    {
+        int index = Wrap(value);
+        return IsAvailable(index) ? index : DefaultSkin;
+    }
 
     public static int EquippedPlaneIndex
     {
@@ -449,7 +564,7 @@ public static class PlaneSkinState
                 id = SaveManager.Instance.CurrentUser.equipped_skin_id;
 
             int value = ParseId(id, PlayerPrefs.GetInt(PlaneKey, 0));
-            return Wrap(value);
+            return NormalizeSkin(value);
         }
     }
 
@@ -462,13 +577,22 @@ public static class PlaneSkinState
                 id = SaveManager.Instance.CurrentUser.equipped_trail_id;
 
             int value = ParseId(id, PlayerPrefs.GetInt(TrailKey, 0));
-            return Wrap(value);
+            return TrailCatalog.Normalize(value);
         }
     }
 
-    public static Color SkinColor(int index) => SkinColors[Wrap(index)];
+    public static Color SkinColor(int index) => NormalizeSkin(index) == BomberSkin ? BomberColor : DefaultColor;
 
-    public static string SkinName(int index) => SkinNames[Wrap(index)];
+    public static string SkinName(int index)
+    {
+        int id = NormalizeSkin(index);
+
+        PlaneSkins.Skin skin = PlaneSkins.Get(id);
+        if (skin != null)
+            return skin.title;
+
+        return id == BomberSkin ? "스텔스 폭격기" : "클래식 화이트";
+    }
 
     /// <summary>"default" = 0, 숫자 문자열 = 그 번호, 없으면 fallback</summary>
     public static int ParseId(string id, int fallback)
@@ -484,7 +608,6 @@ public static class PlaneSkinState
 
     private static int Wrap(int value)
     {
-        int n = SkinColors.Length;
-        return ((value % n) + n) % n;
+        return ((value % IdRange) + IdRange) % IdRange;
     }
 }

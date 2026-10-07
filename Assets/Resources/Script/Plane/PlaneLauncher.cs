@@ -7,6 +7,9 @@ public class PlaneLauncher : MonoBehaviour
 
     private GameObject currentPlane;
 
+    // 게임오버 뒤 바닥에 남겨 둔 지난 비행기 (재시작 / 다음 발사 때 치운다)
+    private GameObject finishedPlane;
+
     public bool HasPlane => currentPlane != null;
 
     public void Launch()
@@ -18,6 +21,9 @@ public class PlaneLauncher : MonoBehaviour
             Debug.Log("이미 비행기 존재");
             return;
         }
+
+        // 지난 판의 비행기가 남아 있으면 치우기
+        ClearFinishedPlane();
 
         // Spawn 위치 가져오기
         Transform spawn =
@@ -54,9 +60,13 @@ public class PlaneLauncher : MonoBehaviour
         {
             controller.StartFlight();
 
+            // 이 비행기가 사라졌을 때만 비움 (지난 판 비행기가 치워질 때 새 비행기를 놓치지 않게)
+            GameObject launched = currentPlane;
+
             controller.OnPlaneDestroyed += () =>
             {
-                currentPlane = null;
+                if (ReferenceEquals(currentPlane, launched))
+                    currentPlane = null;
             };
         }
 
@@ -86,12 +96,27 @@ public class PlaneLauncher : MonoBehaviour
             Destroy(currentPlane);
             currentPlane = null;
         }
+
+        ClearFinishedPlane();
+    }
+
+    private void ClearFinishedPlane()
+    {
+        if (finishedPlane != null)
+            Destroy(finishedPlane);
+
+        finishedPlane = null;
     }
 
     public void PlaneFinished(GameObject plane)
     {
         if (currentPlane == plane)
         {
+            // 비행기는 결과 화면 동안 바닥에 남겨 두되, 다음 판에서 치울 수 있게 기억해 둔다
+            if (finishedPlane != null && finishedPlane != plane)
+                Destroy(finishedPlane);
+
+            finishedPlane = plane;
             currentPlane = null;
         }
     }

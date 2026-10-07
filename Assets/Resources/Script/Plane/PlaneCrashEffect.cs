@@ -14,8 +14,14 @@ using UnityEngine;
 ///    - 부딪힌 반대 방향으로 살짝 튕긴 뒤, 데굴데굴 돌면서 바닥(실제 바닥 / 책상 등)으로 떨어져 한두 번 통통 튄다
 ///    - 바닥 높이 : 실시간 공간 인식(깊이) → 방 공간 메시 → 트래킹 바닥 순으로 찾음
 ///
-/// 종이가 아닌 종류(예 : 공룡)는 구겨지지 않고 찌그러지듯 눌렸다 펴지며 튕기고 떨어진다.
-/// 스텔스 폭격기는 폭발음과 함께 폭발하고 기체가 사라진다. (BomberEffects)
+/// 종이가 아닌 종류는 구겨지지 않고 찌그러지듯 눌렸다 펴지며 튕기고 떨어진다.
+/// 종류(PlaneCategory)에 따라 달라지는 것 :
+/// - 폭격기 / 미사일 : 폭발음과 함께 폭발하고 기체가 사라진다. (BomberEffects)
+/// - 달러 비행기 / 은박 오리가미 : 구겨지면서 동전 · 지폐 / 은빛 반짝이가 흩어진다.
+/// - 여객기 / 콩코드 : 불꽃과 연기를 내며 찌그러져 튕긴다.
+/// - 공룡 : 흙먼지를 일으키며 나뒹군다.
+/// - 비행선 : 바람이 빠지며 이리저리 날아다니다 쪼그라들어 떨어진다.
+/// - 냥캣 : 무지개 별을 터뜨리며 뿅 하고 사라진다.
 /// </summary>
 public class PlaneCrashEffect : MonoBehaviour
 {
@@ -66,6 +72,17 @@ public class PlaneCrashEffect : MonoBehaviour
     private bool exploding;
     private float time;
 
+    // ---------- 비행선 : 바람 빠짐 ----------
+    private const float DeflateDuration = 1.1f;   // 바람이 빠지며 날아다니는 시간 (초)
+    private bool deflating;
+    private float deflateAngle;
+    private Vector3 deflateAxisA;
+    private Vector3 deflateAxisB;
+
+    // ---------- 냥캣 : 뿅 하고 사라짐 ----------
+    private const float PoofDuration = 0.32f;
+    private bool poofing;
+
     // ---------- 실행 ----------
 
     /// <summary>충돌 효과 재생 (효과음 + 애니메이션)</summary>
@@ -110,6 +127,55 @@ public class PlaneCrashEffect : MonoBehaviour
                 appearance.ReleaseLineTrails();
             return;
         }
+
+        // 스킨 크기 (파티클 크기 기준)
+        float effectSize = length;
+        if (appearance != null)
+        {
+            PlaneSkins.Skin skin = PlaneSkins.Get(PlaneSkinState.EquippedPlaneIndex);
+            if (skin != null && skin.category == category)
+                effectSize = skin.size;
+        }
+
+        // 냥캣 : 무지개 별을 터뜨리고 빙글 돌며 사라짐
+        if (PlaneCategory.Poofs(category))
+        {
+            poofing = true;
+            CrashEffects.RainbowBurst(visual.position, effectSize);
+            spinAxis = Random.onUnitSphere;
+            return;
+        }
+
+        // 비행선 : 바람이 빠지며 이리저리 날아다니다가 쪼그라들어 떨어짐
+        if (PlaneCategory.Deflates(category))
+        {
+            deflating = true;
+            CrashEffects.GasPuff(visual.position, effectSize);
+
+            // 부딪힌 방향에 수직인 면에서 빙글빙글
+            Vector3 side = Vector3.Cross(impact, Vector3.up);
+            if (side.sqrMagnitude < 0.0001f)
+                side = Vector3.right;
+            deflateAxisA = side.normalized;
+            deflateAxisB = -impact;
+            deflateAngle = Random.Range(0f, Mathf.PI * 2f);
+
+            radius = length * 0.25f;
+            spinAxis = Random.onUnitSphere;
+            spinSpeed = 0f;
+            floorY = FindFloorY(visual.position);
+            return;
+        }
+
+        // 종류별 파티클
+        if (category == PlaneCategory.Money)
+            CrashEffects.Coins(visual.position, effectSize);
+        else if (category == PlaneCategory.Foil)
+            CrashEffects.Glitter(visual.position, effectSize);
+        else if (category == PlaneCategory.Airliner)
+            CrashEffects.MetalImpact(visual.position, impact, effectSize);
+        else if (category == PlaneCategory.Dinosaur)
+            CrashEffects.Dust(visual.position, effectSize);
 
         bool crumple = PlaneCategory.Crumples(category)
                        && appearance != null
@@ -161,6 +227,28 @@ public class PlaneCrashEffect : MonoBehaviour
                 visual.gameObject.SetActive(false);
                 enabled = false;
             }
+            return;
+        }
+
+        if (poofing)
+        {
+            UpdatePoof(dt);
+            return;
+        }
+
+        if (deflating)
+        {
+            UpdateDeflate(dt);
+            return;
+        }
+
+        if (PlaneCategory.Deflates(category))
+        {
+            // 바람이 다 빠진 뒤 : 쪼그라든 채로 떨어짐
+            UpdateMotion(dt);
+
+            if (resting)
+                enabled = false;
             return;
         }
 
@@ -250,10 +338,18 @@ public class PlaneCrashEffect : MonoBehaviour
         output = new Vector3[map.Length];
         int[] indices = new int[map.Length];
 
+        // 텍스처 모델 스킨은 구겨져도 텍스처가 그대로 보이도록 UV도 옮긴다
+        Vector2[] sourceUv = source.uv;
+        bool hasUv = sourceUv != null && sourceUv.Length == vertices.Length;
+        Vector2[] outputUv = hasUv ? new Vector2[map.Length] : null;
+
         for (int i = 0; i < map.Length; i++)
         {
             output[i] = vertices[map[i]];
             indices[i] = i;
+
+            if (hasUv)
+                outputUv[i] = sourceUv[map[i]];
         }
 
         mesh = new Mesh();
@@ -262,6 +358,8 @@ public class PlaneCrashEffect : MonoBehaviour
             mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
         mesh.MarkDynamic();
         mesh.vertices = output;
+        if (hasUv)
+            mesh.uv = outputUv;
         mesh.triangles = indices;
         mesh.RecalculateNormals();
         mesh.bounds = source.bounds;   // 구겨지면 작아지므로 원본 크기 그대로 둬도 됨
@@ -312,6 +410,62 @@ public class PlaneCrashEffect : MonoBehaviour
 
         float s = Mathf.Sin(time / duration * Mathf.PI) * (1f - time / duration);
         visual.localScale = Vector3.Scale(baseScale, new Vector3(1f + 0.35f * s, 1f - 0.45f * s, 1f + 0.35f * s));
+    }
+
+    // ---------- 냥캣 : 뿅 하고 사라짐 ----------
+
+    private void UpdatePoof(float dt)
+    {
+        float k = Mathf.Clamp01(time / PoofDuration);
+
+        // 살짝 커졌다가 빙글 돌며 작아짐
+        float scale = k < 0.3f ? Mathf.Lerp(1f, 1.3f, k / 0.3f) : Mathf.Lerp(1.3f, 0f, (k - 0.3f) / 0.7f);
+        visual.localScale = baseScale * scale;
+        visual.rotation = Quaternion.AngleAxis(1100f * dt, spinAxis) * visual.rotation;
+
+        if (k >= 1f)
+        {
+            visual.gameObject.SetActive(false);
+            enabled = false;
+        }
+    }
+
+    // ---------- 비행선 : 바람 빠짐 ----------
+
+    private void UpdateDeflate(float dt)
+    {
+        float k = Mathf.Clamp01(time / DeflateDuration);
+
+        // 풍선처럼 작은 원을 그리며 이리저리 (처음엔 빠르게, 바람이 빠질수록 느리게)
+        deflateAngle += dt * Mathf.Lerp(15f, 6f, k);
+        float speed = Mathf.Lerp(1.1f, 0.15f, k);
+
+        Vector3 direction =
+            deflateAxisA * Mathf.Cos(deflateAngle) +
+            deflateAxisB * (Mathf.Sin(deflateAngle) * 0.6f + 0.25f) +
+            Vector3.up * (Mathf.Sin(deflateAngle * 1.7f) * 0.5f + 0.15f);
+        direction = direction.sqrMagnitude > 0.0001f ? direction.normalized : Vector3.up;
+
+        Vector3 position = visual.position + direction * (speed * dt);
+        position.y = Mathf.Max(position.y, floorY + radius);
+        visual.position = position;
+
+        // 날아가는 쪽으로 기수를 돌림
+        Quaternion look = Quaternion.LookRotation(direction, Vector3.up);
+        visual.rotation = Quaternion.Slerp(visual.rotation, look, 1f - Mathf.Exp(-14f * dt));
+
+        // 쪼그라들면서 부르르 떨림
+        float squeeze = Mathf.Lerp(1f, 0.42f, k);
+        float wobble = 1f + 0.09f * Mathf.Sin(time * 46f) * (1f - k);
+        visual.localScale = Vector3.Scale(baseScale, new Vector3(squeeze * wobble, squeeze / wobble, Mathf.Lerp(1f, 0.72f, k)));
+
+        if (k >= 1f)
+        {
+            // 바람이 다 빠짐 → 힘없이 떨어짐
+            deflating = false;
+            velocity = direction * 0.1f;
+            spinSpeed = Random.Range(60f, 140f);
+        }
     }
 
     // ---------- 튕김 / 낙하 ----------

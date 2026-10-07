@@ -37,7 +37,18 @@ public class TopRankCard : MonoBehaviour
     public void SetupText(string playerName, string valueText)
     {
         if (playerNameText != null)
+        {
+            // 닉네임이 길어도 카드 밖으로 넘치지 않게 : 한 줄, 글자 크기 자동 축소
+            if (!playerNameText.enableAutoSizing)
+            {
+                playerNameText.textWrappingMode = TextWrappingModes.NoWrap;
+                playerNameText.fontSizeMax = playerNameText.fontSize;
+                playerNameText.fontSizeMin = playerNameText.fontSize * 0.55f;
+                playerNameText.enableAutoSizing = true;
+            }
+
             playerNameText.text = playerName;
+        }
 
         if (distanceText != null)
         {

@@ -24,6 +24,9 @@ public class SkinSelector : MonoBehaviour
     private int currentAppliedSkinID = 0;
     private int previewingSkinID = 0;
 
+    // 선택 테두리가 따라다닐 버튼 (다른 페이지로 넘기면 버튼이 꺼지므로 테두리도 숨긴다)
+    private Transform selectedButton;
+
     /// <summary>
     /// 트레일 탭인지 (TrailPanel에 붙은 SkinSelector, 또는 미리보기 모델이 파티클 트레일인 경우)
     /// 트레일은 비행기 스킨과 따로 저장한다. (예전에는 같은 칸에 저장돼서 트레일을 적용하면 비행기 스킨이 바뀌었음)
@@ -53,6 +56,7 @@ public class SkinSelector : MonoBehaviour
 
         if (defaultButton != null && selectionFrame != null)
         {
+            selectedButton = defaultButton.transform;
             selectionFrame.position = defaultButton.transform.position;
             selectionFrame.gameObject.SetActive(true);
         }
@@ -102,9 +106,29 @@ public class SkinSelector : MonoBehaviour
 
         if (selectionFrame != null && buttonTransform != null)
         {
+            selectedButton = buttonTransform;
             selectionFrame.gameObject.SetActive(true);
             selectionFrame.position = buttonTransform.position;
         }
+    }
+
+    /// <summary>
+    /// 선택 테두리를 고른 버튼에 붙여 둔다.
+    /// 고른 버튼이 없는 페이지(예 : 1페이지에서 고르고 2페이지로 넘김)에서는 테두리를 숨긴다.
+    /// (예전에는 테두리가 제자리에 남아서 다른 페이지의 엉뚱한 칸 / 빈 칸이 선택된 것처럼 보였음)
+    /// </summary>
+    private void LateUpdate()
+    {
+        if (selectionFrame == null || selectedButton == null)
+            return;
+
+        bool show = selectedButton.gameObject.activeInHierarchy;
+
+        if (selectionFrame.gameObject.activeSelf != show)
+            selectionFrame.gameObject.SetActive(show);
+
+        if (show)
+            selectionFrame.position = selectedButton.position;
     }
 
     private void UpdateButtonState(int skinID)
@@ -137,6 +161,13 @@ public class SkinSelector : MonoBehaviour
     {
         string firestoreSkinID =
             ConvertSkinID(previewingSkinID);
+
+        // 삭제된 비행기 스킨(1~8번)은 적용하지 않는다
+        if (!IsTrailSelector && !PlaneSkinState.IsAvailable(NormalizeID(previewingSkinID)))
+        {
+            Debug.LogWarning($"사용할 수 없는 스킨입니다 : {firestoreSkinID}");
+            return;
+        }
 
         // 보유 스킨인지 다시 확인 (로드 전이면 저장해 둔 보유 목록 기준)
         if (!IsOwned(firestoreSkinID))
@@ -178,7 +209,14 @@ public class SkinSelector : MonoBehaviour
             applyButton.interactable = false;
     }
 
+    /// <summary>장착한 번호. 비행기 탭에서는 삭제된 스킨(1~8번)을 기본 스킨으로 본다.</summary>
     private int GetEquippedSkinID()
+    {
+        int id = GetSavedEquippedID();
+        return IsTrailSelector ? id : PlaneSkinState.NormalizeSkin(id);
+    }
+
+    private int GetSavedEquippedID()
     {
         if (SaveManager.Instance == null ||
             SaveManager.Instance.CurrentUser == null)

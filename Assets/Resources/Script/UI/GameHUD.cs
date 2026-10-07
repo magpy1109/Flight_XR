@@ -69,13 +69,10 @@ public class GameHUD : MonoBehaviour
     // ---------- 처음 하는 사람 안내 (첫 플레이 때만) ----------
     // 다시 보고 싶으면 PlayerPrefs의 "Tutorial_FlightGuide_Shown" 키를 지우면 된다.
     private const string GuideShownKey = "Tutorial_FlightGuide_Shown";
-    private const float GuideFlightSeconds = 6f;      // 첫 비행 시작 후 이 시간 동안 더 보여 줌
     private static readonly Vector2 GuideCenter = new Vector2(0f, -240f);
 
     private CanvasGroup guideGroup;
     private bool guideDone;
-    private bool wasPlaying;
-    private float flightStartTime = -1f;
 
     private TMP_Text countdownText;
     private string lastCountdown;
@@ -394,14 +391,10 @@ public class GameHUD : MonoBehaviour
             return;
 
         bool playing = gm != null && gm.IsPlaying;
+        bool counting = CountdownManager.Instance != null && CountdownManager.Instance.IsCounting;
 
-        if (playing && !wasPlaying)
-            flightStartTime = Time.unscaledTime;
-        wasPlaying = playing;
-
-        // 첫 비행을 몇 초 해 보면 다시는 보여 주지 않음
-        if (!guideDone && playing && flightStartTime >= 0f &&
-            Time.unscaledTime - flightStartTime >= GuideFlightSeconds)
+        // 카운트다운이 시작되면(= 첫 비행을 시작하면) 사라지고, 다시는 보여 주지 않음
+        if (!guideDone && (counting || playing))
         {
             guideDone = true;
             PlayerPrefs.SetInt(GuideShownKey, 1);

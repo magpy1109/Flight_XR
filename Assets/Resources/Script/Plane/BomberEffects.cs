@@ -41,7 +41,7 @@ public static class BomberEffects
 
     // ---------- 머티리얼 ----------
 
-    private static Material Glow()
+    public static Material Glow()
     {
         if (glowMaterial != null)
             return glowMaterial;
@@ -61,7 +61,7 @@ public static class BomberEffects
     }
 
     /// <summary>같은 머티리얼을 반투명(알파 블렌드)으로 바꾼 복사본 (연기 / 비행운용)</summary>
-    private static Material Alpha()
+    public static Material Alpha()
     {
         if (alphaMaterial != null)
             return alphaMaterial;
@@ -191,7 +191,8 @@ public static class BomberEffects
         Object.Destroy(root, 3.5f);
     }
 
-    private static void Burst(Transform parent, string name, Material material, int count, float delay,
+    /// <summary>한 번 터지는 파티클 묶음 (CrashEffects에서도 사용)</summary>
+    public static void Burst(Transform parent, string name, Material material, int count, float delay,
         Vector2 life, Vector2 speed, Vector2 size, Color[] colors, float growth, float gravity, float radius, bool stretch)
     {
         if (material == null)

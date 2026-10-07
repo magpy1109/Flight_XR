@@ -209,17 +209,26 @@ public class SaveManager : MonoBehaviour
                     $"스킨 {OwnedSkins.Count}개 로드 완료"
                 );
 
-                IsLoaded = true;
-
-                SaveOwnedCache();
-                FlushPendingEquip();
-
-                Debug.Log(
-                    "===== 게임 데이터 로드 완료 ====="
-                );
-
-                Loaded?.Invoke();
+                // 닉네임이 아직 없으면 겹치지 않는 닉네임을 자동으로 만들어 저장한 뒤 로드 완료
+                EnsureNickname(FinishLoading);
             });
+    }
+
+    private void FinishLoading()
+    {
+        if (IsLoaded)
+            return;
+
+        IsLoaded = true;
+
+        SaveOwnedCache();
+        FlushPendingEquip();
+
+        Debug.Log(
+            "===== 게임 데이터 로드 완료 ====="
+        );
+
+        Loaded?.Invoke();
     }
 
     // =========================
@@ -233,7 +242,8 @@ public class SaveManager : MonoBehaviour
     public bool HasSkin(string skinId)
     {
         // 기본 스킨은 항상 보유
-        if (skinId == "default" || UnlockAllForTesting)
+        // 기본 스킨 / 스킨별 기본 트레일("default"), 클래식 이펙트 트레일은 항상 보유
+        if (skinId == "default" || skinId == TrailCatalog.ClassicKey || UnlockAllForTesting)
             return true;
 
         // Firebase 로드 전에는 지난번에 저장해 둔 보유 목록 사용
@@ -248,7 +258,8 @@ public class SaveManager : MonoBehaviour
     /// <summary>SaveManager가 없거나 로드 전일 때도 쓸 수 있는 보유 확인 (로컬 캐시)</summary>
     public static bool HasSkinCached(string skinId)
     {
-        if (skinId == "default" || UnlockAllForTesting)
+        // 기본 스킨 / 스킨별 기본 트레일("default"), 클래식 이펙트 트레일은 항상 보유
+        if (skinId == "default" || skinId == TrailCatalog.ClassicKey || UnlockAllForTesting)
             return true;
 
         string cache = PlayerPrefs.GetString(KEY_OWNED_CACHE, "default");
@@ -477,8 +488,107 @@ public class SaveManager : MonoBehaviour
         Debug.Log("SaveManager : 로컬 스탯 갱신 완료");
     }
 
+    // 자동 닉네임 : 겹치는지 확인하는 횟수 / 확인을 기다리는 최대 시간(초)
+    private const int NicknameMaxTries = 8;
+    private const float NicknameCheckTimeout = 6f;
+
     /// <summary>
-    /// 닉네임을 Meta 프로필 이름으로 맞춤 (MetaProfile에서 호출). 게임 안에서 닉네임을 바꾸는 기능은 없다.
+    /// 닉네임이 아직 없으면(처음 실행, 또는 예전 기본값 "Player") 자동으로 만들어 서버에 저장하고 고정한다.
+    /// - 다른 사람이 이미 쓰는 닉네임이면 다시 만든다. (users 에서 같은 닉네임을 찾아 확인)
+    /// - 게임 안에서 닉네임을 바꾸는 기능은 없다. (한 번 정해지면 그대로)
+    /// - 어떤 경우에도 done 은 한 번 호출된다. (확인이 실패하거나 늦어도 게임은 진행)
+    /// </summary>
+    private void EnsureNickname(System.Action done)
+    {
+        string current = CurrentUser != null && CurrentUser.nickname != null ? CurrentUser.nickname.Trim() : "";
+
+        bool needsNickname = CurrentUser != null &&
+                             (current.Length == 0 || current == "Player" || current == "Unknown" || current == "Nickname");
+
+        if (!needsNickname)
+        {
+            done?.Invoke();
+            return;
+        }
+
+        StartCoroutine(CreateUniqueNickname(done));
+    }
+
+    private IEnumerator CreateUniqueNickname(System.Action done)
+    {
+        string nickname = null;
+
+        for (int attempt = 0; attempt < NicknameMaxTries; attempt++)
+        {
+            // 뒤로 갈수록 숫자 자릿수를 늘려 겹칠 가능성을 줄임
+            string candidate = NicknameGenerator.Create(attempt < 3 ? 2 : 4);
+
+            bool? taken = null;   // null = 아직 모름
+
+            try
+            {
+                db.Collection("users")
+                    .WhereEqualTo("nickname", candidate)
+                    .Limit(1)
+                    .GetSnapshotAsync()
+                    .ContinueWithOnMainThread(task =>
+                    {
+                        if (task.IsCanceled || task.IsFaulted)
+                        {
+                            Debug.LogWarning("닉네임 중복 확인 실패 : " + task.Exception);
+                            taken = false;   // 확인할 수 없으면 그대로 사용
+                            return;
+                        }
+
+                        taken = task.Result.Count > 0;
+                    });
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("닉네임 중복 확인 실패 : " + e.Message);
+                taken = false;
+            }
+
+            float waited = 0f;
+            while (taken == null && waited < NicknameCheckTimeout)
+            {
+                waited += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            if (taken == null)
+            {
+                Debug.LogWarning("닉네임 중복 확인 응답이 없어 그대로 사용 : " + candidate);
+                nickname = candidate;
+                break;
+            }
+
+            if (taken == false)
+            {
+                nickname = candidate;
+                break;
+            }
+
+            Debug.Log("이미 사용 중인 닉네임 → 다시 생성 : " + candidate);
+        }
+
+        // 계속 겹치면 계정 ID 일부를 붙여 반드시 다르게
+        if (nickname == null)
+        {
+            FirebaseUser user = FirebaseManager.Ready ? FirebaseAuth.DefaultInstance.CurrentUser : null;
+            string suffix = user != null && user.UserId.Length >= 4 ? user.UserId.Substring(0, 4) : "0000";
+            nickname = NicknameGenerator.Create(2) + suffix;
+        }
+
+        Debug.Log("닉네임 자동 생성 : " + nickname);
+
+        ApplyProfileNickname(nickname);
+
+        done?.Invoke();
+    }
+
+    /// <summary>
+    /// 닉네임을 바꾸고 서버(users.nickname)에 저장. (자동 생성 닉네임 / Meta 프로필 이름 적용용)
     /// 이미 같은 이름이면 아무것도 하지 않고 false.
     /// </summary>
     public bool ApplyProfileNickname(string profileName)
@@ -497,7 +607,7 @@ public class SaveManager : MonoBehaviour
 
         if (user == null || db == null)
         {
-            Debug.LogWarning("닉네임(프로필 이름)을 서버에 저장하지 못했습니다 : 로그인 전");
+            Debug.LogWarning("닉네임을 서버에 저장하지 못했습니다 : 로그인 전");
             return true;
         }
 
@@ -511,13 +621,45 @@ public class SaveManager : MonoBehaviour
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    Debug.LogError("닉네임(프로필 이름) 저장 실패 : " + task.Exception);
+                    Debug.LogError("닉네임 저장 실패 : " + task.Exception);
                     return;
                 }
 
-                Debug.Log("닉네임을 Meta 프로필 이름으로 저장 : " + profileName);
+                Debug.Log("닉네임 저장 완료 : " + profileName);
             });
 
         return true;
     }
-}
+}
+
+/// <summary>
+/// 자동 닉네임 만들기 : "꾸미는 말 + 이름 + 두 자리 숫자" (예 : 날쌘제비27)
+/// 메인 메뉴 닉네임 칸에 들어가도록 짧게 만든다. 겹치는지는 SaveManager가 서버에서 확인한다.
+/// </summary>
+public static class NicknameGenerator
+{
+    private static readonly string[] Adjectives =
+    {
+        "빠른", "날쌘", "용감한", "푸른", "높은", "가벼운", "씩씩한", "멋진",
+        "신난", "느긋한", "조용한", "당찬", "힘찬", "하얀", "작은", "큰"
+    };
+
+    private static readonly string[] Nouns =
+    {
+        "제비", "참새", "까치", "솔개", "독수리", "갈매기", "기러기", "두루미",
+        "파랑새", "종이학", "구름", "바람", "비행기", "날개", "혜성", "별"
+    };
+
+    private static readonly System.Random random = new System.Random();
+
+    /// <summary>digits : 뒤에 붙는 숫자 자릿수 (2 → 10~99, 4 → 1000~9999)</summary>
+    public static string Create(int digits = 2)
+    {
+        int min = digits >= 4 ? 1000 : 10;
+        int max = digits >= 4 ? 10000 : 100;
+
+        return Adjectives[random.Next(Adjectives.Length)]
+               + Nouns[random.Next(Nouns.Length)]
+               + random.Next(min, max);
+    }
+}

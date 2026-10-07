@@ -15,6 +15,43 @@ public class PlayerInfoUI : MonoBehaviour
 
     private FirebaseFirestore db;
 
+    // 프로필 칸 안에서 글자 세로 위치 (닉네임 / 순위 공통, 칸 가운데 기준)
+    private const float TextCenterY = -2f;
+
+    private void Awake()
+    {
+        // 순위 글자가 위쪽 정렬이라 칸 위로 치우쳐 보이던 문제 → 닉네임과 같은 높이에서 세로 가운데 정렬
+        AlignMiddle(nicknameText);
+        AlignMiddle(rankText);
+
+        // 닉네임이 길어도 칸 밖으로 넘치지 않게 : 한 줄, 칸에 맞춰 글자 크기 자동 축소
+        if (nicknameText != null)
+        {
+            nicknameText.textWrappingMode = TextWrappingModes.NoWrap;
+            nicknameText.fontSizeMax = nicknameText.fontSize;
+            nicknameText.fontSizeMin = nicknameText.fontSize * 0.55f;
+            nicknameText.enableAutoSizing = true;
+        }
+
+        // 데이터를 불러오기 전에 씬에 적어 둔 예시 글자("Nickname" / "0")가 잠깐 보이던 문제 → 비워 둠
+        if (nicknameText != null)
+            nicknameText.text = "";
+
+        if (rankText != null)
+            rankText.text = "";
+    }
+
+    private static void AlignMiddle(TextMeshProUGUI text)
+    {
+        if (text == null)
+            return;
+
+        text.verticalAlignment = VerticalAlignmentOptions.Middle;
+
+        RectTransform rect = text.rectTransform;
+        rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, TextCenterY);
+    }
+
     private IEnumerator Start()
     {
         // SaveManager가 생성될 때까지 대기

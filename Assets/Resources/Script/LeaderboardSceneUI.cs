@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// 리더보드 씬 화면.
 ///
 /// - 오른쪽 위 [거리 | 점수] 버튼으로 거리 랭킹 / 점수 랭킹 전환 (마지막으로 본 랭킹을 기억)
-/// - 상위 3명 카드, 4위부터 목록, 아래 내 기록 줄이 선택한 랭킹 기준으로 바뀐다
+/// - 상위 3명 카드, 1위부터 전체 목록, 아래 내 기록 줄이 선택한 랭킹 기준으로 바뀐다
 /// - 목록 머리글 "최고기록" → "최고거리" / "최고점수"
 /// - 내 기록은 아래 고정 줄뿐 아니라 랭킹 안(카드 / 목록)에도 파란 글씨로 표시.
 ///   상위 목록 밖이면 목록 맨 아래에 내 줄을 덧붙인다
@@ -225,8 +225,8 @@ public class LeaderboardSceneUI : MonoBehaviour
         generatedRows.Clear();
         myListRow = null;
 
-        // 4번째부터 생성 (1~3번째는 위 카드)
-        for (int i = 3; i < entries.Count; i++)
+        // 1위부터 모두 생성 (1~3위는 위 카드에도 함께 표시)
+        for (int i = 0; i < entries.Count; i++)
         {
             LeaderboardEntry entry = entries[i];
 
