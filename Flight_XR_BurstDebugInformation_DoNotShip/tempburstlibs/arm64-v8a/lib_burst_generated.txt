@@ -10,7 +10,6 @@ Library: C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\mypc\Desktop\Flight_XR\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\mypc\Desktop\Flight_XR\Library\Burst
 --output=C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -127,7 +126,6 @@ Library: C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\mypc\Desktop\Flight_XR\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\mypc\Desktop\Flight_XR\Library\Burst
 --output=C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -220,7 +218,6 @@ Library: C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\mypc\Desktop\Flight_XR\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\mypc\Desktop\Flight_XR\Library\Burst
 --output=C:\Users\mypc\Desktop\Flight_XR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
